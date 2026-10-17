@@ -4,35 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05060f">
-<meta name="description" content="ABHS — ALAMIN B HARUN SPECIAL. A world-class learning universe: AI tutor, quizzes, notes, flashcards, focus timer, achievements, premium.">
+<meta name="description" content="ABHS — ALAMIN B HARUN SPECIAL. AI tutor, image studio, quizzes, notes, flashcards, focus, achievements, premium. 6 themes. Multi-language.">
 <title>ABHS · ALAMIN B HARUN SPECIAL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v4 · AURORA — Design System
+   ABHS v5 · AURORA+ — Complete Design System
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
+/* ---------- DEFAULT THEME: AURORA (dark) ---------- */
 :root{
-  --bg:#05060f;
-  --bg-2:#080b1a;
-  --panel:rgba(15,20,40,.72);
-  --panel-solid:#0e1329;
-  --panel-2:rgba(22,28,55,.85);
+  --bg:#05060f; --bg-2:#080b1a;
+  --panel:rgba(15,20,40,.72); --panel-solid:#0e1329; --panel-2:rgba(22,28,55,.85);
   --field:rgba(9,13,30,.85);
-  --stroke:rgba(140,170,255,.13);
-  --stroke-2:rgba(140,170,255,.38);
-  --txt:#eef2ff;
-  --dim:#98a5c6;
-  --cyan:#22d3ee;
-  --blue:#3b82f6;
-  --violet:#8b5cf6;
-  --pink:#ec4899;
-  --lime:#a3e635;
-  --amber:#fbbf24;
-  --rose:#fb7185;
+  --stroke:rgba(140,170,255,.13); --stroke-2:rgba(140,170,255,.38);
+  --txt:#eef2ff; --dim:#98a5c6;
+  --cyan:#22d3ee; --blue:#3b82f6; --violet:#8b5cf6; --pink:#ec4899;
+  --lime:#a3e635; --amber:#fbbf24; --rose:#fb7185;
   --grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);
   --grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));
   --grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);
@@ -40,20 +31,68 @@
   --r-sm:12px; --r:18px; --r-lg:26px; --r-xl:34px;
   --shadow:0 30px 70px -28px rgba(0,0,0,.85);
   --glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);
-  --rail-w:258px;
-  --top-h:66px;
+  --rail-w:258px; --top-h:66px;
 }
+
+/* ---------- THEME: MIDNIGHT ---------- */
+[data-theme="midnight"]{
+  --bg:#000; --bg-2:#050508;
+  --panel:rgba(14,14,22,.85); --panel-solid:#0a0a12; --panel-2:rgba(20,20,32,.9);
+  --field:rgba(8,8,15,.9);
+  --stroke:rgba(160,160,200,.14); --stroke-2:rgba(160,160,200,.4);
+  --txt:#e8e8f5; --dim:#8888a8;
+  --cyan:#a78bfa; --blue:#6366f1; --violet:#8b5cf6; --pink:#d946ef;
+  --grad:linear-gradient(135deg,#a78bfa,#6366f1,#d946ef);
+  --grad-soft:linear-gradient(135deg,rgba(167,139,250,.16),rgba(217,70,239,.16));
+  --txt-grad:linear-gradient(100deg,#a78bfa,#818cf8,#d946ef);
+}
+
+/* ---------- THEME: OCEAN ---------- */
+[data-theme="ocean"]{
+  --bg:#020617; --bg-2:#041028;
+  --panel:rgba(15,23,42,.8); --panel-solid:#0a1628; --panel-2:rgba(20,40,70,.9);
+  --field:rgba(8,20,40,.9);
+  --stroke:rgba(56,189,248,.18); --stroke-2:rgba(56,189,248,.42);
+  --txt:#f0f9ff; --dim:#7dd3fc;
+  --cyan:#38bdf8; --blue:#0ea5e9; --violet:#06b6d4; --pink:#22d3ee;
+  --grad:linear-gradient(135deg,#38bdf8,#0ea5e9,#06b6d4);
+  --grad-soft:linear-gradient(135deg,rgba(56,189,248,.16),rgba(34,211,238,.16));
+  --txt-grad:linear-gradient(100deg,#38bdf8,#0ea5e9,#22d3ee);
+}
+
+/* ---------- THEME: SUNSET ---------- */
+[data-theme="sunset"]{
+  --bg:#1a0b0b; --bg-2:#2a0f10;
+  --panel:rgba(45,20,20,.8); --panel-solid:#2a1215; --panel-2:rgba(60,28,28,.9);
+  --field:rgba(30,12,12,.9);
+  --stroke:rgba(251,146,60,.18); --stroke-2:rgba(251,146,60,.42);
+  --txt:#fff7ed; --dim:#fdba74;
+  --cyan:#fb923c; --blue:#f97316; --violet:#ef4444; --pink:#f43f5e;
+  --grad:linear-gradient(135deg,#fb923c,#f97316,#ef4444);
+  --grad-soft:linear-gradient(135deg,rgba(251,146,60,.16),rgba(244,63,94,.16));
+  --txt-grad:linear-gradient(100deg,#fbbf24,#fb923c,#f43f5e);
+}
+
+/* ---------- THEME: FOREST ---------- */
+[data-theme="forest"]{
+  --bg:#04140a; --bg-2:#062a14;
+  --panel:rgba(15,40,22,.8); --panel-solid:#0a2818; --panel-2:rgba(20,55,30,.9);
+  --field:rgba(8,25,14,.9);
+  --stroke:rgba(74,222,128,.18); --stroke-2:rgba(74,222,128,.42);
+  --txt:#f0fdf4; --dim:#86efac;
+  --cyan:#4ade80; --blue:#22c55e; --violet:#10b981; --pink:#14b8a6;
+  --grad:linear-gradient(135deg,#4ade80,#22c55e,#14b8a6);
+  --grad-soft:linear-gradient(135deg,rgba(74,222,128,.16),rgba(20,184,166,.16));
+  --txt-grad:linear-gradient(100deg,#4ade80,#22c55e,#14b8a6);
+}
+
+/* ---------- THEME: LIGHT ---------- */
 [data-theme="light"]{
-  --bg:#eef1fb;
-  --bg-2:#f6f8ff;
-  --panel:rgba(255,255,255,.78);
-  --panel-solid:#ffffff;
-  --panel-2:rgba(255,255,255,.92);
+  --bg:#eef1fb; --bg-2:#f6f8ff;
+  --panel:rgba(255,255,255,.78); --panel-solid:#ffffff; --panel-2:rgba(255,255,255,.92);
   --field:#ffffff;
-  --stroke:rgba(37,99,235,.14);
-  --stroke-2:rgba(37,99,235,.4);
-  --txt:#0a1024;
-  --dim:#4d5a7d;
+  --stroke:rgba(37,99,235,.14); --stroke-2:rgba(37,99,235,.4);
+  --txt:#0a1024; --dim:#4d5a7d;
   --shadow:0 26px 60px -26px rgba(30,64,175,.35);
 }
 
@@ -64,8 +103,7 @@ body{
   line-height:1.6;transition:background .5s ease,color .5s ease;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4,.brand-text,.display{font-family:'Outfit',system-ui,sans-serif;letter-spacing:-.02em}
-
+h1,h2,h3,h4,.display{font-family:'Outfit',system-ui,sans-serif;letter-spacing:-.02em}
 button{cursor:pointer;font-family:inherit;font-size:15px;color:inherit;border:none;background:none;transition:all .2s cubic-bezier(.3,.9,.4,1)}
 input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .hidden{display:none!important}
@@ -80,7 +118,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
 }
 
-/* ---------- Background canvases ---------- */
 #aurora{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.85}
 [data-theme="light"] #aurora{opacity:.5}
 #confetti{position:fixed;inset:0;width:100%;height:100%;z-index:900;pointer-events:none}
@@ -121,14 +158,8 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   background:var(--panel);border:1px solid var(--stroke);
 }
 .pill.xp{color:var(--amber);border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
-.pill.user{
-  background:var(--grad);color:#fff;border:none;
-  box-shadow:0 8px 22px -8px rgba(99,102,241,.9);
-}
-.pill.user.premium{
-  background:var(--grad-gold);
-  animation:goldPulse 2.6s ease-in-out infinite;
-}
+.pill.user{background:var(--grad);color:#fff;border:none;box-shadow:0 8px 22px -8px rgba(99,102,241,.9)}
+.pill.user.premium{background:var(--grad-gold);animation:goldPulse 2.6s ease-in-out infinite}
 @keyframes goldPulse{
   0%,100%{box-shadow:0 8px 22px -8px rgba(251,191,36,.6)}
   50%{box-shadow:0 10px 32px -4px rgba(251,191,36,1)}
@@ -168,7 +199,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .main{margin-left:var(--rail-w);position:relative;z-index:1;min-height:calc(100vh - var(--top-h))}
 .view{padding-bottom:40px;animation:fadeUp .45s cubic-bezier(.2,.9,.3,1)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
 .wrap{padding:38px 34px;max-width:1180px;margin:0 auto}
 @media(max-width:900px){
   .rail{display:none}
@@ -176,7 +206,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   .wrap{padding:24px 16px}
 }
 
-/* ---------- Dock (mobile) ---------- */
+/* ---------- Dock ---------- */
 .dock{
   display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:130;
   height:64px;border-radius:22px;padding:6px;
@@ -193,7 +223,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .dock-btn i{font-style:normal;font-size:19px}
 .dock-btn.active{background:var(--grad-soft);color:var(--cyan)}
 
-/* ---------- Drawer (mobile) ---------- */
+/* ---------- Drawer ---------- */
 .scrim{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:140;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);animation:fadeIn .22s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -213,16 +243,11 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;
   justify-content:center;gap:8px;white-space:nowrap;
 }
-.btn-primary{
-  background:var(--grad);background-size:200% auto;color:#fff;
-  box-shadow:0 14px 34px -12px rgba(99,102,241,.95);
-}
+.btn-primary{background:var(--grad);background-size:200% auto;color:#fff;box-shadow:0 14px 34px -12px rgba(99,102,241,.95)}
 .btn-primary:hover{background-position:right center;transform:translateY(-2px);
   box-shadow:0 20px 44px -14px rgba(99,102,241,1)}
-.btn-ghost{
-  background:var(--panel);border:1px solid var(--stroke);color:var(--txt);
-  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-}
+.btn-ghost{background:var(--panel);border:1px solid var(--stroke);color:var(--txt);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .btn-ghost:hover{border-color:var(--stroke-2);color:var(--cyan);transform:translateY(-2px)}
 .btn-gold{background:var(--grad-gold);color:#fff;box-shadow:0 14px 34px -12px rgba(251,191,36,.9)}
 .btn-gold:hover{transform:translateY(-2px)}
@@ -237,10 +262,8 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 @media(max-width:520px){.row .btn{flex:1 1 100%}}
 
 /* ---------- Cards ---------- */
-.grid{
-  display:grid;gap:16px;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));
-}
+.grid{display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
 .card{
   position:relative;overflow:hidden;border-radius:var(--r-lg);padding:22px;
   background:var(--panel);border:1px solid var(--stroke);
@@ -288,20 +311,16 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 }
 @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,211,238,.6)}
   50%{opacity:.4;box-shadow:0 0 0 8px rgba(34,211,238,0)}}
-.hero h1{
-  position:relative;font-size:clamp(36px,8.5vw,80px);line-height:1.02;
-  font-weight:900;letter-spacing:-.03em;margin-bottom:18px;
-}
+.hero h1{position:relative;font-size:clamp(36px,8.5vw,80px);line-height:1.02;
+  font-weight:900;letter-spacing:-.03em;margin-bottom:18px}
 .grad-text{
   background:var(--txt-grad);background-size:220% auto;
   -webkit-background-clip:text;background-clip:text;color:transparent;
   animation:shine 6s linear infinite;
 }
 @keyframes shine{to{background-position:220% center}}
-.hero p{
-  position:relative;max-width:600px;margin:0 auto 28px;color:var(--dim);
-  font-size:15.5px;line-height:1.85;font-weight:300;
-}
+.hero p{position:relative;max-width:600px;margin:0 auto 28px;color:var(--dim);
+  font-size:15.5px;line-height:1.85;font-weight:300}
 .hero .row{position:relative;justify-content:center}
 
 /* ---------- Stats ---------- */
@@ -315,11 +334,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   transition:all .3s;
 }
 .stat:hover{transform:translateY(-6px);border-color:var(--stroke-2);box-shadow:var(--glow)}
-.stat b{
-  display:block;font-size:30px;font-weight:900;line-height:1.1;margin-bottom:4px;
+.stat b{display:block;font-size:30px;font-weight:900;line-height:1.1;margin-bottom:4px;
   font-family:'Outfit',sans-serif;
-  background:var(--txt-grad);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
+  background:var(--txt-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat span{font-size:11.5px;color:var(--dim);font-weight:600;letter-spacing:.4px}
 
 /* ---------- Section head ---------- */
@@ -330,12 +347,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 /* ---------- Progress ---------- */
 .track{height:10px;border-radius:20px;background:rgba(120,140,200,.16);overflow:hidden;
   box-shadow:inset 0 2px 5px rgba(0,0,0,.3)}
-.fill{
-  height:100%;width:0;border-radius:20px;background:var(--grad);
+.fill{height:100%;width:0;border-radius:20px;background:var(--grad);
   background-size:200% auto;transition:width .8s cubic-bezier(.2,.9,.3,1);
-  animation:shine 3.6s linear infinite;box-shadow:0 0 14px rgba(140,120,255,.75);
-}
-.fill.gold{background:var(--grad-gold);box-shadow:0 0 14px rgba(251,191,36,.8)}
+  animation:shine 3.6s linear infinite;box-shadow:0 0 14px rgba(140,120,255,.75)}
 
 /* ---------- Forms ---------- */
 .form-card{
@@ -351,11 +365,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   margin-bottom:7px;letter-spacing:.4px;text-transform:uppercase}
 .field input,.field select,.field textarea{
   width:100%;padding:14px 16px;border-radius:14px;background:var(--field);
-  border:1px solid var(--stroke);outline:none;transition:all .22s;font-size:14.5px;
-}
+  border:1px solid var(--stroke);outline:none;transition:all .22s;font-size:14.5px}
 .field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.13);
-}
+  border-color:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.13)}
 .form-card .btn{width:100%;margin-top:6px}
 .switch-line{text-align:center;font-size:13.5px;color:var(--dim);margin-top:16px}
 .switch-line a{color:var(--cyan);font-weight:700;cursor:pointer}
@@ -378,41 +390,29 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   border-radius:var(--r);background:var(--panel);border:1px solid var(--stroke);
   -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
 }
-.avatar{
-  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
   font-size:20px;background:var(--grad);flex-shrink:0;
-  box-shadow:0 0 0 3px rgba(99,102,241,.25),0 8px 20px -8px rgba(99,102,241,.9);
-}
+  box-shadow:0 0 0 3px rgba(99,102,241,.25),0 8px 20px -8px rgba(99,102,241,.9)}
 .chat-top .info{flex:1;min-width:0}
 .chat-top h3{font-size:15px;font-weight:700}
 .chat-top .info small{font-size:11.5px;color:var(--lime);display:flex;align-items:center;gap:6px}
 .chat-top .info small::before{content:'';width:7px;height:7px;border-radius:50%;
   background:var(--lime);animation:blink 1.6s infinite}
-.chat-log{
-  flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:11px;
+.chat-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:11px;
   border-radius:var(--r);background:color-mix(in srgb,var(--panel-solid) 60%,transparent);
-  border:1px solid var(--stroke);margin-bottom:10px;scroll-behavior:smooth;
-}
-.msg{
-  max-width:86%;padding:13px 16px;border-radius:18px;font-size:14.2px;line-height:1.68;
-  word-wrap:break-word;white-space:pre-wrap;animation:msgIn .3s cubic-bezier(.2,.9,.3,1);
-}
+  border:1px solid var(--stroke);margin-bottom:10px;scroll-behavior:smooth}
+.msg{max-width:86%;padding:13px 16px;border-radius:18px;font-size:14.2px;line-height:1.68;
+  word-wrap:break-word;white-space:pre-wrap;animation:msgIn .3s cubic-bezier(.2,.9,.3,1)}
 @keyframes msgIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
-.msg.user{
-  align-self:flex-end;background:var(--grad);color:#fff;
-  border-bottom-right-radius:5px;box-shadow:0 12px 28px -14px rgba(99,102,241,.95);
-}
-.msg.ai{
-  align-self:flex-start;background:var(--panel);border:1px solid var(--stroke);
-  border-bottom-left-radius:5px;
-}
+.msg.user{align-self:flex-end;background:var(--grad);color:#fff;
+  border-bottom-right-radius:5px;box-shadow:0 12px 28px -14px rgba(99,102,241,.95)}
+.msg.ai{align-self:flex-start;background:var(--panel);border:1px solid var(--stroke);
+  border-bottom-left-radius:5px}
 .msg.typing{align-self:flex-start;background:var(--panel);border:1px solid var(--stroke);
   color:var(--dim);font-style:italic}
 .chat-bar{display:flex;gap:8px}
-.chat-bar input{
-  flex:1;min-width:0;padding:15px 17px;border-radius:15px;background:var(--field);
-  border:1px solid var(--stroke);outline:none;font-size:15px;
-}
+.chat-bar input{flex:1;min-width:0;padding:15px 17px;border-radius:15px;background:var(--field);
+  border:1px solid var(--stroke);outline:none;font-size:15px}
 .chat-bar input:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.12)}
 .chat-bar button{width:52px;border-radius:15px;background:var(--grad);color:#fff;
   font-size:18px;flex-shrink:0;box-shadow:0 12px 28px -14px rgba(99,102,241,.95)}
@@ -422,36 +422,28 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   animation:blink 1.2s infinite}
 
 /* ---------- Notes ---------- */
-.note{
-  position:relative;padding:16px 18px;border-radius:var(--r);margin-bottom:12px;
-  background:var(--panel);border:1px solid var(--stroke);transition:all .25s;
-}
+.note{position:relative;padding:16px 18px;border-radius:var(--r);margin-bottom:12px;
+  background:var(--panel);border:1px solid var(--stroke);transition:all .25s}
 .note:hover{border-color:var(--stroke-2)}
 .note.pinned{border-color:rgba(251,191,36,.55);background:rgba(251,191,36,.05)}
 .note .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
   font-size:11px;color:var(--dim);margin-bottom:9px;font-weight:600}
 .note .body{font-size:14px;line-height:1.72;white-space:pre-wrap;word-wrap:break-word}
 .note .acts{display:flex;gap:7px;margin-top:13px;flex-wrap:wrap}
-.note .acts button{
-  padding:6px 12px;font-size:12px;font-weight:700;border-radius:9px;
-  border:1px solid var(--stroke);color:var(--dim);background:transparent;
-}
+.note .acts button{padding:6px 12px;font-size:12px;font-weight:700;border-radius:9px;
+  border:1px solid var(--stroke);color:var(--dim);background:transparent}
 .note .acts button:hover{color:var(--cyan);border-color:var(--cyan)}
 
 /* ---------- Vocab ---------- */
 .vlist{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr))}
-.vitem{
-  position:relative;padding:17px;border-radius:var(--r);cursor:pointer;
-  background:var(--panel);border:1px solid var(--stroke);transition:all .25s;
-}
+.vitem{position:relative;padding:17px;border-radius:var(--r);cursor:pointer;
+  background:var(--panel);border:1px solid var(--stroke);transition:all .25s}
 .vitem:hover{border-color:var(--stroke-2);transform:translateY(-3px);box-shadow:var(--glow)}
 .vitem .w{font-size:15.5px;font-weight:800;color:var(--cyan);margin-bottom:5px;
   font-family:'Outfit',sans-serif}
 .vitem .m{font-size:13px;color:var(--dim);line-height:1.6}
-.vitem .star{
-  position:absolute;top:12px;right:12px;font-size:16px;opacity:.35;transition:all .2s;
-  background:none;border:none;padding:0;line-height:1;
-}
+.vitem .star{position:absolute;top:12px;right:12px;font-size:16px;opacity:.35;transition:all .2s;
+  background:none;border:none;padding:0;line-height:1}
 .vitem .star.on{opacity:1;color:var(--amber);transform:scale(1.15)}
 
 /* ---------- Flashcards ---------- */
@@ -459,13 +451,11 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .flash-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;
   transition:transform .7s cubic-bezier(.2,.9,.3,1)}
 .flash.flipped .flash-inner{transform:rotateY(180deg)}
-.face{
-  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:28px;text-align:center;border-radius:var(--r-xl);
   background:var(--panel);border:1px solid var(--stroke);box-shadow:var(--shadow);
-  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
-}
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .face.back{transform:rotateY(180deg);border-color:var(--stroke-2)}
 .face .kicker{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;
   color:var(--dim);font-weight:800;margin-bottom:14px}
@@ -473,7 +463,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   background:var(--txt-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .face .def{font-size:15px;line-height:1.7;color:var(--dim);max-width:400px}
 
-/* ---------- Focus timer ---------- */
+/* ---------- Focus ---------- */
 .focus-box{max-width:460px;margin:0 auto;text-align:center}
 .presets{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
 .preset{padding:8px 17px;border-radius:30px;font-size:13px;font-weight:700;
@@ -491,19 +481,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   color:var(--dim);font-weight:800;margin-bottom:18px}
 
 /* ---------- Modal ---------- */
-.overlay{
-  position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;
+.overlay{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;
   padding:18px;background:rgba(3,5,14,.8);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  animation:fadeIn .22s;
-}
-.modal{
-  width:100%;max-width:540px;max-height:90vh;overflow-y:auto;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:fadeIn .22s}
+.modal{width:100%;max-width:540px;max-height:90vh;overflow-y:auto;
   padding:26px;border-radius:var(--r-xl);
   background:linear-gradient(160deg,var(--panel-2),var(--panel-solid));
   border:1px solid var(--stroke);box-shadow:var(--shadow);
-  animation:popIn .3s cubic-bezier(.2,.9,.3,1);
-}
+  animation:popIn .3s cubic-bezier(.2,.9,.3,1)}
 @keyframes popIn{from{opacity:0;transform:scale(.94) translateY(14px)}to{opacity:1;transform:none}}
 .modal h2{font-size:20px;font-weight:800;margin-bottom:6px}
 .modal .hint{color:var(--dim);font-size:13px;line-height:1.7;margin:8px 0 18px}
@@ -516,10 +501,8 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 [data-theme="light"] .qcat{color:#6d28d9}
 .qtext{font-size:16.5px;font-weight:700;line-height:1.55;margin-bottom:18px}
 .opts{display:flex;flex-direction:column;gap:9px;margin-bottom:6px}
-.opt{
-  padding:14px 16px;border-radius:13px;text-align:left;font-size:14px;font-weight:600;
-  background:rgba(120,140,200,.08);border:1px solid var(--stroke);transition:all .2s;
-}
+.opt{padding:14px 16px;border-radius:13px;text-align:left;font-size:14px;font-weight:600;
+  background:rgba(120,140,200,.08);border:1px solid var(--stroke);transition:all .2s}
 .opt:hover:not(:disabled){border-color:var(--cyan);background:rgba(34,211,238,.12)}
 .opt.correct{background:rgba(16,185,129,.22);border-color:#10b981;color:#6ee7b7}
 .opt.wrong{background:rgba(251,113,133,.2);border-color:var(--rose);color:#fda4af}
@@ -531,7 +514,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   font-family:'Outfit',sans-serif;
   background:var(--txt-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* ---------- Palette / Command ---------- */
+/* ---------- Palette ---------- */
 .palette{position:fixed;inset:0;z-index:400;background:rgba(3,5,14,.82);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding:11vh 16px 16px;
   animation:fadeIn .18s}
@@ -555,7 +538,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .ach .em{font-size:26px;line-height:1}
 .ach h4{font-size:14px;font-weight:700;margin-bottom:3px}
 .ach p{font-size:12px;color:var(--dim);line-height:1.5}
-
 .lb{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;
   margin-bottom:8px;background:var(--panel);border:1px solid var(--stroke);font-size:14px}
 .lb.me{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(34,211,238,.16)}
@@ -564,14 +546,12 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .lb .nm{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lb .xpv{font-size:12.5px;font-weight:800;color:var(--amber)}
 
-/* ---------- Calendar ---------- */
+/* ---------- Calendar / History ---------- */
 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:330px}
 .cal-d{aspect-ratio:1;border-radius:8px;display:grid;place-items:center;font-size:10px;
   color:var(--dim);background:rgba(120,140,200,.1)}
 .cal-d.on{background:var(--grad);color:#fff;font-weight:800;
   box-shadow:0 6px 16px -8px rgba(99,102,241,.95)}
-
-/* ---------- History ---------- */
 .hrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;
   border-bottom:1px solid var(--stroke);font-size:13px;color:var(--dim)}
 .hrow:last-child{border-bottom:none}
@@ -581,17 +561,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .empty{text-align:center;padding:38px 18px;color:var(--dim)}
 .empty .em{font-size:44px;display:block;margin-bottom:10px;opacity:.5}
 .empty p{font-size:13.5px;line-height:1.7}
-
 .toast-host{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:950;
   display:flex;flex-direction:column;gap:9px;align-items:center;pointer-events:none;
   width:max-content;max-width:92vw}
-.toast{
-  position:relative;overflow:hidden;padding:13px 22px;border-radius:14px;
+.toast{position:relative;overflow:hidden;padding:13px 22px;border-radius:14px;
   font-weight:700;font-size:13.5px;color:#fff;text-align:center;
   background:linear-gradient(135deg,#10b981,#059669);
   box-shadow:0 16px 40px -14px rgba(16,185,129,.9);
-  animation:toastIn .35s cubic-bezier(.2,.9,.3,1);
-}
+  animation:toastIn .35s cubic-bezier(.2,.9,.3,1)}
 .toast::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:100%;
   background:rgba(255,255,255,.55);transform-origin:left;animation:drain 2.4s linear forwards}
 @keyframes drain{to{transform:scaleX(0)}}
@@ -600,7 +577,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .toast.info{background:var(--grad);box-shadow:0 16px 40px -14px rgba(99,102,241,.95)}
 @keyframes toastIn{from{opacity:0;transform:translateY(24px) scale(.95)}to{opacity:1;transform:none}}
 
-/* ---------- Settings rows ---------- */
+/* ---------- Settings ---------- */
 .s-card{padding:20px 22px;border-radius:var(--r-lg);margin-bottom:16px;
   background:var(--panel);border:1px solid var(--stroke);
   -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
@@ -627,17 +604,15 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   50%{transform:translateY(-10px) rotate(4deg)}}
 .prem-hero h1{font-size:clamp(28px,7vw,46px);font-weight:900;margin-bottom:8px}
 .prem-hero p{color:var(--dim);font-size:14.5px;max-width:440px;margin:0 auto}
-
 .pstatus{padding:16px 20px;border-radius:16px;margin-bottom:16px;display:flex;
   align-items:center;gap:13px;font-weight:700;font-size:14px}
 .pstatus.active{background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.42);color:#6ee7b7}
 .pstatus.expired{background:rgba(251,113,133,.14);border:1px solid rgba(251,113,133,.42);color:#fda4af}
 .pstatus.pending{background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.42);color:#fbbf24}
 .pstatus .em{font-size:22px}
-
-.bank{padding:22px;border-radius:var(--r-lg);margin-bottom:16px;
+.bank,.perks,.steps{padding:22px;border-radius:var(--r-lg);margin-bottom:16px;
   background:var(--panel);border:1px solid var(--stroke)}
-.bank h3{font-size:15.5px;font-weight:800;margin-bottom:14px}
+.bank h3,.perks h3,.steps h3{font-size:15.5px;font-weight:800;margin-bottom:14px}
 .brow{display:flex;justify-content:space-between;align-items:center;gap:12px;
   padding:12px 0;border-bottom:1px dashed var(--stroke);flex-wrap:wrap}
 .brow:last-child{border-bottom:none;padding-bottom:0}
@@ -646,29 +621,18 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .copy{padding:5px 12px;font-size:11.5px;font-weight:800;border-radius:9px;
   background:rgba(34,211,238,.14);border:1px solid rgba(34,211,238,.4);color:var(--cyan)}
 .copy:hover{background:rgba(34,211,238,.28)}
-
-.perks{padding:22px;border-radius:var(--r-lg);margin-bottom:16px;
-  background:var(--panel);border:1px solid var(--stroke)}
-.perks h3{font-size:15px;font-weight:800;margin-bottom:13px}
 .perks ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .perks li{font-size:14px;color:var(--dim);display:flex;gap:10px;align-items:center}
 .perks li::before{content:'✓';color:var(--lime);font-weight:900;font-size:14px}
-
-.steps{padding:22px;border-radius:var(--r-lg);margin-bottom:20px;
-  background:var(--panel);border:1px solid var(--stroke)}
-.steps h3{font-size:15px;font-weight:800;margin-bottom:14px}
 .steps ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:12px}
 .steps li{counter-increment:s;position:relative;padding-left:38px;font-size:13.5px;
   color:var(--dim);line-height:1.65}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;
   border-radius:50%;background:var(--grad);color:#fff;font-weight:900;font-size:12.5px;
   display:grid;place-items:center}
-
-.code-in{
-  width:100%;padding:17px;font-size:19px;font-weight:900;letter-spacing:3px;
+.code-in{width:100%;padding:17px;font-size:19px;font-weight:900;letter-spacing:3px;
   text-align:center;text-transform:uppercase;border-radius:15px;font-family:'Courier New',monospace;
-  background:var(--field);border:2px solid var(--stroke);outline:none;transition:all .22s;
-}
+  background:var(--field);border:2px solid var(--stroke);outline:none;transition:all .22s}
 .code-in:focus{border-color:var(--amber);box-shadow:0 0 0 4px rgba(251,191,36,.16)}
 
 /* ---------- Admin ---------- */
@@ -696,18 +660,64 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .foot .links span{cursor:pointer;font-size:12.5px}
 .foot .links span:hover{color:var(--cyan)}
 
-/* ---------- Level-up pop ---------- */
-.lvlup{
-  position:fixed;inset:0;z-index:880;display:grid;place-items:center;pointer-events:none;
-}
-.lvlup .inner{
-  text-align:center;animation:popIn .5s cubic-bezier(.2,.9,.3,1);
-}
+/* ---------- Level-up ---------- */
+.lvlup{position:fixed;inset:0;z-index:880;display:grid;place-items:center;pointer-events:none}
+.lvlup .inner{text-align:center;animation:popIn .5s cubic-bezier(.2,.9,.3,1)}
 .lvlup .big{font-size:clamp(40px,12vw,90px);font-weight:900;font-family:'Outfit',sans-serif;
   background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 10px 40px rgba(251,191,36,.7))}
 .lvlup .small{font-size:14px;letter-spacing:4px;text-transform:uppercase;
   color:var(--amber);font-weight:900}
+
+/* ---------- THEME PICKER ---------- */
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-top:14px}
+.theme-btn{padding:10px;border-radius:14px;border:2px solid var(--stroke);cursor:pointer;
+  background:var(--panel);transition:all .22s}
+.theme-btn:hover{transform:translateY(-2px);border-color:var(--stroke-2)}
+.theme-btn.active{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.2)}
+.theme-prev{height:46px;border-radius:10px;margin-bottom:8px;position:relative;overflow:hidden}
+.theme-prev::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.14))}
+.theme-name{font-size:11px;font-weight:800;color:var(--txt);text-transform:uppercase;
+  letter-spacing:.6px}
+.theme-btn.active .theme-name{color:var(--cyan)}
+
+/* ---------- LANGUAGE CHIPS ---------- */
+.lang-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.lang-chip{padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;
+  background:var(--panel);border:1px solid var(--stroke);color:var(--dim);cursor:pointer;transition:all .2s}
+.lang-chip:hover{border-color:var(--stroke-2);color:var(--txt)}
+.lang-chip.on{background:var(--grad);color:#fff;border-color:transparent;
+  box-shadow:0 6px 18px -6px rgba(99,102,241,.7)}
+
+/* ---------- AI IMAGE ---------- */
+.img-styles{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.img-style{padding:8px 16px;border-radius:20px;font-size:12.5px;font-weight:700;
+  background:var(--panel);border:1px solid var(--stroke);color:var(--dim);cursor:pointer;transition:all .2s}
+.img-style:hover{border-color:var(--stroke-2)}
+.img-style.on{background:var(--grad);color:#fff;border-color:transparent}
+.img-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));margin-top:20px}
+.img-item{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1;
+  background:var(--panel);border:1px solid var(--stroke);box-shadow:0 10px 30px -12px rgba(0,0,0,.6);
+  animation:imgIn .45s cubic-bezier(.2,.9,.3,1)}
+@keyframes imgIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.img-item img{width:100%;height:100%;object-fit:cover;display:block}
+.img-item .acts{position:absolute;top:8px;right:8px;display:flex;gap:6px;opacity:0;transition:opacity .2s}
+.img-item:hover .acts{opacity:1}
+.img-item .ov{width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;
+  border:none;display:grid;place-items:center;font-size:14px;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.img-item .ov:hover{background:var(--cyan);color:#000}
+.img-prompt{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;
+  background:linear-gradient(to top,rgba(0,0,0,.88),transparent);
+  color:#fff;font-size:11px;line-height:1.4;max-height:60px;overflow:hidden}
+.img-loading{aspect-ratio:1;border-radius:16px;display:grid;place-items:center;
+  background:var(--panel);border:1px solid var(--stroke);
+  color:var(--dim);font-size:13px;font-weight:600;position:relative;overflow:hidden}
+.img-loading::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(140,170,255,.18),transparent);
+  animation:shimmer 1.4s infinite}
+@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 </style>
 </head>
 <body>
@@ -715,7 +725,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 <canvas id="aurora"></canvas>
 <canvas id="confetti"></canvas>
 
-<!-- ==================== TOPBAR ==================== -->
 <header class="topbar">
   <button class="icon-btn" id="drawerBtn" onclick="openDrawer()" style="display:none">☰</button>
   <div class="brand" onclick="go('home')">
@@ -725,18 +734,16 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   <div class="topbar-right">
     <span class="pill xp hidden" id="xpPill">⚡ <b id="xpVal">0</b> XP</span>
     <span class="pill user hidden" id="userPill"></span>
-    <button class="icon-btn" onclick="toggleTheme()" id="themeBtn" title="Theme">🌙</button>
+    <button class="icon-btn" onclick="cycleTheme()" id="themeBtn" title="Cycle theme">🌙</button>
     <button class="icon-btn" onclick="openPalette()" title="Command (Ctrl+K)">🔍</button>
   </div>
 </header>
 
-<!-- ==================== RAIL ==================== -->
 <aside class="rail" id="rail"></aside>
 
-<!-- ==================== MAIN ==================== -->
 <main class="main">
 
-<!-- ---------- AUTH ---------- -->
+<!-- AUTH -->
 <section id="view-auth" class="view">
   <div class="form-card">
     <h2 id="authTitle">Welcome Back</h2>
@@ -766,417 +773,465 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   </div>
 </section>
 
-<!-- ---------- APP ---------- -->
 <div id="app" class="hidden">
 
-  <!-- HOME -->
-  <section id="view-home" class="view">
-    <div class="hero">
-      <div class="orb"></div>
-      <span class="chip">Sabuwar Duniyar Ilimi · A New Learning Universe</span>
-      <h1>ALAMIN B HARUN<br><span class="grad-text">SPECIAL</span></h1>
-      <p>Learn smarter. Think deeper. Achieve more.<br>
-         One place for AI tutoring, exams, notes, flashcards, focus and real progress.</p>
-      <div class="row">
-        <button class="btn btn-primary" onclick="go('dashboard')">Get Started →</button>
-        <button class="btn btn-gold" onclick="go('premium')">👑 Go Premium</button>
-      </div>
-      <div class="stats">
-        <div class="stat"><b data-count id="statXP">0</b><span>TOTAL XP</span></div>
-        <div class="stat"><b data-count id="statQuiz">0</b><span>QUIZZES</span></div>
-        <div class="stat"><b data-count id="statNotes">0</b><span>NOTES</span></div>
-        <div class="stat"><b data-count id="statStreak">1</b><span>DAY STREAK</span></div>
-      </div>
+<!-- HOME -->
+<section id="view-home" class="view">
+  <div class="hero">
+    <div class="orb"></div>
+    <span class="chip">Sabuwar Duniyar Ilimi · A New Learning Universe</span>
+    <h1>ALAMIN B HARUN<br><span class="grad-text">SPECIAL</span></h1>
+    <p>Learn smarter. Think deeper. Achieve more.<br>
+       AI tutoring, image generation, exams, notes, flashcards, focus and real progress.</p>
+    <div class="row">
+      <button class="btn btn-primary" onclick="go('dashboard')">Get Started →</button>
+      <button class="btn btn-gold" onclick="go('premium')">👑 Go Premium</button>
     </div>
-    <div class="wrap">
-      <div class="head">
-        <h2>Your <span class="grad-text">Learning Universe</span></h2>
-        <p>Real tools. Real learning. Real progress.</p>
-      </div>
-      <div class="grid">
-        <div class="card tilt"><span class="icon">🤖</span><h3>AI Tutor</h3>
-          <p>Ask anything on any subject and get clear instant answers.</p>
-          <button class="card-btn" onclick="go('ai')">Chat Now →</button></div>
-        <div class="card tilt"><span class="icon">📝</span><h3>Smart Notes</h3>
-          <p>Write, pin, search and edit. Everything auto-saves.</p>
-          <button class="card-btn" onclick="go('notes')">Open Notes →</button></div>
-        <div class="card tilt"><span class="icon">🎓</span><h3>Examination Centre</h3>
-          <p>Real quizzes with instant scoring and XP rewards.</p>
-          <button class="card-btn" onclick="openQuiz()">Start Quiz →</button></div>
-        <div class="card tilt"><span class="icon">🃏</span><h3>Flashcards</h3>
-          <p>Flip, shuffle and master new words the smart way.</p>
-          <button class="card-btn" onclick="go('flashcards')">Study Cards →</button></div>
-        <div class="card tilt"><span class="icon">⏱️</span><h3>Focus Timer</h3>
-          <p>Pomodoro sessions to build deep concentration.</p>
-          <button class="card-btn" onclick="go('focus')">Start Focus →</button></div>
-        <div class="card tilt"><span class="icon">👑</span><h3>Go Premium</h3>
-          <p>Unlimited everything for just ₦500 per year.</p>
-          <button class="card-btn" onclick="go('premium')">Upgrade →</button></div>
-      </div>
+    <div class="stats">
+      <div class="stat"><b data-count id="statXP">0</b><span>TOTAL XP</span></div>
+      <div class="stat"><b data-count id="statQuiz">0</b><span>QUIZZES</span></div>
+      <div class="stat"><b data-count id="statNotes">0</b><span>NOTES</span></div>
+      <div class="stat"><b data-count id="statStreak">1</b><span>DAY STREAK</span></div>
     </div>
-  </section>
+  </div>
+  <div class="wrap">
+    <div class="head">
+      <h2>Your <span class="grad-text">Learning Universe</span></h2>
+      <p>Real tools. Real learning. Real progress.</p>
+    </div>
+    <div class="grid">
+      <div class="card tilt"><span class="icon">🤖</span><h3>AI Tutor</h3>
+        <p>Ask anything on any subject in your language.</p>
+        <button class="card-btn" onclick="go('ai')">Chat Now →</button></div>
+      <div class="card tilt"><span class="icon">🖼️</span><h3>AI Image Studio</h3>
+        <p>Describe a scene and watch AI paint it for you.</p>
+        <button class="card-btn" onclick="go('image')">Create →</button></div>
+      <div class="card tilt"><span class="icon">📝</span><h3>Smart Notes</h3>
+        <p>Write, pin, search and edit. Everything auto-saves.</p>
+        <button class="card-btn" onclick="go('notes')">Open Notes →</button></div>
+      <div class="card tilt"><span class="icon">🎓</span><h3>Examination Centre</h3>
+        <p>Real quizzes with instant scoring and XP rewards.</p>
+        <button class="card-btn" onclick="openQuiz()">Start Quiz →</button></div>
+      <div class="card tilt"><span class="icon">🃏</span><h3>Flashcards</h3>
+        <p>Flip, shuffle and master new words the smart way.</p>
+        <button class="card-btn" onclick="go('flashcards')">Study Cards →</button></div>
+      <div class="card tilt"><span class="icon">⏱️</span><h3>Focus Timer</h3>
+        <p>Pomodoro sessions to build deep concentration.</p>
+        <button class="card-btn" onclick="go('focus')">Start Focus →</button></div>
+      <div class="card tilt"><span class="icon">🎨</span><h3>6 Themes</h3>
+        <p>Aurora, Midnight, Ocean, Sunset, Forest, Light.</p>
+        <button class="card-btn" onclick="go('settings')">Change →</button></div>
+      <div class="card tilt"><span class="icon">👑</span><h3>Go Premium</h3>
+        <p>Unlimited everything for just ₦500 per year.</p>
+        <button class="card-btn" onclick="go('premium')">Upgrade →</button></div>
+    </div>
+  </div>
+</section>
 
-  <!-- DASHBOARD -->
-  <section id="view-dashboard" class="view hidden">
-    <div class="wrap">
-      <div class="head">
-        <h2>Welcome, <span class="grad-text" id="dashName">Learner</span></h2>
-        <p id="dashGreeting">Your journey to knowledge starts here.</p>
+<!-- DASHBOARD -->
+<section id="view-dashboard" class="view hidden">
+  <div class="wrap">
+    <div class="head">
+      <h2>Welcome, <span class="grad-text" id="dashName">Learner</span></h2>
+      <p id="dashGreeting">Your journey to knowledge starts here.</p>
+    </div>
+    <div class="s-card" style="margin-bottom:22px">
+      <div style="display:flex;justify-content:space-between;align-items:center;
+                  gap:12px;flex-wrap:wrap;margin-bottom:12px">
+        <span class="qcat" style="margin:0" id="levelTag">LEVEL 1</span>
+        <span style="font-size:12.5px;color:var(--dim)" id="xpText">0 / 100 XP</span>
       </div>
-      <div class="s-card" style="margin-bottom:22px">
-        <div style="display:flex;justify-content:space-between;align-items:center;
-                    gap:12px;flex-wrap:wrap;margin-bottom:12px">
-          <span class="qcat" style="margin:0" id="levelTag">LEVEL 1</span>
-          <span style="font-size:12.5px;color:var(--dim)" id="xpText">0 / 100 XP</span>
-        </div>
-        <div class="track"><div class="fill" id="levelFill"></div></div>
-      </div>
-      <div class="grid">
-        <div class="card tilt"><span class="icon">📚</span><h3>My Courses</h3>
-          <p>Choose a subject and let the AI tutor guide you.</p>
-          <button class="card-btn" onclick="go('courses')">Browse →</button></div>
-        <div class="card tilt"><span class="icon">🎯</span><h3>Quick Quiz</h3>
-          <p>5 random questions. Earn XP for every correct answer.</p>
-          <button class="card-btn" onclick="openQuiz()">Start →</button></div>
-        <div class="card tilt"><span class="icon">🤖</span><h3>Ask AI</h3>
-          <p>Instant answers on any topic you are studying.</p>
-          <button class="card-btn" onclick="go('ai')">Open Chat →</button></div>
-        <div class="card tilt"><span class="icon">⏱️</span><h3>Focus</h3>
-          <p>Study deeply with distraction-free sessions.</p>
-          <button class="card-btn" onclick="go('focus')">Focus Now →</button></div>
-        <div class="card tilt" style="grid-column:1/-1">
-          <span class="icon">🗓️</span><h3>Daily Challenge</h3>
-          <p id="dailyStatus">Answer today's question to earn +20 XP.</p>
-          <div id="dailyQuiz"></div>
-        </div>
+      <div class="track"><div class="fill" id="levelFill"></div></div>
+    </div>
+    <div class="grid">
+      <div class="card tilt"><span class="icon">📚</span><h3>My Courses</h3>
+        <p>Choose a subject and let the AI tutor guide you.</p>
+        <button class="card-btn" onclick="go('courses')">Browse →</button></div>
+      <div class="card tilt"><span class="icon">🎯</span><h3>Quick Quiz</h3>
+        <p>5 random questions. Earn XP for every correct answer.</p>
+        <button class="card-btn" onclick="openQuiz()">Start →</button></div>
+      <div class="card tilt"><span class="icon">🖼️</span><h3>Image Studio</h3>
+        <p>Turn ideas into pictures in seconds.</p>
+        <button class="card-btn" onclick="go('image')">Create →</button></div>
+      <div class="card tilt"><span class="icon">⏱️</span><h3>Focus</h3>
+        <p>Study deeply with distraction-free sessions.</p>
+        <button class="card-btn" onclick="go('focus')">Focus Now →</button></div>
+      <div class="card tilt" style="grid-column:1/-1">
+        <span class="icon">🗓️</span><h3>Daily Challenge</h3>
+        <p id="dailyStatus">Answer today's question to earn +20 XP.</p>
+        <div id="dailyQuiz"></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- COURSES -->
-  <section id="view-courses" class="view hidden">
-    <div class="wrap">
-      <div class="head"><h2>Discover Your Courses</h2>
-        <p>Pick a subject and let the AI tutor walk you through it.</p></div>
-      <div class="grid" id="courseGrid"></div>
-    </div>
-  </section>
+<!-- COURSES -->
+<section id="view-courses" class="view hidden">
+  <div class="wrap">
+    <div class="head"><h2>Discover Your Courses</h2>
+      <p>Pick a subject and let the AI tutor walk you through it.</p></div>
+    <div class="grid" id="courseGrid"></div>
+  </div>
+</section>
 
-  <!-- AI -->
-  <section id="view-ai" class="view hidden">
-    <div class="chat-shell">
-      <div class="chat-top">
-        <div class="avatar">🤖</div>
-        <div class="info">
-          <h3>ABHS AI Tutor</h3>
-          <small>Online · ask me anything</small>
-        </div>
-        <button class="icon-btn" id="ttsBtn" onclick="toggleTTS()" title="Read answers aloud">🔈</button>
-        <button class="icon-btn" onclick="clearChat()" title="Clear chat">🗑</button>
+<!-- AI CHAT -->
+<section id="view-ai" class="view hidden">
+  <div class="chat-shell">
+    <div class="chat-top">
+      <div class="avatar">🤖</div>
+      <div class="info">
+        <h3>ABHS AI Tutor</h3>
+        <small>Online · <span id="langLabel">English</span></small>
       </div>
-      <div class="chat-log" id="chatLog"></div>
-      <div class="chat-bar">
-        <input id="chatInput" placeholder="Ask a question…"
-               onkeypress="if(event.key==='Enter')sendChat()">
-        <button class="mic" id="micBtn" onclick="toggleMic()" title="Voice input">🎙</button>
-        <button onclick="sendChat()" title="Send">➤</button>
-      </div>
+      <button class="icon-btn" id="ttsBtn" onclick="toggleTTS()" title="Read aloud">🔈</button>
+      <button class="icon-btn" onclick="clearChat()" title="Clear chat">🗑</button>
     </div>
-  </section>
+    <div class="chat-log" id="chatLog"></div>
+    <div class="chat-bar">
+      <input id="chatInput" placeholder="Ask a question…"
+             onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="mic" id="micBtn" onclick="toggleMic()" title="Voice input">🎙</button>
+      <button onclick="sendChat()" title="Send">➤</button>
+    </div>
+  </div>
+</section>
 
-  <!-- NOTES -->
-  <section id="view-notes" class="view hidden">
-    <div class="wrap" style="max-width:760px">
-      <div class="head"><h2>📝 My Study Notes</h2>
-        <p>Saved automatically on this device.</p></div>
-      <div class="s-card" style="margin-bottom:22px">
-        <textarea id="noteInput" placeholder="Write your note here…"
-                  style="width:100%;min-height:140px;padding:15px;border-radius:14px;
+<!-- AI IMAGE STUDIO -->
+<section id="view-image" class="view hidden">
+  <div class="wrap" style="max-width:900px">
+    <div class="head">
+      <h2>🖼️ AI Image Studio</h2>
+      <p>Rubuta abin da kake so, AI zai ƙirƙira maka hoto. Kyauta ne!</p>
+    </div>
+    <div class="s-card">
+      <div class="field">
+        <label>Bayyana hoton da kake so</label>
+        <textarea id="imgPrompt" placeholder="Misali: Wani ɗan Hausa a cikin farin riga yana karatu a ɗakin karatu mai haske…"
+                  style="width:100%;min-height:80px;padding:14px;border-radius:14px;
                          background:var(--field);border:1px solid var(--stroke);
-                         outline:none;resize:vertical;line-height:1.7"></textarea>
-        <div class="row" style="margin-top:12px">
-          <button class="btn btn-primary btn-sm" id="noteBtn" onclick="saveNote()">Save Note</button>
-          <button class="btn btn-ghost btn-sm hidden" id="noteCancel" onclick="cancelEdit()">Cancel</button>
-        </div>
+                         outline:none;resize:vertical;line-height:1.6"></textarea>
       </div>
-      <input class="search-input" id="noteSearch" placeholder="🔍 Search notes…" oninput="renderNotes()">
-      <h3 style="font-size:16px;margin-bottom:14px" id="notesTitle">Your Notes (0)</h3>
-      <div id="notesList"></div>
-    </div>
-  </section>
-
-  <!-- VOCAB -->
-  <section id="view-vocab" class="view hidden">
-    <div class="wrap">
-      <div class="head"><h2>🌍 Vocabulary Master</h2>
-        <p>Tap ★ to save a word to your favourites.</p></div>
-      <input class="search-input" id="vocabSearch" placeholder="🔍 Search words…" oninput="renderVocab()">
-      <div class="vlist" id="vocabList"></div>
-    </div>
-  </section>
-
-  <!-- FLASHCARDS -->
-  <section id="view-flashcards" class="view hidden">
-    <div class="wrap" style="max-width:720px">
-      <div class="head"><h2>🃏 Flashcards</h2>
-        <p>Tap the card to flip it. Use the buttons to move around.</p></div>
-      <div class="flash" id="flashCard" onclick="flipCard()">
-        <div class="flash-inner">
-          <div class="face"><div class="kicker">Word</div><div class="big" id="flashWord">—</div></div>
-          <div class="face back"><div class="kicker">Meaning</div><div class="def" id="flashDef">—</div></div>
-        </div>
+      <div class="img-styles" id="imgStyles">
+        <button class="img-style on" data-style="realistic">📷 Realistic</button>
+        <button class="img-style" data-style="anime">🎨 Anime</button>
+        <button class="img-style" data-style="3d-render">🧊 3D</button>
+        <button class="img-style" data-style="watercolor">🖌️ Watercolor</button>
+        <button class="img-style" data-style="cyberpunk">🌆 Cyberpunk</button>
+        <button class="img-style" data-style="fantasy-art">🐉 Fantasy</button>
       </div>
-      <p style="text-align:center;color:var(--dim);font-size:12.5px;margin:16px 0 18px"
-         id="flashCounter">1 / 1</p>
+      <div class="row" style="margin-top:12px">
+        <button class="btn btn-primary" onclick="generateImage()">✨ Generate</button>
+        <button class="btn btn-ghost" onclick="clearImageHistory()">🗑 Clear All</button>
+      </div>
+    </div>
+    <div class="img-grid" id="imgGrid"></div>
+    <div id="imgEmpty" class="empty">
+      <span class="em">🎨</span>
+      <p>Babu hoto tukuna. Rubuta prompt ɗinka ka danna <b>Generate</b>!</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section id="view-notes" class="view hidden">
+  <div class="wrap" style="max-width:760px">
+    <div class="head"><h2>📝 My Study Notes</h2>
+      <p>Saved automatically on this device.</p></div>
+    <div class="s-card" style="margin-bottom:22px">
+      <textarea id="noteInput" placeholder="Write your note here…"
+                style="width:100%;min-height:140px;padding:15px;border-radius:14px;
+                       background:var(--field);border:1px solid var(--stroke);
+                       outline:none;resize:vertical;line-height:1.7"></textarea>
+      <div class="row" style="margin-top:12px">
+        <button class="btn btn-primary btn-sm" id="noteBtn" onclick="saveNote()">Save Note</button>
+        <button class="btn btn-ghost btn-sm hidden" id="noteCancel" onclick="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+    <input class="search-input" id="noteSearch" placeholder="🔍 Search notes…" oninput="renderNotes()">
+    <h3 style="font-size:16px;margin-bottom:14px" id="notesTitle">Your Notes (0)</h3>
+    <div id="notesList"></div>
+  </div>
+</section>
+
+<!-- VOCAB -->
+<section id="view-vocab" class="view hidden">
+  <div class="wrap">
+    <div class="head"><h2>🌍 Vocabulary Master</h2>
+      <p>Tap ★ to save a word to your favourites.</p></div>
+    <input class="search-input" id="vocabSearch" placeholder="🔍 Search words…" oninput="renderVocab()">
+    <div class="vlist" id="vocabList"></div>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section id="view-flashcards" class="view hidden">
+  <div class="wrap" style="max-width:720px">
+    <div class="head"><h2>🃏 Flashcards</h2>
+      <p>Tap the card to flip it. Use the buttons to move around.</p></div>
+    <div class="flash" id="flashCard" onclick="flipCard()">
+      <div class="flash-inner">
+        <div class="face"><div class="kicker">Word</div><div class="big" id="flashWord">—</div></div>
+        <div class="face back"><div class="kicker">Meaning</div><div class="def" id="flashDef">—</div></div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--dim);font-size:12.5px;margin:16px 0 18px"
+       id="flashCounter">1 / 1</p>
+    <div class="row" style="justify-content:center">
+      <button class="btn btn-ghost btn-sm" onclick="flashPrev()">← Prev</button>
+      <button class="btn btn-primary btn-sm" onclick="flipCard()">Flip</button>
+      <button class="btn btn-ghost btn-sm" onclick="flashNext()">Next →</button>
+      <button class="btn btn-ghost btn-sm" onclick="flashShuffle()">🔀 Shuffle</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS -->
+<section id="view-focus" class="view hidden">
+  <div class="wrap" style="max-width:560px">
+    <div class="head" style="text-align:center">
+      <h2>⏱️ Focus Timer</h2>
+      <p style="margin-left:auto;margin-right:auto">Deep work beats long hours. Finish a session to earn +15 XP.</p>
+    </div>
+    <div class="focus-box">
+      <div class="presets">
+        <button class="preset active" onclick="setPreset(25,this)">25 min</button>
+        <button class="preset" onclick="setPreset(15,this)">15 min</button>
+        <button class="preset" onclick="setPreset(45,this)">45 min</button>
+        <button class="preset" onclick="setPreset(5,this)">5 min</button>
+      </div>
+      <div class="ring">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="50%" stop-color="#818cf8"/>
+              <stop offset="100%" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <circle class="bg" cx="100" cy="100" r="88"/>
+          <circle class="fg" id="ringFg" cx="100" cy="100" r="88"/>
+        </svg>
+        <div class="clock" id="clock">25:00</div>
+      </div>
+      <p class="timer-label" id="timerLabel">Ready to focus</p>
       <div class="row" style="justify-content:center">
-        <button class="btn btn-ghost btn-sm" onclick="flashPrev()">← Prev</button>
-        <button class="btn btn-primary btn-sm" onclick="flipCard()">Flip</button>
-        <button class="btn btn-ghost btn-sm" onclick="flashNext()">Next →</button>
-        <button class="btn btn-ghost btn-sm" onclick="flashShuffle()">🔀 Shuffle</button>
+        <button class="btn btn-primary" id="focusBtn" onclick="toggleFocus()">Start</button>
+        <button class="btn btn-ghost" onclick="resetFocus()">Reset</button>
+      </div>
+      <p style="margin-top:22px;font-size:12.5px;color:var(--dim)">
+        Sessions completed: <b id="focusCount">0</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<section id="view-progress" class="view hidden">
+  <div class="wrap" style="max-width:820px">
+    <div class="head"><h2>📈 My Learning Progress</h2>
+      <p>Real statistics from your activity on this device.</p></div>
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="card"><h3>⚡ Experience Points</h3><p id="progXpText">0 XP</p>
+        <div class="track"><div class="fill" id="progXpFill"></div></div></div>
+      <div class="card"><h3>🎯 Quizzes Completed</h3><p id="progQuizText">0 quizzes</p>
+        <div class="track"><div class="fill" id="progQuizFill"></div></div></div>
+      <div class="card"><h3>🤖 AI Questions Asked</h3><p id="progChatText">0 questions</p>
+        <div class="track"><div class="fill" id="progChatFill"></div></div></div>
+      <div class="card"><h3>📝 Notes Written</h3><p id="progNotesText">0 notes</p>
+        <div class="track"><div class="fill" id="progNotesFill"></div></div></div>
+      <div class="card"><h3>🔥 Streak — last 28 days</h3>
+        <p>Keep showing up, even for 5 minutes.</p>
+        <div class="cal" id="streakCal"></div></div>
+      <div class="card"><h3>🧾 Recent Quiz History</h3><div id="quizHistory"></div></div>
+    </div>
+    <br>
+    <button class="btn btn-danger btn-sm" onclick="resetProgress()">Reset All Progress</button>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="view-achievements" class="view hidden">
+  <div class="wrap" style="max-width:960px">
+    <div class="head"><h2>🏆 Achievements</h2>
+      <p id="achSummary">0 of 0 unlocked</p></div>
+    <div class="grid" id="achGrid"></div>
+    <h3 style="margin:36px 0 14px;font-size:17px">🥇 Leaderboard</h3>
+    <div id="leaderboard"></div>
+  </div>
+</section>
+
+<!-- PREMIUM -->
+<section id="view-premium" class="view hidden">
+  <div class="wrap" style="max-width:640px">
+    <div class="prem-hero">
+      <div class="crown">👑</div>
+      <h1>ABHS <span class="grad-text">Premium</span></h1>
+      <p>Unlock unlimited learning for just ₦500 per year.</p>
+    </div>
+    <div id="premiumStatusBox"></div>
+    <div class="bank">
+      <h3>💳 Payment Details</h3>
+      <div class="brow"><span>Bank</span><b id="bankName">OPay</b></div>
+      <div class="brow"><span>Account Number</span>
+        <div><b id="bankAcc">9129290984</b>
+          <button class="copy" onclick="copyText('9129290984','Account number')">Copy</button></div></div>
+      <div class="brow"><span>Account Name</span><b id="bankOwner">Alamin Haruna</b></div>
+      <div class="brow"><span>Amount</span><b style="color:var(--amber)">₦500 (1 Year)</b></div>
+    </div>
+    <div class="perks">
+      <h3>What you get</h3>
+      <ul>
+        <li>Unlimited AI questions (free: 10/day)</li>
+        <li>Unlimited quizzes (free: 5/day)</li>
+        <li>👑 Premium badge on your profile</li>
+        <li>Advanced analytics &amp; insights</li>
+        <li>Priority WhatsApp support</li>
+        <li>All future premium features</li>
+      </ul>
+    </div>
+    <div class="steps">
+      <h3>How to activate</h3>
+      <ol>
+        <li>Send ₦500 to the OPay account above</li>
+        <li>Save your transaction reference number</li>
+        <li>Click "I've Paid" below and submit your reference</li>
+        <li>Send the reference to Alamin on WhatsApp</li>
+        <li>Receive your activation code</li>
+        <li>Enter the code to unlock Premium</li>
+      </ol>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button class="btn btn-primary" onclick="openPaymentFlow()">💳 I've Paid — Submit Reference</button>
+      <button class="btn btn-ghost" onclick="openActivation()">🔑 I have an activation code</button>
+      <button class="btn btn-ghost" onclick="openWhatsApp()">💬 Contact on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- SETTINGS -->
+<section id="view-settings" class="view hidden">
+  <div class="wrap" style="max-width:700px">
+    <div class="head"><h2>⚙️ Settings</h2>
+      <p>Personalise ABHS and manage your data.</p></div>
+
+    <div class="s-card">
+      <h3>👤 Profile</h3>
+      <div class="field" style="margin-top:12px">
+        <label for="setName">Display name</label>
+        <input id="setName" type="text" placeholder="Your name">
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="saveProfile()">Save Profile</button>
+    </div>
+
+    <div class="s-card">
+      <h3>🔐 Password</h3>
+      <div class="field" style="margin-top:12px">
+        <label for="oldPass">Current password</label>
+        <input id="oldPass" type="password" autocomplete="current-password">
+      </div>
+      <div class="field">
+        <label for="newPass">New password</label>
+        <input id="newPass" type="password" autocomplete="new-password">
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="changePassword()">Update Password</button>
+    </div>
+
+    <div class="s-card">
+      <h3>🎨 Theme</h3>
+      <p style="font-size:12.5px;color:var(--dim);margin-top:4px">Zaɓi launi da kake so.</p>
+      <div class="theme-grid" id="themeGrid"></div>
+    </div>
+
+    <div class="s-card">
+      <h3>🗣️ Yaren AI (Hausa / English / …)</h3>
+      <p style="font-size:12.5px;color:var(--dim);margin-top:4px">
+        Zaɓi yaren da AI zai yi magana da shi kuma zai amsa da shi.
+      </p>
+      <div class="lang-row" id="langRow"></div>
+    </div>
+
+    <div class="s-card">
+      <h3>🔊 Sound &amp; Voice</h3>
+      <div class="s-row">
+        <div><div class="t">Sound effects</div>
+          <div class="d">Short beeps on quiz answers</div></div>
+        <div class="toggle" id="soundToggle" onclick="toggleSound()" role="switch" tabindex="0"></div>
+      </div>
+      <div class="s-row">
+        <div><div class="t">Read AI answers aloud</div>
+          <div class="d">Text-to-speech for the AI tutor</div></div>
+        <div class="toggle" id="ttsToggle" onclick="toggleTTS()" role="switch" tabindex="0"></div>
       </div>
     </div>
-  </section>
 
-  <!-- FOCUS -->
-  <section id="view-focus" class="view hidden">
-    <div class="wrap" style="max-width:560px">
-      <div class="head" style="text-align:center">
-        <h2>⏱️ Focus Timer</h2>
-        <p style="margin-left:auto;margin-right:auto">Deep work beats long hours. Finish a session to earn +15 XP.</p>
+    <div class="s-card">
+      <h3>💾 Data</h3>
+      <div class="s-row">
+        <div><div class="t">Export my data</div>
+          <div class="d">Download a JSON backup of your progress</div></div>
+        <button class="btn btn-ghost btn-sm" onclick="exportData()">Export</button>
       </div>
-      <div class="focus-box">
-        <div class="presets">
-          <button class="preset active" onclick="setPreset(25,this)">25 min</button>
-          <button class="preset" onclick="setPreset(15,this)">15 min</button>
-          <button class="preset" onclick="setPreset(45,this)">45 min</button>
-          <button class="preset" onclick="setPreset(5,this)">5 min</button>
-        </div>
-        <div class="ring">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#22d3ee"/>
-                <stop offset="50%" stop-color="#818cf8"/>
-                <stop offset="100%" stop-color="#e879f9"/>
-              </linearGradient>
-            </defs>
-            <circle class="bg" cx="100" cy="100" r="88"/>
-            <circle class="fg" id="ringFg" cx="100" cy="100" r="88"/>
-          </svg>
-          <div class="clock" id="clock">25:00</div>
-        </div>
-        <p class="timer-label" id="timerLabel">Ready to focus</p>
-        <div class="row" style="justify-content:center">
-          <button class="btn btn-primary" id="focusBtn" onclick="toggleFocus()">Start</button>
-          <button class="btn btn-ghost" onclick="resetFocus()">Reset</button>
-        </div>
-        <p style="margin-top:22px;font-size:12.5px;color:var(--dim)">
-          Sessions completed: <b id="focusCount">0</b>
-        </p>
+      <div class="s-row">
+        <div><div class="t">Import data</div>
+          <div class="d">Restore from a backup file</div></div>
+        <button class="btn btn-ghost btn-sm" onclick="$('importFile').click()">Import</button>
+        <input type="file" id="importFile" accept="application/json" class="hidden" onchange="importData(event)">
+      </div>
+      <div class="s-row">
+        <div><div class="t" style="color:#fda4af">Delete account</div>
+          <div class="d">Permanently removes your account and all data</div></div>
+        <button class="btn btn-danger btn-sm" onclick="deleteAccount()">Delete</button>
       </div>
     </div>
-  </section>
 
-  <!-- PROGRESS -->
-  <section id="view-progress" class="view hidden">
-    <div class="wrap" style="max-width:820px">
-      <div class="head"><h2>📈 My Learning Progress</h2>
-        <p>Real statistics from your activity on this device.</p></div>
-      <div class="grid" style="grid-template-columns:1fr">
-        <div class="card"><h3>⚡ Experience Points</h3><p id="progXpText">0 XP</p>
-          <div class="track"><div class="fill" id="progXpFill"></div></div></div>
-        <div class="card"><h3>🎯 Quizzes Completed</h3><p id="progQuizText">0 quizzes</p>
-          <div class="track"><div class="fill" id="progQuizFill"></div></div></div>
-        <div class="card"><h3>🤖 AI Questions Asked</h3><p id="progChatText">0 questions</p>
-          <div class="track"><div class="fill" id="progChatFill"></div></div></div>
-        <div class="card"><h3>📝 Notes Written</h3><p id="progNotesText">0 notes</p>
-          <div class="track"><div class="fill" id="progNotesFill"></div></div></div>
-        <div class="card"><h3>🔥 Streak — last 28 days</h3>
-          <p>Keep showing up, even for 5 minutes.</p>
-          <div class="cal" id="streakCal"></div></div>
-        <div class="card"><h3>🧾 Recent Quiz History</h3><div id="quizHistory"></div></div>
-      </div>
-      <br>
-      <button class="btn btn-danger btn-sm" onclick="resetProgress()">Reset All Progress</button>
+    <div class="s-card">
+      <h3>🔐 Admin Access</h3>
+      <p style="font-size:12.5px;color:var(--dim);line-height:1.7;margin:8px 0 12px">
+        Only for Alamin Haruna. Manage premium users and verify payments.</p>
+      <button class="btn btn-ghost btn-sm" onclick="openAdmin()">Open Admin Panel</button>
     </div>
-  </section>
 
-  <!-- ACHIEVEMENTS -->
-  <section id="view-achievements" class="view hidden">
-    <div class="wrap" style="max-width:960px">
-      <div class="head"><h2>🏆 Achievements</h2>
-        <p id="achSummary">0 of 0 unlocked</p></div>
-      <div class="grid" id="achGrid"></div>
-      <h3 style="margin:36px 0 14px;font-size:17px">🥇 Leaderboard</h3>
-      <div id="leaderboard"></div>
+    <div class="s-card">
+      <h3>ℹ️ About</h3>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px">
+        <b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>
+        Version 5.0 · Aurora+ Edition<br>
+        All data is stored locally in your browser. Nothing is uploaded to any server.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PREMIUM -->
-  <section id="view-premium" class="view hidden">
-    <div class="wrap" style="max-width:640px">
-      <div class="prem-hero">
-        <div class="crown">👑</div>
-        <h1>ABHS <span class="grad-text">Premium</span></h1>
-        <p>Unlock unlimited learning for just ₦500 per year.</p>
-      </div>
-      <div id="premiumStatusBox"></div>
-      <div class="bank">
-        <h3>💳 Payment Details</h3>
-        <div class="brow"><span>Bank</span><b id="bankName">OPay</b></div>
-        <div class="brow"><span>Account Number</span>
-          <div><b id="bankAcc">9129290984</b>
-            <button class="copy" onclick="copyText('9129290984','Account number')">Copy</button></div></div>
-        <div class="brow"><span>Account Name</span><b id="bankOwner">Alamin Haruna</b></div>
-        <div class="brow"><span>Amount</span><b style="color:var(--amber)">₦500 (1 Year)</b></div>
-      </div>
-      <div class="perks">
-        <h3>What you get</h3>
-        <ul>
-          <li>Unlimited AI questions (free: 10/day)</li>
-          <li>Unlimited quizzes (free: 5/day)</li>
-          <li>👑 Premium badge on your profile</li>
-          <li>Advanced analytics &amp; insights</li>
-          <li>Priority WhatsApp support</li>
-          <li>All future premium features</li>
-        </ul>
-      </div>
-      <div class="steps">
-        <h3>How to activate</h3>
-        <ol>
-          <li>Send ₦500 to the OPay account above</li>
-          <li>Save your transaction reference number</li>
-          <li>Click "I've Paid" below and submit your reference</li>
-          <li>Send the reference to Alamin on WhatsApp</li>
-          <li>Receive your activation code</li>
-          <li>Enter the code to unlock Premium</li>
-        </ol>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <button class="btn btn-primary" onclick="openPaymentFlow()">💳 I've Paid — Submit Reference</button>
-        <button class="btn btn-ghost" onclick="openActivation()">🔑 I have an activation code</button>
-        <button class="btn btn-ghost" onclick="openWhatsApp()">💬 Contact on WhatsApp</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SETTINGS -->
-  <section id="view-settings" class="view hidden">
-    <div class="wrap" style="max-width:700px">
-      <div class="head"><h2>⚙️ Settings</h2>
-        <p>Personalise ABHS and manage your data.</p></div>
-
-      <div class="s-card">
-        <h3>👤 Profile</h3>
-        <div class="field" style="margin-top:12px">
-          <label for="setName">Display name</label>
-          <input id="setName" type="text" placeholder="Your name">
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="saveProfile()">Save Profile</button>
-      </div>
-
-      <div class="s-card">
-        <h3>🔐 Password</h3>
-        <div class="field" style="margin-top:12px">
-          <label for="oldPass">Current password</label>
-          <input id="oldPass" type="password" autocomplete="current-password">
-        </div>
-        <div class="field">
-          <label for="newPass">New password</label>
-          <input id="newPass" type="password" autocomplete="new-password">
-        </div>
-        <button class="btn btn-ghost btn-sm" onclick="changePassword()">Update Password</button>
-      </div>
-
-      <div class="s-card">
-        <h3>🎨 Appearance &amp; Sound</h3>
-        <div class="s-row">
-          <div><div class="t">Light theme</div>
-            <div class="d">Switch between dark and light mode</div></div>
-          <div class="toggle" id="themeToggle" onclick="toggleTheme()" role="switch" tabindex="0"></div>
-        </div>
-        <div class="s-row">
-          <div><div class="t">Sound effects</div>
-            <div class="d">Short beeps on quiz answers</div></div>
-          <div class="toggle" id="soundToggle" onclick="toggleSound()" role="switch" tabindex="0"></div>
-        </div>
-        <div class="s-row">
-          <div><div class="t">Read AI answers aloud</div>
-            <div class="d">Text-to-speech for the AI tutor</div></div>
-          <div class="toggle" id="ttsToggle" onclick="toggleTTS()" role="switch" tabindex="0"></div>
-        </div>
-      </div>
-
-      <div class="s-card">
-        <h3>💾 Data</h3>
-        <div class="s-row">
-          <div><div class="t">Export my data</div>
-            <div class="d">Download a JSON backup of your progress</div></div>
-          <button class="btn btn-ghost btn-sm" onclick="exportData()">Export</button>
-        </div>
-        <div class="s-row">
-          <div><div class="t">Import data</div>
-            <div class="d">Restore from a backup file</div></div>
-          <button class="btn btn-ghost btn-sm" onclick="$('importFile').click()">Import</button>
-          <input type="file" id="importFile" accept="application/json" class="hidden" onchange="importData(event)">
-        </div>
-        <div class="s-row">
-          <div><div class="t" style="color:#fda4af">Delete account</div>
-            <div class="d">Permanently removes your account and all data</div></div>
-          <button class="btn btn-danger btn-sm" onclick="deleteAccount()">Delete</button>
-        </div>
-      </div>
-
-      <div class="s-card">
-        <h3>🔐 Admin Access</h3>
-        <p style="font-size:12.5px;color:var(--dim);line-height:1.7;margin:8px 0 12px">
-          Only for Alamin Haruna. Manage premium users and verify payments.</p>
-        <button class="btn btn-ghost btn-sm" onclick="openAdmin()">Open Admin Panel</button>
-      </div>
-
-      <div class="s-card">
-        <h3>ℹ️ About</h3>
-        <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px">
-          <b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>
-          Version 4.0 · Aurora Edition<br>
-          All data is stored locally in your browser. Nothing is uploaded to any server.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="foot">
-    <strong>ABHS · ALAMIN B HARUN SPECIAL</strong><br>
-    Learn Smarter. Think Deeper. Achieve More.<br>
-    <div class="links">
-      <span onclick="go('courses')">Courses</span>
-      <span onclick="go('premium')">Premium</span>
-      <span onclick="go('achievements')">Achievements</span>
-      <span onclick="go('settings')">Settings</span>
-    </div>
-    <small>© <span id="year"></span> ABHS. All rights reserved.</small>
-  </footer>
+<footer class="foot">
+  <strong>ABHS · ALAMIN B HARUN SPECIAL</strong><br>
+  Learn Smarter. Think Deeper. Achieve More.<br>
+  <div class="links">
+    <span onclick="go('courses')">Courses</span>
+    <span onclick="go('image')">Image</span>
+    <span onclick="go('premium')">Premium</span>
+    <span onclick="go('achievements')">Achievements</span>
+    <span onclick="go('settings')">Settings</span>
+  </div>
+  <small>© <span id="year"></span> ABHS. All rights reserved.</small>
+</footer>
 
 </div><!-- /#app -->
 </main>
 
-<!-- ==================== DOCK ==================== -->
 <nav class="dock">
   <button class="dock-btn" data-nav="home" onclick="go('home')"><i>🏠</i>Home</button>
   <button class="dock-btn" data-nav="courses" onclick="go('courses')"><i>📚</i>Learn</button>
   <button class="dock-btn" data-nav="ai" onclick="go('ai')"><i>🤖</i>AI</button>
-  <button class="dock-btn" data-nav="progress" onclick="go('progress')"><i>📈</i>Progress</button>
+  <button class="dock-btn" data-nav="image" onclick="go('image')"><i>🖼️</i>Image</button>
   <button class="dock-btn" onclick="openDrawer()"><i>☰</i>More</button>
 </nav>
 
-<!-- ==================== DRAWER ==================== -->
 <div class="scrim hidden" id="drawerScrim" onclick="closeDrawer()"></div>
 <aside class="drawer hidden" id="drawer">
   <div class="drawer-grip"></div>
   <div id="drawerLinks"></div>
 </aside>
 
-<!-- ==================== MODALS ==================== -->
 <div id="quizModal" class="overlay hidden">
   <div class="modal" role="dialog" aria-modal="true" id="quizBody"></div>
 </div>
@@ -1231,7 +1286,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   </div>
 </div>
 
-<!-- ==================== COMMAND PALETTE ==================== -->
 <div id="palette" class="palette hidden">
   <div class="palette-box">
     <input id="paletteInput" placeholder="Search views, courses, words…  (Esc to close)"
@@ -1240,42 +1294,35 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   </div>
 </div>
 
-<!-- ==================== TOASTS ==================== -->
 <div class="toast-host" id="toastHost"></div>
 
 <script>
 'use strict';
-/* ============================================================
-   ABHS v4 · AURORA — Application Logic
-   ============================================================ */
 
 /* ---------- 1. Constants ---------- */
 const LS = {
-  users:'abhs.v4.users',
-  session:'abhs.v4.session',
-  data:e => 'abhs.v4.data.'+e,
-  theme:'abhs.v4.theme',
-  sound:'abhs.v4.sound'
+  users:'abhs.v5.users', session:'abhs.v5.session',
+  data:e => 'abhs.v5.data.'+e,
+  theme:'abhs.v5.theme', sound:'abhs.v5.sound'
 };
-
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
 
-/* ---------- 2. Premium config — CHANGE THESE ---------- */
-const PREMIUM_PRICE        = 500;
-const PREMIUM_DAYS         = 365;
-const FREE_AI_LIMIT        = 10;
-const FREE_QUIZ_LIMIT      = 5;
-const ADMIN_PASSWORD       = 'ABHS2025ADMIN';
-const MASTER_PREMIUM_CODE  = 'ABHS-GOLD-2025';
-const PAYMENT_PHONE        = '2349129290984';
-const ACCOUNT_NUMBER       = '9129290984';
-const ACCOUNT_NAME         = 'Alamin Haruna';
-const ACCOUNT_BANK         = 'OPay';
+/* ---------- 2. Premium config ---------- */
+const PREMIUM_PRICE = 500;
+const PREMIUM_DAYS = 365;
+const FREE_AI_LIMIT = 10;
+const FREE_QUIZ_LIMIT = 5;
+const ADMIN_PASSWORD = 'ABHS2025ADMIN';
+const MASTER_PREMIUM_CODE = 'ABHS-GOLD-2025';
+const PAYMENT_PHONE = '2349129290984';
+const ACCOUNT_NUMBER = '9129290984';
+const ACCOUNT_NAME = 'Alamin Haruna';
+const ACCOUNT_BANK = 'OPay';
 
 /* ---------- 3. Helpers ---------- */
 const $ = id => document.getElementById(id);
-const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const show = el => el && el.classList.remove('hidden');
 const hide = el => el && el.classList.add('hidden');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1287,7 +1334,6 @@ function hashStr(str){
   return (h >>> 0).toString(36).toUpperCase().padStart(8,'0').slice(0,8);
 }
 const hashPass = (email, pass) => hashStr(email + '::' + pass).toLowerCase();
-
 function premiumCode(email){
   const a = hashStr('ABHS-PREMIUM-' + email.toLowerCase() + '-2025');
   const b = hashStr(email.toLowerCase() + '-ABHS-GOLD-2025');
@@ -1301,7 +1347,8 @@ const writeUsers = u => localStorage.setItem(LS.users, JSON.stringify(u));
 function defaultData(){
   return {
     xp:0, quizzes:0, aiQuestions:0,
-    notes:[], history:[], chat:[], favorites:[],
+    notes:[], history:[], chat:[], favorites:[], images:[],
+    lang:'en-US',
     focusSessions:0, focusMinutes:0,
     achievements:[], days:[], streak:1, bestStreak:1,
     lastLogin:'',
@@ -1320,7 +1367,7 @@ function mergeDefaults(raw){
   ['daily','premium','aiToday','quizzesToday'].forEach(k => {
     out[k] = Object.assign({}, base[k], (raw && raw[k]) || {});
   });
-  ['notes','history','chat','favorites','achievements','days'].forEach(k => {
+  ['notes','history','chat','favorites','images','achievements','days'].forEach(k => {
     if (!Array.isArray(out[k])) out[k] = [];
   });
   return out;
@@ -1333,49 +1380,93 @@ function readDataRaw(email){
 }
 const getData = () => currentUser ? (readDataRaw(currentUser.email) || defaultData()) : null;
 const saveData = d => { if (currentUser) localStorage.setItem(LS.data(currentUser.email), JSON.stringify(d)); };
-
 const levelOf = xp => Math.floor((xp || 0) / LEVEL_STEP) + 1;
 const levelProgress = xp => (xp || 0) % LEVEL_STEP;
 
-/* ---------- 5. Theme ---------- */
+/* ---------- 5. Themes ---------- */
+const THEMES = [
+  { id:'dark',     name:'Aurora',   preview:'linear-gradient(135deg,#22d3ee,#6366f1,#d946ef)', color:'#05060f', icon:'🌙' },
+  { id:'midnight', name:'Midnight', preview:'linear-gradient(135deg,#a78bfa,#6366f1,#d946ef)', color:'#000000', icon:'🌌' },
+  { id:'ocean',    name:'Ocean',    preview:'linear-gradient(135deg,#38bdf8,#0ea5e9,#06b6d4)', color:'#020617', icon:'🌊' },
+  { id:'sunset',   name:'Sunset',   preview:'linear-gradient(135deg,#fb923c,#f97316,#ef4444)', color:'#1a0b0b', icon:'🌅' },
+  { id:'forest',   name:'Forest',   preview:'linear-gradient(135deg,#4ade80,#22c55e,#14b8a6)', color:'#04140a', icon:'🌲' },
+  { id:'light',    name:'Light',    preview:'linear-gradient(135deg,#eef1fb,#dbeafe,#fce7f3)', color:'#eef1fb', icon:'☀️' }
+];
+
 function applyTheme(theme){
   document.documentElement.setAttribute('data-theme', theme);
-  $('themeBtn').textContent = theme === 'light' ? '☀️' : '🌙';
-  const tt = $('themeToggle'); if (tt) tt.classList.toggle('on', theme === 'light');
+  const t = THEMES.find(x => x.id === theme) || THEMES[0];
+  $('themeBtn').textContent = t.icon;
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'light' ? '#eef1fb' : '#05060f');
+  if (meta) meta.setAttribute('content', t.color);
 }
-function toggleTheme(){
-  const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  localStorage.setItem(LS.theme, next);
-  applyTheme(next);
+function cycleTheme(){
+  const cur = localStorage.getItem(LS.theme) || 'dark';
+  const idx = THEMES.findIndex(x => x.id === cur);
+  const next = THEMES[(idx + 1) % THEMES.length].id;
+  setTheme(next);
+}
+function setTheme(id){
+  localStorage.setItem(LS.theme, id);
+  applyTheme(id);
+  renderThemePicker();
+  toast('Theme: ' + (THEMES.find(t => t.id === id) || {}).name, 'info');
+  beep(760, 0.06);
+}
+function renderThemePicker(){
+  const grid = $('themeGrid');
+  if (!grid) return;
+  const current = localStorage.getItem(LS.theme) || 'dark';
+  grid.innerHTML = THEMES.map(t =>
+    '<button class="theme-btn' + (t.id === current ? ' active' : '') +
+    '" onclick="setTheme(\'' + t.id + '\')">' +
+      '<div class="theme-prev" style="background:' + t.preview + '"></div>' +
+      '<div class="theme-name">' + t.name + '</div>' +
+    '</button>'
+  ).join('');
 }
 
-/* ---------- 6. Sound ---------- */
-let audioCtx = null;
-const soundOn = () => localStorage.getItem(LS.sound) !== 'off';
-function beep(freq = 660, dur = 0.09, type = 'sine'){
-  if (!soundOn()) return;
-  try{
-    if (!audioCtx){
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return;
-      audioCtx = new AC();
-    }
-    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-    o.type = type; o.frequency.value = freq;
-    g.gain.setValueAtTime(0.05, audioCtx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
-    o.connect(g); g.connect(audioCtx.destination);
-    o.start(); o.stop(audioCtx.currentTime + dur);
-  }catch(e){}
+/* ---------- 6. Languages ---------- */
+const LANGS = [
+  { code:'en-US', label:'English',   flag:'🇬🇧' },
+  { code:'ha-NG', label:'Hausa',     flag:'🇳🇬' },
+  { code:'ar-SA', label:'العربية',    flag:'🇸🇦' },
+  { code:'fr-FR', label:'Français',  flag:'🇫🇷' },
+  { code:'sw-KE', label:'Kiswahili', flag:'🇰🇪' }
+];
+
+const SYSTEM_PROMPTS = {
+  'en-US':'You are ABHS AI, a friendly and accurate tutor for the ALAMIN B HARUN SPECIAL learning platform. Answer clearly and briefly (2-4 short paragraphs maximum). Use simple English, give an example when helpful, and stay educational.',
+  'ha-NG':'Kai ABHS AI ne, malami mai kirki kuma daidai don dandalin koyo na ALAMIN B HARUN SPECIAL. Amsa a takaice kuma a fili (sakin layi 2-4). Yi amfani da Hausa mai sauƙi, ba da misali idan ya dace, kuma ka kasance mai ilimi.',
+  'ar-SA':'أنت ABHS AI، معلم ودود ودقيق لمنصة ALAMIN B HARUN SPECIAL التعليمية. أجب بوضوح وإيجاز (2-4 فقرات قصيرة كحد أقصى). استخدم لغة عربية بسيطة، وأعط مثالاً عند الحاجة.',
+  'fr-FR':'Tu es ABHS AI, un tuteur amical et précis pour la plateforme ALAMIN B HARUN SPECIAL. Réponds clairement et brièvement (2-4 courts paragraphes). Utilise un français simple, donne un exemple si utile.',
+  'sw-KE':'Wewe ni ABHS AI, mwalimu rafiki na ALAMIN B HARUN SPECIAL. Jibu kwa ufupi na wazi (aya 2-4). Tumia Kiswahili rahisi, toa mfano inapofaa.'
+};
+
+const currentLang = () => { const d = getData(); return (d && d.lang) || 'en-US'; };
+const langLabel = code => (LANGS.find(l => l.code === code) || LANGS[0]).label;
+
+function renderLangPicker(){
+  const row = $('langRow');
+  if (!row) return;
+  const cur = currentLang();
+  row.innerHTML = LANGS.map(l =>
+    '<button class="lang-chip' + (l.code === cur ? ' on' : '') +
+    '" onclick="setLanguage(\'' + l.code + '\')">' +
+      l.flag + ' ' + l.label +
+    '</button>'
+  ).join('');
 }
-function toggleSound(){
-  const on = soundOn();
-  localStorage.setItem(LS.sound, on ? 'off' : 'on');
-  const st = $('soundToggle'); if (st) st.classList.toggle('on', !on);
-  toast(on ? 'Sound off' : 'Sound on', 'info');
-  if (!on) beep(720, 0.08);
+function setLanguage(code){
+  const d = getData();
+  if (!d) return;
+  d.lang = code;
+  saveData(d);
+  renderLangPicker();
+  const lbl = $('langLabel');
+  if (lbl) lbl.textContent = langLabel(code);
+  toast('Language: ' + langLabel(code), 'info');
+  beep(760, 0.06);
 }
 
 /* ---------- 7. Toast ---------- */
@@ -1409,32 +1500,52 @@ function askConfirm(title, message, okLabel = 'Confirm', danger = true){
   });
 }
 
-/* ---------- 9. Confetti ---------- */
+/* ---------- 9. Sound ---------- */
+let audioCtx = null;
+const soundOn = () => localStorage.getItem(LS.sound) !== 'off';
+function beep(freq = 660, dur = 0.09, type = 'sine'){
+  if (!soundOn()) return;
+  try{
+    if (!audioCtx){
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      audioCtx = new AC();
+    }
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.05, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + dur);
+  }catch(e){}
+}
+function toggleSound(){
+  const on = soundOn();
+  localStorage.setItem(LS.sound, on ? 'off' : 'on');
+  const st = $('soundToggle'); if (st) st.classList.toggle('on', !on);
+  toast(on ? 'Sound off' : 'Sound on', 'info');
+  if (!on) beep(720, 0.08);
+}
+
+/* ---------- 10. Confetti ---------- */
 const confCanvas = $('confetti');
 const cctx = confCanvas.getContext('2d');
 let confParts = [], confRAF = null, dpr = Math.min(devicePixelRatio || 1, 2);
-
 function sizeConfetti(){
   confCanvas.width = innerWidth * dpr;
   confCanvas.height = innerHeight * dpr;
   cctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 sizeConfetti();
-
 function burstConfetti(x, y, count = 90){
   const colors = ['#22d3ee','#6366f1','#d946ef','#f472b6','#fbbf24','#a3e635','#ffffff'];
   for (let i = 0; i < count; i++){
-    const ang = Math.random() * Math.PI * 2;
-    const spd = 3 + Math.random() * 9;
+    const ang = Math.random() * Math.PI * 2, spd = 3 + Math.random() * 9;
     confParts.push({
-      x, y,
-      vx: Math.cos(ang) * spd,
-      vy: Math.sin(ang) * spd - 3,
+      x, y, vx: Math.cos(ang) * spd, vy: Math.sin(ang) * spd - 3,
       size: 4 + Math.random() * 7,
       color: colors[(Math.random() * colors.length) | 0],
-      rot: Math.random() * Math.PI,
-      vr: (Math.random() - 0.5) * 0.35,
-      life: 1
+      rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.35, life: 1
     });
   }
   if (!confRAF) confRAF = requestAnimationFrame(stepConfetti);
@@ -1446,8 +1557,7 @@ function stepConfetti(){
     p.rot += p.vr; p.life -= 0.008;
     cctx.save();
     cctx.globalAlpha = Math.max(p.life, 0);
-    cctx.translate(p.x, p.y);
-    cctx.rotate(p.rot);
+    cctx.translate(p.x, p.y); cctx.rotate(p.rot);
     cctx.fillStyle = p.color;
     cctx.fillRect(-p.size/2, -p.size/2, p.size, p.size * 0.6);
     cctx.restore();
@@ -1457,14 +1567,13 @@ function stepConfetti(){
   else { cctx.clearRect(0, 0, innerWidth, innerHeight); confRAF = null; }
 }
 
-/* ---------- 10. Aurora background ---------- */
+/* ---------- 11. Aurora background ---------- */
 const aurora = $('aurora');
 const actx = aurora.getContext('2d');
-let AW = 0, AH = 0, blobs = [], stars = [];
-
+let blobs = [], stars = [];
 function sizeAurora(){
-  AW = aurora.width = innerWidth * dpr;
-  AH = aurora.height = innerHeight * dpr;
+  aurora.width = innerWidth * dpr;
+  aurora.height = innerHeight * dpr;
   actx.setTransform(dpr, 0, 0, dpr, 0, 0);
   const mobile = innerWidth < 700;
   blobs = [
@@ -1475,54 +1584,44 @@ function sizeAurora(){
   ].slice(0, mobile ? 3 : 4);
   stars = Array.from({ length: mobile ? 60 : 130 }, () => ({
     x: Math.random(), y: Math.random(),
-    r: Math.random() * 1.4 + 0.3,
-    a: Math.random(), s: 0.002 + Math.random() * 0.006
+    r: Math.random() * 1.4 + 0.3, a: Math.random(), s: 0.002 + Math.random() * 0.006
   }));
 }
 sizeAurora();
-
 let t = 0;
 function drawAurora(){
   t++;
   actx.clearRect(0, 0, innerWidth, innerHeight);
-
   const w = innerWidth, h = innerHeight;
+  const light = document.documentElement.getAttribute('data-theme') === 'light';
   actx.globalCompositeOperation = 'lighter';
   blobs.forEach(b => {
     const cx = (b.x + Math.sin(t * b.sx * 100 + b.p) * 0.09) * w;
     const cy = (b.y + Math.cos(t * b.sy * 100 + b.p) * 0.09) * h;
     const rad = b.r * Math.max(w, h) * 0.7;
     const g = actx.createRadialGradient(cx, cy, 0, cx, cy, rad);
-    const light = document.documentElement.getAttribute('data-theme') === 'light';
     const a = light ? 0.10 : 0.22;
     g.addColorStop(0, 'rgba(' + b.c.join(',') + ',' + a + ')');
     g.addColorStop(1, 'rgba(' + b.c.join(',') + ',0)');
     actx.fillStyle = g;
-    actx.beginPath();
-    actx.arc(cx, cy, rad, 0, Math.PI * 2);
-    actx.fill();
+    actx.beginPath(); actx.arc(cx, cy, rad, 0, Math.PI * 2); actx.fill();
   });
   actx.globalCompositeOperation = 'source-over';
-
-  if (document.documentElement.getAttribute('data-theme') !== 'light'){
+  if (!light){
     actx.fillStyle = '#fff';
     stars.forEach(s => {
       s.a += s.s;
-      const alpha = 0.25 + Math.abs(Math.sin(s.a)) * 0.6;
-      actx.globalAlpha = alpha;
-      actx.beginPath();
-      actx.arc(s.x * w, s.y * h, s.r, 0, Math.PI * 2);
-      actx.fill();
+      actx.globalAlpha = 0.25 + Math.abs(Math.sin(s.a)) * 0.6;
+      actx.beginPath(); actx.arc(s.x * w, s.y * h, s.r, 0, Math.PI * 2); actx.fill();
     });
     actx.globalAlpha = 1;
   }
   requestAnimationFrame(drawAurora);
 }
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) drawAurora();
-
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) drawAurora();
 addEventListener('resize', () => { sizeAurora(); sizeConfetti(); });
 
-/* ---------- 11. Tilt + ripple ---------- */
+/* ---------- 12. Tilt + Ripple ---------- */
 function initTilt(){
   $$('.tilt').forEach(card => {
     if (card.dataset.tilted) return;
@@ -1552,8 +1651,9 @@ document.addEventListener('click', e => {
   setTimeout(() => s.remove(), 620);
 });
 
-/* ---------- 12. Animated counters ---------- */
+/* ---------- 13. Animated counters ---------- */
 function animateCount(el, target){
+  if (!el) return;
   const start = Number(el.textContent) || 0;
   if (start === target){ el.textContent = target; return; }
   const dur = 600, t0 = performance.now();
@@ -1566,30 +1666,32 @@ function animateCount(el, target){
   requestAnimationFrame(step);
 }
 
-/* ---------- 13. Navigation data ---------- */
+/* ---------- 14. Navigation data ---------- */
 const NAV = [
   { group:'Learn', items:[
-    { id:'home',      icon:'🏠', label:'Home' },
+    { id:'home', icon:'🏠', label:'Home' },
     { id:'dashboard', icon:'📊', label:'Dashboard' },
-    { id:'courses',   icon:'📚', label:'Courses' },
-    { id:'ai',        icon:'🤖', label:'AI Tutor' }
+    { id:'courses', icon:'📚', label:'Courses' },
+    { id:'ai', icon:'🤖', label:'AI Tutor' }
+  ]},
+  { group:'Create', items:[
+    { id:'image', icon:'🖼️', label:'AI Image' }
   ]},
   { group:'Tools', items:[
-    { id:'notes',      icon:'📝', label:'My Notes' },
-    { id:'vocab',      icon:'🌍', label:'Vocabulary' },
+    { id:'notes', icon:'📝', label:'My Notes' },
+    { id:'vocab', icon:'🌍', label:'Vocabulary' },
     { id:'flashcards', icon:'🃏', label:'Flashcards' },
-    { id:'focus',      icon:'⏱️', label:'Focus Timer' }
+    { id:'focus', icon:'⏱️', label:'Focus Timer' }
   ]},
   { group:'Premium', items:[
     { id:'premium', icon:'👑', label:'Go Premium' }
   ]},
   { group:'Account', items:[
-    { id:'progress',     icon:'📈', label:'Progress' },
+    { id:'progress', icon:'📈', label:'Progress' },
     { id:'achievements', icon:'🏆', label:'Achievements' },
-    { id:'settings',     icon:'⚙️', label:'Settings' }
+    { id:'settings', icon:'⚙️', label:'Settings' }
   ]}
 ];
-
 const VIEWS = NAV.flatMap(g => g.items.map(i => i.id));
 
 function buildNav(container){
@@ -1617,31 +1719,21 @@ function buildNav(container){
 buildNav($('rail'));
 buildNav($('drawerLinks'));
 
-/* ---------- 14. Drawer ---------- */
-function openDrawer(){
-  show($('drawer')); show($('drawerScrim'));
-}
-function closeDrawer(){
-  hide($('drawer')); hide($('drawerScrim'));
-}
-function syncDrawerBtn(){
-  $('drawerBtn').style.display = currentUser && innerWidth <= 900 ? 'grid' : 'none';
-}
+/* ---------- 15. Drawer ---------- */
+function openDrawer(){ show($('drawer')); show($('drawerScrim')); }
+function closeDrawer(){ hide($('drawer')); hide($('drawerScrim')); }
+function syncDrawerBtn(){ $('drawerBtn').style.display = currentUser && innerWidth <= 900 ? 'grid' : 'none'; }
 addEventListener('resize', syncDrawerBtn);
 
-/* ---------- 15. Auth ---------- */
-let currentUser = null;
-let authMode = 'login';
+/* ---------- 16. Auth ---------- */
+let currentUser = null, authMode = 'login';
 
 function showAuth(){
-  hide($('app'));
-  hide($('userPill'));
-  hide($('xpPill'));
+  hide($('app')); hide($('userPill')); hide($('xpPill'));
   show($('view-auth'));
   authMode = 'login';
   renderAuthMode();
 }
-
 function renderAuthMode(){
   const login = authMode === 'login';
   $('authTitle').textContent = login ? 'Welcome Back' : 'Create Account';
@@ -1660,7 +1752,6 @@ function handleAuth(){
   const pass = $('authPass').value;
   const name = $('authName').value.trim();
   const err = $('authError');
-
   if (!email || !pass){ err.textContent = 'Please fill all fields.'; return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && !/^[a-z0-9._-]{3,}$/.test(email)){
     err.textContent = 'Enter a valid email or username (min 3 characters).'; return;
@@ -1669,7 +1760,6 @@ function handleAuth(){
   if (authMode === 'signup' && name.length < 2){ err.textContent = 'Please enter your full name.'; return; }
 
   const users = readUsers();
-
   if (authMode === 'signup'){
     if (users[email]){ err.textContent = 'This email is already registered.'; return; }
     users[email] = { email, name, pass: hashPass(email, pass), created: new Date().toISOString() };
@@ -1689,13 +1779,10 @@ function handleAuth(){
 function login(user){
   currentUser = user;
   localStorage.setItem(LS.session, user.email);
-
   const d = getData();
   const today = todayKey();
-
   if (!d.days.includes(today)) d.days.push(today);
   if (d.days.length > 140) d.days = d.days.slice(-140);
-
   if (d.lastLogin !== today){
     if (d.lastLogin){
       const diff = Math.round((new Date(today) - new Date(d.lastLogin)) / 86400000);
@@ -1708,13 +1795,9 @@ function login(user){
   checkAchievements(d);
 
   $('userPill').textContent = '👤 ' + user.name.split(' ')[0];
-  show($('userPill'));
-  show($('xpPill'));
-
-  hide($('view-auth'));
-  show($('app'));
+  show($('userPill')); show($('xpPill'));
+  hide($('view-auth')); show($('app'));
   syncDrawerBtn();
-
   updatePremiumPill();
   renderChat();
   refreshAll();
@@ -1733,19 +1816,16 @@ function logout(){
   toast('Logged out', 'info');
 }
 
-/* ---------- 16. Navigation ---------- */
+/* ---------- 17. Navigation ---------- */
 function go(view){
   if (!currentUser) return;
   if (!VIEWS.includes(view)) view = 'home';
-
   VIEWS.forEach(v => {
     const el = $('view-' + v);
     if (el) el.classList.toggle('hidden', v !== view);
   });
-
   $$('.nav-link[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === view));
   $$('.dock-btn[data-nav]').forEach(b => b.classList.toggle('active', b.dataset.nav === view));
-
   closeDrawer();
   window.scrollTo({ top:0, behavior:'smooth' });
 
@@ -1758,10 +1838,14 @@ function go(view){
   if (view === 'settings')     renderSettings();
   if (view === 'home')         refreshHome();
   if (view === 'premium')      renderPremiumStatus();
-  if (view === 'ai')           setTimeout(() => $('chatInput').focus(), 250);
+  if (view === 'image')        renderImageGrid();
+  if (view === 'ai'){
+    const lbl = $('langLabel'); if (lbl) lbl.textContent = langLabel(currentLang());
+    setTimeout(() => $('chatInput').focus(), 250);
+  }
 }
 
-/* ---------- 17. XP / Level ---------- */
+/* ---------- 18. XP / Level ---------- */
 function addXP(amount, reason){
   const d = getData();
   if (!d) return;
@@ -1769,32 +1853,24 @@ function addXP(amount, reason){
   d.xp = (d.xp || 0) + amount;
   saveData(d);
   const after = levelOf(d.xp);
-
   checkAchievements(d);
   refreshAll();
-
   if (reason) toast('+' + amount + ' XP · ' + reason, 'info');
-
-  if (after > before){
-    setTimeout(() => celebrateLevel(after), 260);
-  }
+  if (after > before) setTimeout(() => celebrateLevel(after), 260);
 }
-
 function celebrateLevel(lvl){
   burstConfetti(innerWidth / 2, innerHeight * 0.35, 140);
   beep(880, 0.14, 'triangle');
   setTimeout(() => beep(1180, 0.2, 'triangle'), 180);
-
   const wrap = document.createElement('div');
   wrap.className = 'lvlup';
-  wrap.innerHTML = '<div class="inner"><div class="small">Level Up</div>' +
-                   '<div class="big">LEVEL ' + lvl + '</div></div>';
+  wrap.innerHTML = '<div class="inner"><div class="small">Level Up</div><div class="big">LEVEL ' + lvl + '</div></div>';
   document.body.appendChild(wrap);
   setTimeout(() => { wrap.style.transition = 'opacity .5s'; wrap.style.opacity = '0'; }, 1500);
   setTimeout(() => wrap.remove(), 2100);
 }
 
-/* ---------- 18. Achievements ---------- */
+/* ---------- 19. Achievements ---------- */
 const ACHIEVEMENTS = [
   { id:'first_quiz', icon:'🎯', title:'First Steps',   desc:'Complete your first quiz',  check:d => d.quizzes >= 1 },
   { id:'quiz_10',    icon:'🔥', title:'Quiz Hunter',   desc:'Complete 10 quizzes',       check:d => d.quizzes >= 10 },
@@ -1810,16 +1886,16 @@ const ACHIEVEMENTS = [
   { id:'xp_2000',    icon:'🌟', title:'Legend',        desc:'Earn 2000 XP',              check:d => d.xp >= 2000 },
   { id:'vocab_10',   icon:'🌍', title:'Word Collector',desc:'Save 10 favourite words',   check:d => d.favorites.length >= 10 },
   { id:'perfect',    icon:'💯', title:'Perfectionist', desc:'Score 100% on a quiz',      check:d => d.history.some(h => h.total > 0 && h.score === h.total) },
+  { id:'artist',     icon:'🎨', title:'AI Artist',     desc:'Generate your first image', check:d => d.images.length >= 1 },
+  { id:'artist_10',  icon:'🖼️', title:'Gallery Owner', desc:'Generate 10 images',        check:d => d.images.length >= 10 },
   { id:'premium',    icon:'👑', title:'Premium Member',desc:'Activate ABHS Premium',     check:d => d.premium && d.premium.active }
 ];
-
 function checkAchievements(d){
   const have = new Set(d.achievements || []);
   let changed = false;
   ACHIEVEMENTS.forEach(a => {
     if (!have.has(a.id) && a.check(d)){
-      have.add(a.id);
-      changed = true;
+      have.add(a.id); changed = true;
       setTimeout(() => {
         toast('🏆 Unlocked: ' + a.title, 'success');
         burstConfetti(innerWidth / 2, innerHeight * 0.3, 70);
@@ -1830,7 +1906,7 @@ function checkAchievements(d){
   if (changed){ d.achievements = Array.from(have); saveData(d); }
 }
 
-/* ---------- 19. Refresh ---------- */
+/* ---------- 20. Refresh ---------- */
 function refreshAll(){
   const d = getData();
   if (!d) return;
@@ -1842,7 +1918,6 @@ function refreshAll(){
   if (!$('view-notes').classList.contains('hidden')) renderNotes();
   if (!$('view-achievements').classList.contains('hidden')) renderAchievements();
 }
-
 function refreshHome(){
   const d = getData();
   if (!d) return;
@@ -1851,53 +1926,45 @@ function refreshHome(){
   animateCount($('statNotes'), d.notes.length);
   animateCount($('statStreak'), d.streak || 1);
 }
-
 function greeting(){
   const h = new Date().getHours();
-  if (h < 5)  return 'Still awake? Let\u2019s make it count.';
+  if (h < 5) return 'Still awake? Let\u2019s make it count.';
   if (h < 12) return 'Good morning — a fresh start awaits.';
   if (h < 17) return 'Good afternoon — keep the momentum going.';
   if (h < 21) return 'Good evening — perfect time to learn.';
   return 'Late night grind — respect. 💪';
 }
-
 function refreshDashboard(){
   const d = getData();
   if (!d) return;
   $('dashName').textContent = currentUser.name.split(' ')[0];
   $('dashGreeting').textContent = greeting();
-
   const lvl = levelOf(d.xp), prog = levelProgress(d.xp);
   $('levelTag').textContent = 'LEVEL ' + lvl;
   $('xpText').textContent = prog + ' / ' + LEVEL_STEP + ' XP  ·  total ' + (d.xp || 0);
   $('levelFill').style.width = Math.min(prog, 100) + '%';
-
   renderDaily();
 }
 
-/* ---------- 20. Daily challenge ---------- */
+/* ---------- 21. Daily challenge ---------- */
 const dailyQ = () => QUIZ_BANK[Math.floor(Date.now() / 86400000) % QUIZ_BANK.length];
-
 function renderDaily(){
   const d = getData();
   if (!d) return;
   const today = todayKey();
-  if (d.daily.date !== today){ d.daily = { date: today, done:false }; saveData(d); }
-
+  if (d.daily.date !== today){ d.daily = { date:today, done:false }; saveData(d); }
   const box = $('dailyQuiz');
   if (d.daily.done){
     $('dailyStatus').textContent = '✅ Today\u2019s challenge is complete. Come back tomorrow!';
     box.innerHTML = '';
     return;
   }
-
   const q = dailyQ();
   $('dailyStatus').textContent = 'Answer today\u2019s question to earn +' + XP.daily + ' XP.';
   box.innerHTML = '<p class="qtext" style="margin-top:14px">' + esc(q.q) + '</p>' +
     '<div class="opts">' + q.options.map((o, i) =>
       '<button class="opt" data-i="' + i + '">' + String.fromCharCode(65 + i) + '. ' + esc(o) + '</button>'
     ).join('') + '</div>';
-
   $$('.opt', box).forEach(btn => {
     btn.onclick = () => {
       const pick = Number(btn.dataset.i);
@@ -1920,24 +1987,19 @@ function renderDaily(){
   });
 }
 
-/* ---------- 21. Progress ---------- */
+/* ---------- 22. Progress ---------- */
 function refreshProgress(){
   const d = getData();
   if (!d) return;
-
   const lvl = levelOf(d.xp), prog = levelProgress(d.xp);
   $('progXpText').textContent = (d.xp || 0) + ' XP  ·  Level ' + lvl;
   $('progXpFill').style.width = Math.min(prog, 100) + '%';
-
   $('progQuizText').textContent = d.quizzes + ' quizzes completed';
   $('progQuizFill').style.width = Math.min(d.quizzes * 5, 100) + '%';
-
   $('progChatText').textContent = d.aiQuestions + ' questions asked';
   $('progChatFill').style.width = Math.min(d.aiQuestions * 2, 100) + '%';
-
   $('progNotesText').textContent = d.notes.length + ' notes saved';
   $('progNotesFill').style.width = Math.min(d.notes.length * 10, 100) + '%';
-
   const days = new Set(d.days || []);
   let html = '';
   const now = new Date();
@@ -1948,7 +2010,6 @@ function refreshProgress(){
     html += '<div class="cal-d' + (days.has(key) ? ' on' : '') + '" title="' + key + '">' + dt.getDate() + '</div>';
   }
   $('streakCal').innerHTML = html;
-
   const hist = (d.history || []).slice(-8).reverse();
   $('quizHistory').innerHTML = hist.length
     ? hist.map(h => '<div class="hrow"><span>' + new Date(h.date).toLocaleDateString() +
@@ -1957,7 +2018,7 @@ function refreshProgress(){
     : '<div class="empty"><span class="em">🧾</span><p>No quizzes taken yet.</p></div>';
 }
 
-/* ---------- 22. Quiz ---------- */
+/* ---------- 23. Quiz ---------- */
 const QUIZ_BANK = [
   { cat:'Psychology', q:'Which subject studies human behaviour and mental processes?',
     options:['Geography','Psychology','Mathematics','Music'], answer:1 },
@@ -2022,7 +2083,6 @@ const QUIZ_BANK = [
 ];
 
 let quizState = null;
-
 function openQuiz(){
   if (!currentUser){ showAuth(); return; }
   if (!checkQuizLimit()) return;
@@ -2031,7 +2091,6 @@ function openQuiz(){
   renderQuizQuestion();
   show($('quizModal'));
 }
-
 function renderQuizQuestion(){
   const qs = quizState.questions, i = quizState.current, q = qs[i];
   $('quizBody').innerHTML =
@@ -2045,7 +2104,6 @@ function renderQuizQuestion(){
       ).join('') +
     '</div>';
 }
-
 function answerQuiz(pick){
   const q = quizState.questions[quizState.current];
   const btns = $$('#quizOpts .opt');
@@ -2057,25 +2115,21 @@ function answerQuiz(pick){
   const ok = pick === q.answer;
   if (ok) quizState.score++;
   beep(ok ? 880 : 220, 0.12, ok ? 'triangle' : 'sawtooth');
-
   setTimeout(() => {
     quizState.current++;
     if (quizState.current < quizState.questions.length) renderQuizQuestion();
     else finishQuiz();
   }, 820);
 }
-
 function finishQuiz(){
   const d = getData();
   const total = quizState.questions.length;
   const score = quizState.score;
   const gained = score * XP.quizCorrect + XP.quizFinish;
-
   d.quizzes++;
   d.xp = (d.xp || 0) + gained;
   d.history.push({ date:new Date().toISOString(), score, total });
   if (d.history.length > 60) d.history = d.history.slice(-60);
-
   if (!isPremium()){
     const today = todayKey();
     if (!d.quizzesToday || d.quizzesToday.date !== today) d.quizzesToday = { date:today, count:0 };
@@ -2084,15 +2138,12 @@ function finishQuiz(){
   saveData(d);
   checkAchievements(d);
   refreshAll();
-
   const pct = Math.round(score / total * 100);
   const msg = pct === 100 ? 'Perfect score! 🏆'
             : pct >= 80 ? 'Excellent work! 🌟'
             : pct >= 60 ? 'Good job! 👍'
             : 'Keep practising — you\u2019ll get there! 💪';
-
   if (pct === 100) burstConfetti(innerWidth / 2, innerHeight * 0.35, 120);
-
   $('quizBody').innerHTML =
     '<div class="result">' +
       '<h3 style="font-size:21px;font-weight:800">Quiz Completed!</h3>' +
@@ -2105,15 +2156,9 @@ function finishQuiz(){
       '</div>' +
     '</div>';
 }
-
 function closeQuiz(){ hide($('quizModal')); quizState = null; refreshAll(); }
 
-/* ---------- 23. AI ---------- */
-const SYSTEM_PROMPT =
-  'You are ABHS AI, a friendly and accurate tutor for the ALAMIN B HARUN SPECIAL ' +
-  'learning platform. Answer clearly and briefly (2-4 short paragraphs maximum). ' +
-  'Use simple English, give an example when helpful, and stay educational.';
-
+/* ---------- 24. AI chat ---------- */
 const KNOWLEDGE = [
   { k:['criminology','crime','criminal','offender'],
     t:'Criminology is the scientific study of crime, criminals and the criminal justice system. It looks at why people commit crimes (causes), how society responds (police, courts, prisons) and how crime can be prevented. Key theories include strain theory, social learning theory and labelling theory.' },
@@ -2124,11 +2169,11 @@ const KNOWLEDGE = [
   { k:['english','grammar','tense','verb','noun'],
     t:'English grammar organises words into clear sentences. The eight parts of speech are noun, pronoun, verb, adjective, adverb, preposition, conjunction and interjection. A simple sentence needs a subject and a verb, e.g. "She studies every day."' },
   { k:['math','maths','algebra','equation','percentage'],
-    t:'Mathematics is the study of numbers, patterns and logic. For percentages: part ÷ whole × 100. Remember BODMAS/PEMDAS when solving expressions: Brackets, Orders, Division/Multiplication, Addition/Subtraction.' },
+    t:'Mathematics is the study of numbers, patterns and logic. For percentages: part ÷ whole × 100. Remember BODMAS/PEMDAS: Brackets, Orders, Division/Multiplication, Addition/Subtraction.' },
   { k:['photosynthesis','biology','cell','plant','body'],
     t:'Biology is the study of living things. Photosynthesis is how green plants make food: they use sunlight, water and carbon dioxide to produce glucose and oxygen inside the chloroplasts of their leaves.' },
   { k:['government','democracy','constitution','law'],
-    t:'Government is the system by which a country is ruled. A democracy is rule by the people, usually through elected representatives. Most modern states separate power into three arms: the executive, the legislature and the judiciary.' },
+    t:'Government is the system by which a country is ruled. A democracy is rule by the people, usually through elected representatives. Most modern states separate power into three arms: executive, legislature and judiciary.' },
   { k:['geography','climate','continent','ocean','map'],
     t:'Geography studies the Earth, its landforms, climate and people. There are seven continents and five oceans; the Pacific is the largest ocean. Latitude lines run east-west and the Equator sits at 0° latitude.' },
   { k:['html','css','javascript','coding','programming','website'],
@@ -2140,7 +2185,6 @@ const KNOWLEDGE = [
   { k:['how to study','study tips','remember','memorise','memorize'],
     t:'Great study habits: (1) study in 25-minute focused blocks with short breaks, (2) test yourself instead of only re-reading, (3) space your revision over several days, (4) teach the idea to someone else, (5) sleep well — memory consolidates during sleep.' }
 ];
-
 function localAnswer(q){
   const text = q.toLowerCase();
   let best = null, bestScore = 0;
@@ -2150,16 +2194,14 @@ function localAnswer(q){
     if (s > bestScore){ bestScore = s; best = item; }
   });
   if (best) return best.t;
-  return 'I could not reach the online AI just now, and I have no saved answer for that yet. ' +
-         'Try asking about Criminology, Sociology, Psychology, English, Maths, Science, Government or ICT — ' +
-         'or check your internet connection and ask again.';
+  return 'I could not reach the online AI just now, and I have no saved answer for that yet. Try asking about Criminology, Sociology, Psychology, English, Maths, Science, Government or ICT.';
 }
-
 async function fetchAI(question){
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 30000);
   try{
-    const prompt = SYSTEM_PROMPT + '\n\nUser: ' + question + '\nAssistant:';
+    const sys = SYSTEM_PROMPTS[currentLang()] || SYSTEM_PROMPTS['en-US'];
+    const prompt = sys + '\n\nUser: ' + question + '\nAssistant:';
     const res = await fetch('https://text.pollinations.ai/' + encodeURIComponent(prompt), { signal: ctrl.signal });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const text = (await res.text()).trim();
@@ -2167,7 +2209,6 @@ async function fetchAI(question){
     return text.slice(0, 1600);
   } finally { clearTimeout(timer); }
 }
-
 function addMsg(text, role){
   const log = $('chatLog');
   const el = document.createElement('div');
@@ -2177,19 +2218,15 @@ function addMsg(text, role){
   log.scrollTop = log.scrollHeight;
   return el;
 }
-
 function renderChat(){
   const log = $('chatLog');
   if (!log) return;
   log.innerHTML = '';
   addMsg('Hello! I am your ABHS AI Tutor. Ask me anything about your studies — Criminology, Sociology, Psychology, English, Maths, Science or any topic. 🌟', 'ai');
   const d = getData();
-  if (d && d.chat && d.chat.length){
-    d.chat.slice(-40).forEach(m => addMsg(m.text, m.role));
-  }
+  if (d && d.chat && d.chat.length) d.chat.slice(-40).forEach(m => addMsg(m.text, m.role));
   log.scrollTop = log.scrollHeight;
 }
-
 function saveChat(role, text){
   const d = getData();
   if (!d) return;
@@ -2197,30 +2234,21 @@ function saveChat(role, text){
   if (d.chat.length > 60) d.chat = d.chat.slice(-60);
   saveData(d);
 }
-
 async function sendChat(){
   const input = $('chatInput');
   const text = input.value.trim();
   if (!text) return;
   if (!canAskAI()) return;
-
   input.value = '';
   addMsg(text, 'user');
   saveChat('user', text);
-
   const typing = addMsg('Thinking…', 'typing');
-
   let reply;
-  try{
-    reply = await fetchAI(text);
-  }catch(e){
-    reply = localAnswer(text) + '\n\n(Offline answer — the online AI could not be reached.)';
-  }
-
+  try{ reply = await fetchAI(text); }
+  catch(e){ reply = localAnswer(text) + '\n\n(Offline answer — the online AI could not be reached.)'; }
   typing.remove();
   addMsg(reply, 'ai');
   saveChat('ai', reply);
-
   const d = getData();
   if (!isPremium()){
     const today = todayKey();
@@ -2232,15 +2260,12 @@ async function sendChat(){
   saveData(d);
   checkAchievements(d);
   refreshAll();
-
   if (d.tts) speak(reply);
 }
-
 function askAI(question){
   go('ai');
   setTimeout(() => { $('chatInput').value = question; sendChat(); }, 320);
 }
-
 async function clearChat(){
   const ok = await askConfirm('Clear chat?', 'This will delete your conversation history.', 'Clear');
   if (!ok) return;
@@ -2251,13 +2276,19 @@ async function clearChat(){
   toast('Chat cleared', 'info');
 }
 
-/* TTS */
+/* ---------- 25. TTS + Voice input ---------- */
 function speak(text){
   if (!('speechSynthesis' in window)) return;
   try{
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(String(text).slice(0, 800));
-    u.rate = 1; u.pitch = 1; u.lang = 'en-US';
+    const u = new SpeechSynthesisUtterance(String(text).slice(0, 900));
+    u.lang = currentLang();
+    u.rate = 1; u.pitch = 1;
+    const voices = speechSynthesis.getVoices();
+    const code = currentLang();
+    const match = voices.find(v => v.lang === code) ||
+                  voices.find(v => v.lang.startsWith(code.split('-')[0]));
+    if (match) u.voice = match;
     speechSynthesis.speak(u);
   }catch(e){}
 }
@@ -2271,22 +2302,18 @@ function toggleTTS(){
   toast(d.tts ? 'AI will read answers aloud' : 'Read-aloud off', 'info');
   if (!d.tts && 'speechSynthesis' in window) speechSynthesis.cancel();
 }
-
-/* Voice input */
 let recog = null, recording = false;
 function toggleMic(){
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR){ toast('Voice input not supported on this browser', 'error'); return; }
-
   if (recording){
     try{ recog.stop(); }catch(e){}
     recording = false;
     $('micBtn').classList.remove('rec');
     return;
   }
-
   recog = new SR();
-  recog.lang = 'en-US';
+  recog.lang = currentLang();
   recog.interimResults = false;
   recog.maxAlternatives = 1;
   recog.onresult = e => {
@@ -2304,14 +2331,12 @@ function toggleMic(){
   }catch(e){ toast('Could not start microphone', 'error'); }
 }
 
-/* ---------- 24. Notes ---------- */
+/* ---------- 26. Notes ---------- */
 let editingId = null;
-
 function saveNote(){
   const input = $('noteInput');
   const text = input.value.trim();
   if (!text){ toast('Write something first', 'error'); return; }
-
   const d = getData();
   if (editingId){
     const n = d.notes.find(x => x.id === editingId);
@@ -2320,9 +2345,7 @@ function saveNote(){
   } else {
     d.notes.unshift({
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
-      content: text,
-      created: new Date().toISOString(),
-      pinned: false
+      content: text, created: new Date().toISOString(), pinned: false
     });
     d.xp = (d.xp || 0) + XP.note;
     toast('Note saved ✓  +' + XP.note + ' XP');
@@ -2335,7 +2358,6 @@ function saveNote(){
   renderNotes();
   refreshAll();
 }
-
 function editNote(id){
   const d = getData();
   const n = d.notes.find(x => x.id === id);
@@ -2347,14 +2369,12 @@ function editNote(id){
   $('noteInput').focus();
   window.scrollTo({ top:0, behavior:'smooth' });
 }
-
 function cancelEdit(){
   editingId = null;
   $('noteInput').value = '';
   $('noteBtn').textContent = 'Save Note';
   $('noteCancel').classList.add('hidden');
 }
-
 async function deleteNote(id){
   const ok = await askConfirm('Delete note?', 'This note will be permanently removed.', 'Delete');
   if (!ok) return;
@@ -2365,7 +2385,6 @@ async function deleteNote(id){
   refreshAll();
   toast('Note deleted', 'info');
 }
-
 function togglePin(id){
   const d = getData();
   const n = d.notes.find(x => x.id === id);
@@ -2374,24 +2393,19 @@ function togglePin(id){
   saveData(d);
   renderNotes();
 }
-
 function renderNotes(){
   const d = getData();
   if (!d) return;
   const q = ($('noteSearch').value || '').toLowerCase().trim();
   let notes = [...d.notes].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
   if (q) notes = notes.filter(n => n.content.toLowerCase().includes(q));
-
   $('notesTitle').textContent = 'Your Notes (' + d.notes.length + ')';
   const list = $('notesList');
-
   if (!notes.length){
     list.innerHTML = '<div class="empty"><span class="em">📝</span><p>' +
-      (q ? 'No notes match your search.' : 'No notes yet. Write your first note above!') +
-      '</p></div>';
+      (q ? 'No notes match your search.' : 'No notes yet. Write your first note above!') + '</p></div>';
     return;
   }
-
   list.innerHTML = notes.map(n =>
     '<div class="note' + (n.pinned ? ' pinned' : '') + '">' +
       '<div class="meta"><span>' + new Date(n.created).toLocaleString() + '</span>' +
@@ -2406,7 +2420,7 @@ function renderNotes(){
   ).join('');
 }
 
-/* ---------- 25. Vocabulary ---------- */
+/* ---------- 27. Vocabulary ---------- */
 const VOCAB = [
   { w:'Abundant',       m:'Existing in large quantities; more than enough.' },
   { w:'Benevolent',     m:'Kind, generous, and caring about others.' },
@@ -2435,7 +2449,6 @@ const VOCAB = [
   { w:'Yearn',          m:'To have an intense feeling of longing for something.' },
   { w:'Zealous',        m:'Having or showing great energy for a cause.' }
 ];
-
 function renderVocab(){
   const d = getData();
   if (!d) return;
@@ -2443,7 +2456,6 @@ function renderVocab(){
   const favs = new Set(d.favorites || []);
   let words = VOCAB;
   if (q) words = words.filter(v => v.w.toLowerCase().includes(q) || v.m.toLowerCase().includes(q));
-
   const list = $('vocabList');
   if (!words.length){
     list.innerHTML = '<div class="empty"><span class="em">🔍</span><p>No words match your search.</p></div>';
@@ -2459,7 +2471,6 @@ function renderVocab(){
     '</div>';
   }).join('');
 }
-
 function toggleFav(e, word){
   e.stopPropagation();
   const d = getData();
@@ -2472,9 +2483,8 @@ function toggleFav(e, word){
   refreshAll();
 }
 
-/* ---------- 26. Flashcards ---------- */
+/* ---------- 28. Flashcards ---------- */
 const flash = { i:0, deck:[...VOCAB], flipped:false };
-
 function renderFlashcards(){
   if (!flash.deck.length) flash.deck = [...VOCAB];
   const item = flash.deck[flash.i];
@@ -2484,10 +2494,7 @@ function renderFlashcards(){
   $('flashCard').classList.remove('flipped');
   flash.flipped = false;
 }
-function flipCard(){
-  flash.flipped = !flash.flipped;
-  $('flashCard').classList.toggle('flipped', flash.flipped);
-}
+function flipCard(){ flash.flipped = !flash.flipped; $('flashCard').classList.toggle('flipped', flash.flipped); }
 function flashNext(){ flash.i = (flash.i + 1) % flash.deck.length; renderFlashcards(); }
 function flashPrev(){ flash.i = (flash.i - 1 + flash.deck.length) % flash.deck.length; renderFlashcards(); }
 function flashShuffle(){
@@ -2497,10 +2504,9 @@ function flashShuffle(){
   toast('Cards shuffled', 'info');
 }
 
-/* ---------- 27. Focus ---------- */
+/* ---------- 29. Focus timer ---------- */
 const CIRC = 2 * Math.PI * 88;
 const focus = { total:25 * 60, remaining:25 * 60, running:false, timer:null };
-
 function paintRing(){
   const ring = $('ringFg');
   ring.setAttribute('stroke-dasharray', CIRC.toFixed(2));
@@ -2557,27 +2563,24 @@ function completeFocus(){
   stopFocus();
   focus.remaining = 0;
   renderTimer();
-
   const d = getData();
   d.focusSessions = (d.focusSessions || 0) + 1;
   d.focusMinutes = (d.focusMinutes || 0) + Math.round(focus.total / 60);
   d.xp = (d.xp || 0) + XP.focus;
   saveData(d);
   checkAchievements(d);
-
   $('timerLabel').textContent = 'Session complete! 🎉';
   $('focusBtn').textContent = 'Start';
   toast('Focus session complete! +' + XP.focus + ' XP');
   burstConfetti(innerWidth / 2, innerHeight * 0.35, 100);
   beep(920, 0.2, 'triangle');
   setTimeout(() => beep(1180, 0.25, 'triangle'), 220);
-
   refreshAll();
   focus.remaining = focus.total;
   setTimeout(renderTimer, 1400);
 }
 
-/* ---------- 28. Achievements view ---------- */
+/* ---------- 30. Achievements view ---------- */
 function renderAchievements(){
   const d = getData();
   if (!d) return;
@@ -2591,7 +2594,6 @@ function renderAchievements(){
   ).join('');
   renderLeaderboard();
 }
-
 function renderLeaderboard(){
   const users = readUsers();
   const rows = Object.values(users).map(u => {
@@ -2599,7 +2601,6 @@ function renderLeaderboard(){
     const xp = data ? (data.xp || 0) : 0;
     return { email:u.email, name:u.name, xp, level:levelOf(xp) };
   }).sort((a, b) => b.xp - a.xp).slice(0, 10);
-
   const box = $('leaderboard');
   if (!rows.length){
     box.innerHTML = '<div class="empty"><span class="em">🏅</span><p>No learners yet.</p></div>';
@@ -2615,17 +2616,17 @@ function renderLeaderboard(){
   ).join('');
 }
 
-/* ---------- 29. Settings ---------- */
+/* ---------- 31. Settings ---------- */
 function renderSettings(){
   const d = getData();
   if (!d) return;
   $('setName').value = currentUser.name || '';
-  $('themeToggle').classList.toggle('on', document.documentElement.getAttribute('data-theme') === 'light');
   $('soundToggle').classList.toggle('on', soundOn());
   $('ttsToggle').classList.toggle('on', !!d.tts);
   const tb = $('ttsBtn'); if (tb) tb.textContent = d.tts ? '🔊' : '🔈';
+  renderThemePicker();
+  renderLangPicker();
 }
-
 function saveProfile(){
   const name = $('setName').value.trim();
   if (name.length < 2){ toast('Name is too short', 'error'); return; }
@@ -2637,7 +2638,6 @@ function saveProfile(){
   refreshDashboard();
   toast('Profile updated ✓');
 }
-
 function changePassword(){
   const oldP = $('oldPass').value, newP = $('newPass').value;
   const users = readUsers();
@@ -2650,13 +2650,11 @@ function changePassword(){
   $('oldPass').value = ''; $('newPass').value = '';
   toast('Password updated ✓');
 }
-
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:4, exported:new Date().toISOString(),
-    user:{ name:currentUser.name, email:currentUser.email },
-    data:d
+    app:'ABHS', version:5, exported:new Date().toISOString(),
+    user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
   const url = URL.createObjectURL(blob);
@@ -2667,7 +2665,6 @@ function exportData(){
   URL.revokeObjectURL(url);
   toast('Backup downloaded ✓');
 }
-
 function importData(ev){
   const file = ev.target.files[0];
   if (!file) return;
@@ -2687,7 +2684,6 @@ function importData(ev){
   reader.readAsText(file);
   ev.target.value = '';
 }
-
 async function deleteAccount(){
   const ok = await askConfirm('Delete account?',
     'Your account, notes and all progress will be permanently removed. This cannot be undone.',
@@ -2703,7 +2699,6 @@ async function deleteAccount(){
   hide($('userPill')); hide($('xpPill'));
   toast('Account deleted', 'info');
 }
-
 async function resetProgress(){
   const ok = await askConfirm('Reset all progress?',
     'Your XP, notes, quizzes and history will be cleared. Your account stays.', 'Reset');
@@ -2715,7 +2710,7 @@ async function resetProgress(){
   toast('Progress reset', 'info');
 }
 
-/* ---------- 30. Courses ---------- */
+/* ---------- 32. Courses ---------- */
 const COURSES = [
   { icon:'⚖️', name:'Criminology', desc:'Crime, criminal behaviour, justice systems and social control.', prompt:'Explain the basics of Criminology' },
   { icon:'👥', name:'Sociology', desc:'Society, social relationships, culture and institutions.', prompt:'Explain the basics of Sociology' },
@@ -2726,7 +2721,6 @@ const COURSES = [
   { icon:'🏛️', name:'Government', desc:'Democracy, constitution, law and civic responsibility.', prompt:'Explain democracy and the arms of government' },
   { icon:'💻', name:'ICT', desc:'Computers, the internet and digital skills.', prompt:'Explain how websites work: HTML, CSS and JavaScript' }
 ];
-
 function renderCourses(){
   $('courseGrid').innerHTML = COURSES.map(c =>
     '<div class="card tilt">' +
@@ -2739,7 +2733,7 @@ function renderCourses(){
   initTilt();
 }
 
-/* ---------- 31. Command palette ---------- */
+/* ---------- 33. Command palette ---------- */
 const PALETTE_INDEX = [
   ...NAV.flatMap(g => g.items.map(i => ({ icon:i.icon, title:i.label, sub:'View · ' + g.group, view:i.id }))),
   ...COURSES.map(c => ({ icon:c.icon, title:c.name, sub:'Course — ask the AI', view:'courses' })),
@@ -2757,14 +2751,12 @@ function openPalette(){
   setTimeout(() => input.focus(), 60);
 }
 function closePalette(){ hide($('palette')); }
-
 function runPalette(){
   const q = $('paletteInput').value.toLowerCase().trim();
   paletteItems = q
     ? PALETTE_INDEX.filter(i => i.title.toLowerCase().includes(q) || i.sub.toLowerCase().includes(q)).slice(0, 16)
     : PALETTE_INDEX.slice(0, 10);
   if (paletteSel >= paletteItems.length) paletteSel = 0;
-
   const box = $('paletteList');
   if (!paletteItems.length){
     box.innerHTML = '<div class="empty"><p>No results found.</p></div>';
@@ -2777,7 +2769,6 @@ function runPalette(){
       '<div class="sub">' + esc(it.sub) + '</div></div>' +
     '</div>'
   ).join('');
-
   $$('#paletteList .pi').forEach(el => {
     el.onclick = () => {
       const it = paletteItems[Number(el.dataset.i)];
@@ -2786,21 +2777,10 @@ function runPalette(){
     };
   });
 }
-
 function paletteKey(e){
-  if (e.key === 'ArrowDown'){
-    e.preventDefault();
-    paletteSel = Math.min(paletteSel + 1, paletteItems.length - 1);
-    runPalette();
-  } else if (e.key === 'ArrowUp'){
-    e.preventDefault();
-    paletteSel = Math.max(paletteSel - 1, 0);
-    runPalette();
-  } else if (e.key === 'Enter'){
-    e.preventDefault();
-    const it = paletteItems[paletteSel];
-    if (it){ closePalette(); go(it.view); }
-  }
+  if (e.key === 'ArrowDown'){ e.preventDefault(); paletteSel = Math.min(paletteSel + 1, paletteItems.length - 1); runPalette(); }
+  else if (e.key === 'ArrowUp'){ e.preventDefault(); paletteSel = Math.max(paletteSel - 1, 0); runPalette(); }
+  else if (e.key === 'Enter'){ e.preventDefault(); const it = paletteItems[paletteSel]; if (it){ closePalette(); go(it.view); } }
 }
 
 /* ============================================================
@@ -2816,111 +2796,90 @@ function isPremium(){
   }
   return true;
 }
-
 async function copyText(text, label){
   try{
     await navigator.clipboard.writeText(text);
     toast((label || 'Copied') + ' ✓');
   }catch(e){
     const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
+    ta.value = text; document.body.appendChild(ta); ta.select();
     try{ document.execCommand('copy'); toast((label || 'Copied') + ' ✓'); }
     catch(err){ toast('Copy failed — select manually', 'error'); }
     ta.remove();
   }
 }
-
 function renderPremiumStatus(){
   const box = $('premiumStatusBox');
   if (!box) return;
   const d = getData();
   if (!d) return;
-
   $('bankName').textContent = ACCOUNT_BANK;
   $('bankAcc').textContent = ACCOUNT_NUMBER;
   $('bankOwner').textContent = ACCOUNT_NAME;
-
   if (d.premium && d.premium.active && d.premium.expiresAt && new Date(d.premium.expiresAt) > new Date()){
     box.innerHTML = '<div class="pstatus active"><span class="em">👑</span>' +
-      '<div><div>Premium Active</div>' +
-      '<small style="color:var(--dim);font-weight:500">Valid until ' +
+      '<div><div>Premium Active</div><small style="color:var(--dim);font-weight:500">Valid until ' +
       new Date(d.premium.expiresAt).toLocaleDateString() + '</small></div></div>';
     return;
   }
   if (d.premium && d.premium.expiresAt && new Date(d.premium.expiresAt) < new Date()){
     box.innerHTML = '<div class="pstatus expired"><span class="em">⏰</span>' +
-      '<div><div>Premium Expired</div>' +
-      '<small style="color:var(--dim);font-weight:500">Renew for ₦500 to continue</small></div></div>';
+      '<div><div>Premium Expired</div><small style="color:var(--dim);font-weight:500">Renew for ₦500 to continue</small></div></div>';
     return;
   }
   if (d.pendingPayment){
     box.innerHTML = '<div class="pstatus pending"><span class="em">⏳</span>' +
       '<div><div>Payment Pending Verification</div>' +
-      '<small style="color:var(--dim);font-weight:500">Ref: ' + esc(d.pendingPayment.ref) +
-      ' · Send it to Alamin on WhatsApp</small></div></div>';
+      '<small style="color:var(--dim);font-weight:500">Ref: ' + esc(d.pendingPayment.ref) + ' · Send it to Alamin on WhatsApp</small></div></div>';
     return;
   }
   box.innerHTML = '';
 }
-
 function openPaymentFlow(){
   if (isPremium()){ toast('You already have Premium! 👑', 'info'); return; }
   $('payRefInput').value = '';
   show($('paymentModal'));
   setTimeout(() => $('payRefInput').focus(), 100);
 }
-
 function submitPayment(){
   const ref = $('payRefInput').value.trim();
   if (ref.length < 3){ toast('Enter a valid reference', 'error'); return; }
-
   const d = getData();
   d.pendingPayment = { ref, date:new Date().toISOString(), amount:PREMIUM_PRICE, status:'pending' };
   saveData(d);
   hide($('paymentModal'));
   renderPremiumStatus();
   toast('Payment submitted! Send your ref on WhatsApp.', 'info');
-
   const msg = encodeURIComponent(
     'Hello Alamin! I have paid ₦' + PREMIUM_PRICE + ' for ABHS Premium.\n\n' +
     'Name: ' + currentUser.name + '\nEmail: ' + currentUser.email +
-    '\nReference: ' + ref + '\n\nPlease send my activation code. Thank you!'
-  );
+    '\nReference: ' + ref + '\n\nPlease send my activation code. Thank you!');
   window.open('https://wa.me/' + PAYMENT_PHONE + '?text=' + msg, '_blank');
 }
-
 function openWhatsApp(){
   const d = getData();
   const ref = (d && d.pendingPayment) ? d.pendingPayment.ref : '(not yet submitted)';
   const msg = encodeURIComponent(
     'Hello Alamin! I want to activate ABHS Premium.\n\n' +
-    'Name: ' + currentUser.name + '\nEmail: ' + currentUser.email + '\nReference: ' + ref
-  );
+    'Name: ' + currentUser.name + '\nEmail: ' + currentUser.email + '\nReference: ' + ref);
   window.open('https://wa.me/' + PAYMENT_PHONE + '?text=' + msg, '_blank');
 }
-
 function openActivation(){
   if (isPremium()){ toast('You already have Premium! 👑', 'info'); return; }
   $('activationCodeInput').value = '';
   show($('activationModal'));
   setTimeout(() => $('activationCodeInput').focus(), 100);
 }
-
 function activatePremium(){
   const raw = $('activationCodeInput').value.trim().toUpperCase();
   if (!raw){ toast('Enter a code', 'error'); return; }
-
   const expected = premiumCode(currentUser.email);
   const ok = raw === expected || raw === MASTER_PREMIUM_CODE;
-
   if (!ok){
     toast('Invalid activation code', 'error');
     beep(220, 0.15, 'sawtooth');
     return;
   }
-
   const d = getData();
   d.premium = {
     active:true,
@@ -2932,30 +2891,21 @@ function activatePremium(){
   d.xp = (d.xp || 0) + XP.premium;
   saveData(d);
   checkAchievements(d);
-
   hide($('activationModal'));
   toast('🎉 Premium activated! Welcome to the club!');
   burstConfetti(innerWidth / 2, innerHeight * 0.35, 180);
   beep(920, 0.15, 'triangle');
   setTimeout(() => beep(1180, 0.2, 'triangle'), 180);
-
   updatePremiumPill();
   refreshAll();
   go('dashboard');
 }
-
 function updatePremiumPill(){
   if (!currentUser) return;
   const pill = $('userPill');
-  if (isPremium()){
-    pill.classList.add('premium');
-    pill.textContent = '👑 ' + currentUser.name.split(' ')[0];
-  } else {
-    pill.classList.remove('premium');
-    pill.textContent = '👤 ' + currentUser.name.split(' ')[0];
-  }
+  if (isPremium()){ pill.classList.add('premium'); pill.textContent = '👑 ' + currentUser.name.split(' ')[0]; }
+  else { pill.classList.remove('premium'); pill.textContent = '👤 ' + currentUser.name.split(' ')[0]; }
 }
-
 function canAskAI(){
   if (isPremium()) return true;
   const d = getData();
@@ -2968,7 +2918,6 @@ function canAskAI(){
   }
   return true;
 }
-
 function checkQuizLimit(){
   if (isPremium()) return true;
   const d = getData();
@@ -2982,9 +2931,8 @@ function checkQuizLimit(){
   return true;
 }
 
-/* ---------- 32. Admin ---------- */
+/* ---------- 34. Admin ---------- */
 let isAdmin = false;
-
 function openAdmin(){
   if (!isAdmin){
     const pass = prompt('🔐 Enter admin password:');
@@ -2995,12 +2943,10 @@ function openAdmin(){
   renderAdmin();
   show($('adminModal'));
 }
-
 function renderAdmin(){
   const box = $('adminUsers');
   const q = ($('adminSearch').value || '').toLowerCase().trim();
   const users = readUsers();
-
   let rows = Object.values(users).map(u => {
     const data = readDataRaw(u.email) || defaultData();
     return {
@@ -3010,16 +2956,12 @@ function renderAdmin(){
       pending: data.pendingPayment || null
     };
   });
-
   if (q) rows = rows.filter(r => r.email.toLowerCase().includes(q) || (r.name || '').toLowerCase().includes(q));
   rows.sort((a, b) => (a.pending && !b.pending) ? -1 : (!a.pending && b.pending) ? 1 : 0);
-
   if (!rows.length){ box.innerHTML = '<div class="empty"><p>No users found.</p></div>'; return; }
-
   box.innerHTML = rows.map(r => {
     const expired = r.expires && new Date(r.expires) < new Date();
-    const label = r.premium && !expired ? '👑 Premium'
-                : (r.premium && expired) ? '⏰ Expired' : '👤 Free';
+    const label = r.premium && !expired ? '👑 Premium' : (r.premium && expired) ? '⏰ Expired' : '👤 Free';
     return '<div class="arow' + (r.pending ? ' pending' : '') + '">' +
       '<div class="ainfo">' +
         '<b>' + esc(r.name) + ' <span style="font-weight:400;color:var(--dim)">· ' + label + '</span></b>' +
@@ -3036,9 +2978,7 @@ function renderAdmin(){
     '</div>';
   }).join('');
 }
-
 function adminCode(email){ copyText(premiumCode(email), 'Code for ' + email); }
-
 function adminOn(email){
   const users = readUsers();
   if (!users[email]){ toast('User not found', 'error'); return; }
@@ -3055,7 +2995,6 @@ function adminOn(email){
   renderAdmin();
   if (currentUser && email === currentUser.email){ updatePremiumPill(); refreshAll(); }
 }
-
 function adminOff(email){
   const data = readDataRaw(email);
   if (!data) return;
@@ -3066,7 +3005,6 @@ function adminOff(email){
   renderAdmin();
   if (currentUser && email === currentUser.email){ updatePremiumPill(); refreshAll(); }
 }
-
 function adminClear(email){
   const data = readDataRaw(email);
   if (!data) return;
@@ -3077,7 +3015,119 @@ function adminClear(email){
   if (currentUser && email === currentUser.email) renderPremiumStatus();
 }
 
-/* ---------- 33. Global events ---------- */
+/* ============================================================
+   AI IMAGE STUDIO
+   ============================================================ */
+let currentStyle = 'realistic';
+
+function initImageStyles(){
+  $$('.img-style').forEach(b => {
+    b.onclick = () => {
+      currentStyle = b.dataset.style;
+      $$('.img-style').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+    };
+  });
+}
+
+function generateImage(){
+  const input = $('imgPrompt');
+  const prompt = input.value.trim();
+  if (!prompt){ toast('Rubuta abin da kake so!', 'error'); return; }
+  if (!currentUser){ showAuth(); return; }
+
+  const enhanced = prompt + ', ' + currentStyle + ' style, high quality, detailed, 4k';
+  const seed = Math.floor(Math.random() * 999999);
+  const url = 'https://image.pollinations.ai/prompt/' + encodeURIComponent(enhanced) +
+    '?width=1024&height=1024&seed=' + seed + '&nologo=true';
+
+  const grid = $('imgGrid');
+  const loading = document.createElement('div');
+  loading.className = 'img-loading';
+  loading.textContent = '🎨 Generating…';
+  grid.prepend(loading);
+  hide($('imgEmpty'));
+
+  const img = new Image();
+  img.onload = () => {
+    loading.remove();
+    const d = getData();
+    if (!d.images) d.images = [];
+    d.images.unshift({ prompt, style:currentStyle, seed, url, date:new Date().toISOString() });
+    if (d.images.length > 20) d.images = d.images.slice(0, 20);
+    saveData(d);
+    checkAchievements(d);
+    renderImageGrid();
+    burstConfetti(innerWidth / 2, innerHeight * 0.4, 60);
+    beep(920, 0.12, 'triangle');
+    toast('Hoto ya shirya! 🎨');
+    input.value = '';
+    refreshAll();
+  };
+  img.onerror = () => {
+    loading.remove();
+    toast('Ba a iya ƙirƙirar hoto — duba internet ɗinka', 'error');
+    const d = getData();
+    if (!d.images || !d.images.length) show($('imgEmpty'));
+  };
+  img.src = url;
+}
+
+function renderImageGrid(){
+  const d = getData();
+  if (!d) return;
+  const imgs = d.images || [];
+  const grid = $('imgGrid');
+  if (!imgs.length){
+    grid.innerHTML = '';
+    show($('imgEmpty'));
+    return;
+  }
+  hide($('imgEmpty'));
+  grid.innerHTML = imgs.map((im, i) =>
+    '<div class="img-item">' +
+      '<img src="' + im.url + '" alt="' + esc(im.prompt) + '" loading="lazy">' +
+      '<div class="acts">' +
+        '<button class="ov" onclick="downloadImage(' + i + ')" title="Download">⬇</button>' +
+        '<button class="ov" onclick="deleteImage(' + i + ')" title="Delete">✕</button>' +
+      '</div>' +
+      '<div class="img-prompt">' + esc(im.prompt) + '</div>' +
+    '</div>'
+  ).join('');
+}
+
+function downloadImage(i){
+  const d = getData();
+  const im = d.images[i];
+  if (!im) return;
+  const a = document.createElement('a');
+  a.href = im.url;
+  a.download = 'abhs-image-' + Date.now() + '.jpg';
+  a.target = '_blank';
+  a.click();
+  toast('Ana sauke hoto…', 'info');
+}
+
+async function deleteImage(i){
+  const d = getData();
+  if (!d.images[i]) return;
+  d.images.splice(i, 1);
+  saveData(d);
+  renderImageGrid();
+  toast('An share hoto', 'info');
+}
+
+async function clearImageHistory(){
+  const ok = await askConfirm('Share duk hotuna?', 'Ba za a iya dawo da su ba.', 'Share');
+  if (!ok) return;
+  const d = getData();
+  d.images = [];
+  saveData(d);
+  renderImageGrid();
+  toast('An share duk hotuna', 'info');
+}
+
+/* ---------- 35. Global events ---------- */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape'){
     if (!$('palette').classList.contains('hidden')) closePalette();
@@ -3088,21 +3138,16 @@ document.addEventListener('keydown', e => {
     else if (!$('confirmModal').classList.contains('hidden')) $('confirmCancel').click();
     else if (!$('drawer').classList.contains('hidden')) closeDrawer();
   }
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
-    e.preventDefault();
-    openPalette();
-  }
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){ e.preventDefault(); openPalette(); }
 });
-
 $('quizModal').addEventListener('click', e => { if (e.target.id === 'quizModal') closeQuiz(); });
 $('paymentModal').addEventListener('click', e => { if (e.target.id === 'paymentModal') hide($('paymentModal')); });
 $('activationModal').addEventListener('click', e => { if (e.target.id === 'activationModal') hide($('activationModal')); });
 $('adminModal').addEventListener('click', e => { if (e.target.id === 'adminModal') hide($('adminModal')); });
 $('palette').addEventListener('click', e => { if (e.target.id === 'palette') closePalette(); });
-
 document.addEventListener('visibilitychange', () => { if (!document.hidden && focus.running) renderTimer(); });
 
-/* ---------- 34. Init ---------- */
+/* ---------- 36. Init ---------- */
 function init(){
   applyTheme(localStorage.getItem(LS.theme) || 'dark');
   $('year').textContent = new Date().getFullYear();
@@ -3111,7 +3156,10 @@ function init(){
   renderVocab();
   renderFlashcards();
   renderTimer();
+  renderThemePicker();
+  renderLangPicker();
   initTilt();
+  initImageStyles();
   syncDrawerBtn();
 
   const session = localStorage.getItem(LS.session);
@@ -3122,7 +3170,6 @@ function init(){
   }
   showAuth();
 }
-
 init();
 </script>
 </body>

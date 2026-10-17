@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05060f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <title>ABHS · ALAMIN B HARUN SPECIAL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   ABHS v8.0 · ULTIMATE EDITION
+   ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
 [data-theme="midnight"]{--bg:#000;--bg-2:#050508;--panel:rgba(14,14,22,.85);--panel-solid:#0a0a12;--panel-2:rgba(20,20,32,.9);--field:rgba(8,8,15,.9);--stroke:rgba(160,160,200,.14);--stroke-2:rgba(160,160,200,.4);--txt:#e8e8f5;--dim:#8888a8;--cyan:#a78bfa;--blue:#6366f1;--violet:#8b5cf6;--pink:#d946ef;--grad:linear-gradient(135deg,#a78bfa,#6366f1,#d946ef);--grad-soft:linear-gradient(135deg,rgba(167,139,250,.16),rgba(217,70,239,.16));--txt-grad:linear-gradient(100deg,#a78bfa,#818cf8,#d946ef)}
@@ -26,6 +31,11 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 ::-webkit-scrollbar{width:9px;height:9px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(140,170,255,.25);border-radius:20px}
+
+/* Splash Screen */
+#splashScreen{position:fixed;inset:0;background:#05060f;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease;}
+@keyframes pulseLogo{0%,100%{transform:scale(1);box-shadow:0 0 30px rgba(99,102,241,.6)}50%{transform:scale(1.05);box-shadow:0 0 50px rgba(99,102,241,1)}}
+
 #aurora,#confetti{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 #aurora{opacity:.85}
 #confetti{z-index:900}
@@ -314,6 +324,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 </style>
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div id="splashScreen">
+  <div style="width:80px;height:80px;border-radius:24px;background:linear-gradient(135deg,#22d3ee,#6366f1,#d946ef);display:grid;place-items:center;font-size:40px;font-weight:900;color:#fff;animation:pulseLogo 2s infinite;">A</div>
+  <h1 style="margin-top:20px;color:#fff;font-family:'Outfit',sans-serif;letter-spacing:2px;">ABHS</h1>
+  <p style="color:#98a5c6;font-size:12px;margin-top:5px;letter-spacing:1px;">ALAMIN B HARUN SPECIAL</p>
+</div>
+
 <canvas id="aurora"></canvas>
 <canvas id="confetti"></canvas>
 
@@ -342,6 +360,10 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="field hidden" id="nameGroup">
       <label for="authName">Full Name</label>
       <input id="authName" type="text" placeholder="e.g. Alamin B Harun">
+    </div>
+    <div class="field hidden" id="refGroup">
+      <label for="authRef">Referral Code (Optional)</label>
+      <input id="authRef" type="text" placeholder="Misali: ALAMIN123">
     </div>
     <div class="field">
       <label for="authEmail">Email</label>
@@ -402,6 +424,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
         <span style="font-size:12.5px;color:var(--dim)" id="xpText">0 / 100 XP</span>
       </div>
       <div class="track"><div class="fill" id="levelFill"></div></div>
+      <button class="btn btn-gold" id="certBtn" onclick="downloadCertificate()" style="margin-top:10px;width:100%;display:none;">
+        🎓 Download My Certificate
+      </button>
     </div>
     <div class="grid">
       <div class="card tilt"><span class="icon">📚</span><h3>Courses</h3><p>Choose a subject and learn.</p><button class="card-btn" onclick="go('courses')">Browse →</button></div>
@@ -592,6 +617,10 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="head"><h2>⚙️ Settings</h2><p>Personalise ABHS.</p></div>
     <div class="s-card"><h3>👤 Profile</h3>
       <div class="field" style="margin-top:12px"><label>Display name</label><input id="setName" type="text"></div>
+      <div class="field" style="margin-top:12px">
+        <label>Your Referral Code (Share to earn XP)</label>
+        <input id="myRefCode" type="text" readonly style="background:var(--grad-soft);color:var(--cyan);font-weight:bold;text-align:center;">
+      </div>
       <button class="btn btn-primary btn-sm" onclick="saveProfile()">Save</button>
     </div>
     <div class="s-card"><h3>🎨 Theme</h3><div class="theme-grid" id="themeGrid"></div></div>
@@ -610,7 +639,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 7.0 · Firebase + Admin Dashboard<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 8.0 · Ultimate Edition<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
@@ -689,7 +718,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 'use strict';
 
 /* ============================================================
-   FIREBASE CONFIG — AN SANYA NAKA
+   FIREBASE CONFIG
    ============================================================ */
 const firebaseConfig = {
   apiKey: "AIzaSyBXjBml4kDBTsx5kcixQathU1fdCLswOrA",
@@ -702,7 +731,6 @@ const firebaseConfig = {
 };
 
 const ADMIN_EMAILS = ['alaminharuna29@gmail.com'];
-
 const USE_FIREBASE = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('YOUR_'));
 
 let auth = null, db = null;
@@ -719,10 +747,10 @@ if (USE_FIREBASE){
    CONSTANTS
    ============================================================ */
 const LS = {
-  session:'abhs.v7.session',
-  data: uid => 'abhs.v7.data.' + uid,
-  theme:'abhs.v7.theme',
-  sound:'abhs.v7.sound'
+  session:'abhs.v8.session',
+  data: uid => 'abhs.v8.data.' + uid,
+  theme:'abhs.v8.theme',
+  sound:'abhs.v8.sound'
 };
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
@@ -766,7 +794,7 @@ function defaultData(){
   return {
     xp:0, quizzes:0, aiQuestions:0,
     notes:[], history:[], chat:[], favorites:[], images:[],
-    lang:'en-US',
+    lang:'en-US', myRefCode:'',
     focusSessions:0, focusMinutes:0,
     achievements:[], days:[], streak:1, bestStreak:1,
     lastLogin:'',
@@ -1093,7 +1121,7 @@ function animateCount(el, target){
 }
 
 /* ============================================================
-   NAV
+   NAVIGATION
    ============================================================ */
 const NAV = [
   { group:'Learn', items:[
@@ -1172,6 +1200,7 @@ function renderAuthMode(){
   $('switchText').textContent = login ? "Don't have an account?" : 'Already have an account?';
   $('switchBtn').textContent = login ? 'Sign Up' : 'Login';
   $('nameGroup').classList.toggle('hidden', login);
+  $('refGroup').classList.toggle('hidden', login);
   $('authError').textContent = '';
 }
 const toggleAuth = () => { authMode = authMode === 'login' ? 'signup' : 'login'; renderAuthMode(); };
@@ -1180,6 +1209,7 @@ async function handleAuth(){
   const email = $('authEmail').value.trim().toLowerCase();
   const pass = $('authPass').value;
   const name = $('authName').value.trim();
+  const refCode = $('authRef') ? $('authRef').value.trim().toUpperCase() : '';
   const err = $('authError');
 
   if (!email || !pass){ err.textContent = 'Please fill all fields.'; return; }
@@ -1193,12 +1223,12 @@ async function handleAuth(){
 
   try {
     if (!USE_FIREBASE){
-      const users = JSON.parse(localStorage.getItem('abhs.v7.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v8.users') || '{}');
       if (authMode === 'signup'){
         if (users[email]){ err.textContent = 'Email already registered.'; throw new Error('exists'); }
         const uid = 'local_' + Date.now();
         users[email] = { uid, email, name, pass: hashStr(email + '::' + pass) };
-        localStorage.setItem('abhs.v7.users', JSON.stringify(users));
+        localStorage.setItem('abhs.v8.users', JSON.stringify(users));
         await localLogin(uid, email, name);
       } else {
         const u = users[email];
@@ -1212,7 +1242,21 @@ async function handleAuth(){
         const cred = await auth.createUserWithEmailAndPassword(email, pass);
         const init = defaultData();
         init.name = name; init.email = email;
+        init.myRefCode = (name.split(' ')[0] + Math.floor(1000 + Math.random() * 9000)).toUpperCase();
+        
         await db.collection('users').doc(cred.user.uid).set(init);
+
+        if (refCode) {
+          try {
+            const snap = await db.collection('users').where('myRefCode', '==', refCode).get();
+            if (!snap.empty) {
+              const inviterDoc = snap.docs[0];
+              await db.collection('users').doc(inviterDoc.id).update({
+                xp: (inviterDoc.data().xp || 0) + 100
+              });
+            }
+          } catch(e) { console.warn('Referral error:', e); }
+        }
       } else {
         await auth.signInWithEmailAndPassword(email, pass);
       }
@@ -1403,7 +1447,61 @@ function refreshDashboard(){
   $('levelTag').textContent = 'LEVEL ' + lvl;
   $('xpText').textContent = prog + ' / ' + LEVEL_STEP + ' XP  ·  total ' + (d.xp || 0);
   $('levelFill').style.width = Math.min(prog, 100) + '%';
+  
+  const certBtn = $('certBtn');
+  if (certBtn) certBtn.style.display = lvl >= 5 ? 'block' : 'none';
+
   renderDaily();
+}
+
+/* ============================================================
+   CERTIFICATE DOWNLOAD
+   ============================================================ */
+function downloadCertificate() {
+  const d = getData();
+  if (levelOf(d.xp) < 5) { toast('Level 5 required for certificate', 'error'); return; }
+
+  const win = window.open('', '_blank');
+  win.document.write(`
+    <html>
+    <head>
+      <title>ABHS Certificate - ${currentUser.name}</title>
+      <style>
+        body { font-family: 'Times New Roman', serif; background: #f4f4f4; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .cert { background: white; padding: 40px; border: 10px solid #d4af37; max-width: 600px; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.2); position: relative; }
+        .title { font-size: 32px; color: #1a237e; font-weight: bold; margin-bottom: 10px; }
+        .subtitle { font-size: 18px; color: #555; margin-bottom: 30px; }
+        .name { font-size: 36px; color: #000; border-bottom: 2px solid #333; display: inline-block; padding: 0 20px; margin-bottom: 20px; font-style: italic; }
+        .text { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 40px; }
+        .footer { display: flex; justify-content: space-between; margin-top: 40px; font-size: 14px; color: #555; }
+        .signature { border-top: 1px solid #333; padding-top: 5px; font-weight: bold; }
+        .seal { position: absolute; bottom: 20px; right: 20px; width: 80px; height: 80px; border-radius: 50%; background: #d4af37; display: grid; place-items: center; color: white; font-weight: bold; font-size: 12px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+      </style>
+    </head>
+    <body>
+      <div class="cert">
+        <div class="title">ABHS ACADEMY</div>
+        <div class="subtitle">ALAMIN B HARUN SPECIAL</div>
+        <p class="text">This is to certify that</p>
+        <div class="name">${currentUser.name}</div>
+        <p class="text">has successfully reached <b>Level ${levelOf(d.xp)}</b> on the ABHS Learning Platform, demonstrating outstanding dedication, consistency, and excellence in learning.</p>
+        <div class="footer">
+          <div>
+            <div class="signature">Alamin Haruna</div>
+            <div>Founder, ABHS</div>
+          </div>
+          <div>
+            <div class="signature">${new Date().toLocaleDateString()}</div>
+            <div>Date Issued</div>
+          </div>
+        </div>
+        <div class="seal">ABHS<br>VERIFIED</div>
+      </div>
+      <script>setTimeout(()=>{window.print();}, 500);<\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
 }
 
 /* ============================================================
@@ -1974,6 +2072,8 @@ async function renderLeaderboard(){
 function renderSettings(){
   const d = getData(); if (!d) return;
   $('setName').value = currentUser.name || '';
+  const mc = $('myRefCode');
+  if (mc) mc.value = d.myRefCode || 'N/A';
   $('soundToggle').classList.toggle('on', soundOn());
   $('ttsToggle').classList.toggle('on', !!d.tts);
   const tb = $('ttsBtn'); if (tb) tb.textContent = d.tts ? '🔊' : '🔈';
@@ -1996,7 +2096,7 @@ async function saveProfile(){
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:7, exported:new Date().toISOString(),
+    app:'ABHS', version:8, exported:new Date().toISOString(),
     user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
@@ -2730,10 +2830,19 @@ async function init(){
   initImageStyles();
   syncDrawerBtn();
 
+  // Splash Screen Logic
+  setTimeout(() => {
+    const splash = $('splashScreen');
+    if(splash) {
+      splash.style.opacity = '0';
+      setTimeout(() => splash.remove(), 600);
+    }
+  }, 1800);
+
   if (!USE_FIREBASE){
     const sessionUid = localStorage.getItem(LS.session);
     if (sessionUid){
-      const users = JSON.parse(localStorage.getItem('abhs.v7.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v8.users') || '{}');
       const found = Object.values(users).find(u => u.uid === sessionUid);
       if (found){
         currentUser = { uid: found.uid, email: found.email, name: found.name };

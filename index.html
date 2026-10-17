@@ -689,20 +689,18 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 'use strict';
 
 /* ============================================================
-   FIREBASE CONFIG — KA SAKA NAKA A NAN
+   FIREBASE CONFIG — AN SANYA NAKA
    ============================================================ */
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBXjBml4kDBTsx5kcixQathU1fdCLswOrA",
+  authDomain: "abhs-app.firebaseapp.com",
+  projectId: "abhs-app",
+  storageBucket: "abhs-app.firebasestorage.app",
+  messagingSenderId: "501414940219",
+  appId: "1:501414940219:web:c755b0f886e6c662ad961e",
+  measurementId: "G-R9ZMPTJBLN"
 };
 
-/* ============================================================
-   ADMIN EMAIL — NAKA
-   ============================================================ */
 const ADMIN_EMAILS = ['alaminharuna29@gmail.com'];
 
 const USE_FIREBASE = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('YOUR_'));
@@ -1161,7 +1159,7 @@ function showAuth(){
 function renderFirebaseBanner(){
   const b = $('firebaseBanner'); if (!b) return;
   if (!USE_FIREBASE){
-    b.innerHTML = '<div class="loading-banner" style="color:#fda4af;background:rgba(251,113,133,.1);border-color:rgba(251,113,133,.4)">⚠️ Firebase ba a saita ba. Ka bi matakan a comment na farkon script.</div>';
+    b.innerHTML = '<div class="loading-banner" style="color:#fda4af;background:rgba(251,113,133,.1);border-color:rgba(251,113,133,.4)">⚠️ Firebase ba a saita ba.</div>';
   } else {
     b.innerHTML = '';
   }
@@ -1981,7 +1979,6 @@ function renderSettings(){
   const tb = $('ttsBtn'); if (tb) tb.textContent = d.tts ? '🔊' : '🔈';
   renderThemePicker();
   renderLangPicker();
-  /* Hide admin card if not admin */
   const adminCard = $('adminAccessCard');
   if (adminCard) adminCard.style.display = isAdminEmail(currentUser.email) ? 'block' : 'none';
 }
@@ -2354,7 +2351,6 @@ async function openAdmin(){
   }
   show($('adminModal'));
   await renderAdmin();
-  /* Live sync — refresh on changes */
   if (adminUnsub) adminUnsub();
   adminUnsub = db.collection('users').onSnapshot(() => {
     renderAdmin();

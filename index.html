@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v12.0 · ULTIMATE EDITION
+   ABHS v15.0 · ULTIMATE EDITION
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
@@ -32,7 +32,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(140,170,255,.25);border-radius:20px}
 
-/* Splash Screen */
 #splashScreen{position:fixed;inset:0;background:#05060f;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease;}
 @keyframes pulseLogo{0%,100%{transform:scale(1);box-shadow:0 0 30px rgba(99,102,241,.6)}50%{transform:scale(1.05);box-shadow:0 0 50px rgba(99,102,241,1)}}
 
@@ -339,6 +338,15 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 /* PLANNER STYLES */
 .plan-box { background: var(--panel); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px; margin-bottom: 16px; font-size: 14.5px; line-height: 1.8; }
 .plan-box h3 { color: var(--cyan); margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid var(--stroke); padding-bottom: 10px; }
+
+/* SOCIAL BOOST STYLES */
+.service-card { background: var(--panel); border: 1px solid var(--stroke); border-radius: 20px; padding: 24px; text-align: center; transition: all .3s; position: relative; overflow: hidden; }
+.service-card:hover { border-color: var(--stroke-2); transform: translateY(-5px); box-shadow: var(--glow); }
+.service-card .s-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+.service-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.service-card .s-desc { font-size: 13px; color: var(--dim); margin-bottom: 16px; }
+.service-card .s-price { font-size: 24px; font-weight: 900; color: var(--lime); margin-bottom: 16px; font-family: 'Outfit', sans-serif; }
+.service-card .s-price span { font-size: 12px; color: var(--dim); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -405,7 +413,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="orb"></div>
     <span class="chip">Sabuwar Duniyar Ilimi · A New Learning Universe</span>
     <h1>ALAMIN B HARUN<br><span class="grad-text">SPECIAL</span></h1>
-    <p>Learn smarter. Think deeper. Achieve more.<br>AI tutoring, Islamic studies, exams, notes, flashcards, focus and real progress.</p>
+    <p>Learn smarter. Think deeper. Achieve more.<br>AI tutoring, Islamic studies, social media boost, and real progress.</p>
     <div class="row">
       <button class="btn btn-primary" onclick="go('dashboard')">Get Started →</button>
       <button class="btn btn-gold" onclick="go('premium')">👑 Go Premium</button>
@@ -421,13 +429,61 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="head"><h2>Your <span class="grad-text">Learning Universe</span></h2><p>Real tools. Real learning. Real progress.</p></div>
     <div class="grid">
       <div class="card tilt"><span class="icon">🤖</span><h3>AI Tutor</h3><p>Ask anything on any subject in your language.</p><button class="card-btn" onclick="go('ai')">Chat Now →</button></div>
+      <div class="card tilt"><span class="icon">🚀</span><h3>Social Boost</h3><p>Buy real followers, likes, and comments.</p><button class="card-btn" onclick="go('social')">Boost Now →</button></div>
       <div class="card tilt"><span class="icon">🕌</span><h3>Islamic Hub</h3><p>Quran (Hausa/English) and Hadith collections.</p><button class="card-btn" onclick="go('islamic')">Open →</button></div>
       <div class="card tilt"><span class="icon">🧠</span><h3>Study Planner</h3><p>Let AI build a daily study schedule for your exams.</p><button class="card-btn" onclick="go('planner')">Plan →</button></div>
-      <div class="card tilt"><span class="icon">🖼️</span><h3>AI Image Studio</h3><p>Describe a scene and watch AI paint it.</p><button class="card-btn" onclick="go('image')">Create →</button></div>
       <div class="card tilt"><span class="icon">🎓</span><h3>Exams</h3><p>Real quizzes with instant scoring and XP.</p><button class="card-btn" onclick="openQuiz()">Start Quiz →</button></div>
       <div class="card tilt"><span class="icon">🏆</span><h3>Global Leaderboard</h3><p>See who is the best in Nigeria and beyond.</p><button class="card-btn" onclick="go('achievements')">View Top 10 →</button></div>
       <div class="card tilt"><span class="icon">⏱️</span><h3>Focus Timer</h3><p>Pomodoro sessions to build focus.</p><button class="card-btn" onclick="go('focus')">Focus →</button></div>
       <div class="card tilt"><span class="icon">👑</span><h3>Go Premium</h3><p>Unlimited everything for ₦500/year.</p><button class="card-btn" onclick="go('premium')">Upgrade →</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="view-social" class="view hidden">
+  <div class="wrap" style="max-width:960px">
+    <div class="head">
+      <h2>🚀 Social Media Boost</h2>
+      <p>Buy real followers, likes, and comments instantly. Powered by Paystack.</p>
+    </div>
+    
+    <div class="grid">
+      <!-- Followers -->
+      <div class="service-card tilt">
+        <span class="s-icon">👥</span>
+        <h3>100 Followers</h3>
+        <div class="s-desc">Real & Active followers for Instagram, TikTok, X (Twitter).</div>
+        <div class="s-price">₦100 <span>/ 100 pcs</span></div>
+        <button class="btn btn-primary" style="width:100%" onclick="openOrderModal('100 Followers', 100, 'followers')">Buy Now</button>
+      </div>
+      
+      <!-- Likes -->
+      <div class="service-card tilt">
+        <span class="s-icon">❤️</span>
+        <h3>100 Likes</h3>
+        <div class="s-desc">Instant likes on your posts to boost engagement.</div>
+        <div class="s-price">₦150 <span>/ 100 pcs</span></div>
+        <button class="btn btn-primary" style="width:100%" onclick="openOrderModal('100 Likes', 150, 'likes')">Buy Now</button>
+      </div>
+      
+      <!-- Comments -->
+      <div class="service-card tilt">
+        <span class="s-icon">💬</span>
+        <h3>100 Comments</h3>
+        <div class="s-desc">Custom or random positive comments from real accounts.</div>
+        <div class="s-price">₦200 <span>/ 100 pcs</span></div>
+        <button class="btn btn-primary" style="width:100%" onclick="openOrderModal('100 Comments', 200, 'comments')">Buy Now</button>
+      </div>
+    </div>
+    
+    <div class="s-card" style="margin-top:24px">
+      <h3>ℹ️ How it works</h3>
+      <p style="font-size:13.5px;color:var(--dim);line-height:1.7;margin-top:8px">
+        1. Click "Buy Now" on any service.<br>
+        2. Enter your social media username or post link.<br>
+        3. Pay securely via Paystack.<br>
+        4. Your order will be processed instantly (delivery takes 5-30 minutes).
+      </p>
     </div>
   </div>
 </section>
@@ -656,7 +712,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="prem-hero"><div class="crown">👑</div><h1>ABHS <span class="grad-text">Premium</span></h1><p>Unlimited learning for ₦500/year.</p></div>
     <div id="premiumStatusBox"></div>
     
-    <button class="btn btn-gold" style="width:100%;margin-bottom:16px;font-size:16px;padding:16px" onclick="payWithPaystack()" id="paystackBtn">
+    <button class="btn btn-gold" style="width:100%;margin-bottom:16px;font-size:16px;padding:16px" onclick="payForPremium()" id="paystackBtn">
       💳 Pay ₦500 with Card / Transfer (Instant)
     </button>
 
@@ -714,18 +770,18 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <div class="s-row"><div><div class="t" style="color:#fda4af">Delete account</div><div class="d">Permanent</div></div><button class="btn btn-danger btn-sm" onclick="deleteAccount()">Delete</button></div>
     </div>
     <div class="s-card" id="adminAccessCard"><h3>🔐 Admin</h3>
-      <p style="font-size:12.5px;color:var(--dim);line-height:1.7;margin:8px 0 12px">Only for Alamin. Manage premium users.</p>
+      <p style="font-size:12.5px;color:var(--dim);line-height:1.7;margin:8px 0 12px">Only for Alamin. Manage premium users & orders.</p>
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 12.0 · Ultimate Edition<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 15.0 · Ultimate Edition<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
 
 <footer class="foot">
   <strong>ABHS · ALAMIN B HARUN SPECIAL</strong><br>Learn Smarter. Think Deeper. Achieve More.<br>
-  <div class="links"><span onclick="go('islamic')">Islamic Hub</span><span onclick="go('planner')">Planner</span><span onclick="go('courses')">Courses</span><span onclick="go('premium')">Premium</span><span onclick="go('settings')">Settings</span></div>
+  <div class="links"><span onclick="go('islamic')">Islamic Hub</span><span onclick="go('social')">Social Boost</span><span onclick="go('planner')">Planner</span><span onclick="go('courses')">Courses</span><span onclick="go('premium')">Premium</span></div>
   <small>© <span id="year"></span> ABHS. All rights reserved.</small>
 </footer>
 </div>
@@ -734,7 +790,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 <nav class="dock">
   <button class="dock-btn" data-nav="home" onclick="go('home')"><i>🏠</i>Home</button>
   <button class="dock-btn" data-nav="courses" onclick="go('courses')"><i>📚</i>Learn</button>
-  <button class="dock-btn" data-nav="islamic" onclick="go('islamic')"><i>🕌</i>Islamic</button>
+  <button class="dock-btn" data-nav="social" onclick="go('social')"><i>🚀</i>Boost</button>
   <button class="dock-btn" data-nav="ai" onclick="go('ai')"><i>🤖</i>AI</button>
   <button class="dock-btn" onclick="openDrawer()"><i>☰</i>More</button>
 </nav>
@@ -743,6 +799,25 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 <aside class="drawer hidden" id="drawer"><div class="drawer-grip"></div><div id="drawerLinks"></div></aside>
 
 <div id="quizModal" class="overlay hidden"><div class="modal" id="quizBody"></div></div>
+
+<div id="orderModal" class="overlay hidden">
+  <div class="modal" style="max-width:460px">
+    <h2>🚀 Complete Your Order</h2>
+    <p class="hint" id="orderTitle">100 Followers - ₦100</p>
+    <div class="field"><label>Social Media Username or Post Link</label>
+      <input id="orderLink" type="text" placeholder="e.g. https://instagram.com/p/xyz or @username">
+    </div>
+    <div class="field" id="commentField" style="display:none">
+      <label>Comments (Optional)</label>
+      <textarea id="orderComments" placeholder="Leave blank for random positive comments."></textarea>
+    </div>
+    <div class="row">
+      <button class="btn btn-gold" style="width:100%" onclick="payForOrder()">💳 Pay with Paystack</button>
+      <button class="btn btn-ghost" style="width:100%" onclick="hide($('orderModal'))">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div id="confirmModal" class="overlay hidden"><div class="modal" style="max-width:400px">
   <h2 id="confirmTitle">Are you sure?</h2>
   <p class="hint" id="confirmMsg">This cannot be undone.</p>
@@ -762,26 +837,32 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 </div></div>
 <div id="adminModal" class="overlay hidden"><div class="modal" style="max-width:680px">
   <h2>🔐 Admin Dashboard</h2>
-  <p class="hint">Manage premium users, payments, and revenue.</p>
-  <div id="adminStats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px"></div>
-  <div id="revenueChart" style="margin-bottom:14px"></div>
-  <input id="adminSearch" class="search-input" placeholder="🔍 Search email or name…" oninput="renderAdminList()">
-  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
-    <button class="btn btn-sm btn-primary" onclick="adminFilter('all')" id="filterAll">All</button>
-    <button class="btn btn-sm btn-ghost" onclick="adminFilter('pending')" id="filterPending">⏳ Pending</button>
-    <button class="btn btn-sm btn-ghost" onclick="adminFilter('premium')" id="filterPremium">👑 Premium</button>
-    <button class="btn btn-sm btn-ghost" onclick="adminFilter('free')" id="filterFree">👤 Free</button>
+  <p class="hint">Manage premium users, payments, and social orders.</p>
+  
+  <div style="display:flex;gap:6px;margin-bottom:14px">
+    <button class="btn btn-sm btn-primary" id="tabUsersBtn" onclick="switchAdminTab('users')">Users</button>
+    <button class="btn btn-sm btn-ghost" id="tabOrdersBtn" onclick="switchAdminTab('orders')">Social Orders</button>
   </div>
-  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
-    <button class="btn btn-sm btn-primary" onclick="adminActivateAllPending()">✅ Activate All Pending</button>
-    <button class="btn btn-sm btn-ghost" onclick="adminExportCSV()">📥 Export CSV</button>
-    <button class="btn btn-sm btn-ghost" onclick="adminWhatsAppAllPending()">💬 WhatsApp All</button>
+
+  <!-- USERS TAB -->
+  <div id="adminUsersTab">
+    <div id="adminStats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px"></div>
+    <div id="revenueChart" style="margin-bottom:14px"></div>
+    <input id="adminSearch" class="search-input" placeholder="🔍 Search email or name…" oninput="renderAdminList()">
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <button class="btn btn-sm btn-primary" onclick="adminFilter('all')" id="filterAll">All</button>
+      <button class="btn btn-sm btn-ghost" onclick="adminFilter('pending')" id="filterPending">⏳ Pending</button>
+      <button class="btn btn-sm btn-ghost" onclick="adminFilter('premium')" id="filterPremium">👑 Premium</button>
+    </div>
+    <div id="adminUsers" style="max-height:45vh;overflow-y:auto"></div>
   </div>
-  <details style="margin-bottom:14px;border:1px solid var(--stroke);border-radius:14px;padding:12px">
-    <summary style="cursor:pointer;font-weight:800;font-size:13px">💳 Payment History</summary>
-    <div id="paymentLog" style="margin-top:10px;max-height:200px;overflow-y:auto"></div>
-  </details>
-  <div id="adminUsers" style="max-height:45vh;overflow-y:auto"></div>
+
+  <!-- ORDERS TAB -->
+  <div id="adminOrdersTab" class="hidden">
+    <input id="orderSearch" class="search-input" placeholder="🔍 Search by email or service…" oninput="renderAdminOrders()">
+    <div id="adminOrders" style="max-height:50vh;overflow-y:auto"></div>
+  </div>
+
   <div class="row" style="margin-top:16px"><button class="btn btn-ghost" onclick="hide($('adminModal'));if(adminUnsub){adminUnsub();adminUnsub=null;}">Close</button></div>
 </div></div>
 <div id="palette" class="palette hidden"><div class="palette-box">
@@ -811,10 +892,19 @@ const firebaseConfig = {
   measurementId: "G-R9ZMPTJBLN"
 };
 
-/* ============================================================
-   PAYSTACK CONFIG
-   ============================================================ */
 const PAYSTACK_PUBLIC_KEY = "pk_test_abf6fedd61c621a1ddf13799be1efb23818d6ed2";
+
+/* ============================================================
+   SMM PANEL CONFIG (JAP Integration)
+   ============================================================ */
+const SMM_API_URL = "https://justanotherpanel.com/api/v2"; 
+const SMM_API_KEY = "56328e7270ccd578f4fcf6ba08c672e3"; // An saka naka a nan
+
+const SMM_SERVICES = {
+  followers: "5903", // ID din da ka samo na Followers
+  likes: "1001",     // Saka ID din Likes a nan idan ka samu
+  comments: "1002"   // Saka ID din Comments a nan idan ka samu
+};
 
 const ADMIN_EMAILS = ['alaminharuna29@gmail.com'];
 const USE_FIREBASE = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('YOUR_'));
@@ -833,10 +923,10 @@ if (USE_FIREBASE){
    CONSTANTS
    ============================================================ */
 const LS = {
-  session:'abhs.v12.session',
-  data: uid => 'abhs.v12.data.' + uid,
-  theme:'abhs.v12.theme',
-  sound:'abhs.v12.sound'
+  session:'abhs.v15.session',
+  data: uid => 'abhs.v15.data.' + uid,
+  theme:'abhs.v15.theme',
+  sound:'abhs.v15.sound'
 };
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
@@ -1216,11 +1306,14 @@ const NAV = [
     { id:'courses', icon:'📚', label:'Courses' },
     { id:'ai', icon:'🤖', label:'AI Tutor' }
   ]},
-  { group:'Islamic', items:[
+  { group:'Islamic & AI', items:[
     { id:'islamic', icon:'🕌', label:'Islamic Hub' },
     { id:'planner', icon:'🧠', label:'Study Planner' }
   ]},
-  { group:'Create', items:[{ id:'image', icon:'🖼️', label:'AI Image' }]},
+  { group:'Services', items:[
+    { id:'social', icon:'🚀', label:'Social Boost' },
+    { id:'image', icon:'🖼️', label:'AI Image' }
+  ]},
   { group:'Tools', items:[
     { id:'notes', icon:'📝', label:'Notes' },
     { id:'vocab', icon:'🌍', label:'Vocabulary' },
@@ -1313,12 +1406,12 @@ async function handleAuth(){
 
   try {
     if (!USE_FIREBASE){
-      const users = JSON.parse(localStorage.getItem('abhs.v12.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v15.users') || '{}');
       if (authMode === 'signup'){
         if (users[email]){ err.textContent = 'Email already registered.'; throw new Error('exists'); }
         const uid = 'local_' + Date.now();
         users[email] = { uid, email, name, pass: hashStr(email + '::' + pass) };
-        localStorage.setItem('abhs.v12.users', JSON.stringify(users));
+        localStorage.setItem('abhs.v15.users', JSON.stringify(users));
         await localLogin(uid, email, name);
       } else {
         const u = users[email];
@@ -1456,6 +1549,115 @@ function go(view){
 }
 
 /* ============================================================
+   SOCIAL BOOST LOGIC
+   ============================================================ */
+let currentOrder = null;
+
+function openOrderModal(title, price, type) {
+  if (!currentUser) { showAuth(); return; }
+  currentOrder = { title, price, type };
+  $('orderTitle').textContent = title + ' - ₦' + price;
+  $('orderLink').value = '';
+  $('orderComments').value = '';
+  
+  if (type === 'comments') {
+    show($('commentField'));
+  } else {
+    hide($('commentField'));
+  }
+  
+  show($('orderModal'));
+  setTimeout(() => $('orderLink').focus(), 100);
+}
+
+function payForOrder() {
+  const link = $('orderLink').value.trim();
+  const comments = $('orderComments').value.trim();
+  
+  if (!link) { toast('Please enter your username or link', 'error'); return; }
+  
+  currentOrder.link = link;
+  currentOrder.comments = comments;
+  
+  let handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,
+    email: currentUser.email,
+    amount: currentOrder.price * 100, 
+    currency: 'NGN',
+    ref: 'ABHS_ORD_' + Math.floor((Math.random() * 1000000000) + 1),
+    callback: function(response) {
+      hide($('orderModal'));
+      processSocialOrder(response.reference);
+    },
+    onClose: function() {
+      toast('Payment window closed.', 'info');
+    }
+  });
+  handler.openIframe();
+}
+
+async function processSocialOrder(ref) {
+  toast('Processing your order...', 'info');
+  
+  const orderData = {
+    uid: currentUser.uid,
+    email: currentUser.email,
+    name: currentUser.name,
+    service: currentOrder.title,
+    type: currentOrder.type,
+    price: currentOrder.price,
+    link: currentOrder.link,
+    comments: currentOrder.comments,
+    reference: ref,
+    status: 'Paid - Pending Delivery',
+    date: new Date().toISOString()
+  };
+
+  // 1. Save to Firebase
+  if (USE_FIREBASE && db) {
+    try {
+      await db.collection('orders').add(orderData);
+    } catch(e) { console.warn('Failed to save order:', e); }
+  }
+
+  // 2. Try to send to SMM Panel (JAP Integration)
+  if (SMM_API_KEY !== "YOUR_SMM_API_KEY_HERE") {
+    try {
+      const serviceId = SMM_SERVICES[currentOrder.type];
+      const formData = new URLSearchParams();
+      formData.append('key', SMM_API_KEY);
+      formData.append('action', 'add');
+      formData.append('service', serviceId);
+      formData.append('link', currentOrder.link);
+      formData.append('quantity', '100');
+      if (currentOrder.type === 'comments') formData.append('comments', currentOrder.comments);
+
+      const res = await fetch(SMM_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      });
+      const data = await res.json();
+      console.log('SMM API Response:', data);
+      
+      if (data.order) {
+        toast('✅ Order placed successfully! Delivery starting soon.');
+      } else {
+        toast('Order saved. Admin will process it manually.', 'info');
+      }
+    } catch (e) {
+      console.warn('SMM API Error:', e);
+      toast('Order saved. Admin will process it manually.', 'info');
+    }
+  } else {
+    toast('✅ Order submitted! Admin will process it shortly.');
+  }
+
+  burstConfetti(innerWidth/2, innerHeight*0.35, 100);
+  beep(880, 0.12, 'triangle');
+}
+
+/* ============================================================
    AI STUDY PLANNER
    ============================================================ */
 let plannerInit = false;
@@ -1542,7 +1744,6 @@ async function fetchQuran() {
   const surahNum = $('surahSelect').value;
   const container = $('quranContainer');
   
-  // Check Cache First
   const cachedData = localStorage.getItem('quran_cache_' + surahNum);
   if (cachedData) {
     renderQuranData(JSON.parse(cachedData));
@@ -2366,7 +2567,7 @@ async function saveProfile(){
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:12, exported:new Date().toISOString(),
+    app:'ABHS', version:15, exported:new Date().toISOString(),
     user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
@@ -2609,7 +2810,7 @@ function renderPremiumStatus(){
   box.innerHTML = '';
 }
 
-function payWithPaystack() {
+function payForPremium() {
   if (isPremium()) { toast('You already have Premium!', 'info'); return; }
   if (!currentUser) { showAuth(); return; }
   
@@ -2618,7 +2819,7 @@ function payWithPaystack() {
     email: currentUser.email,
     amount: PREMIUM_PRICE * 100, 
     currency: 'NGN',
-    ref: 'ABHS_' + Math.floor((Math.random() * 1000000000) + 1),
+    ref: 'ABHS_PREM_' + Math.floor((Math.random() * 1000000000) + 1),
     callback: function(response) {
       activatePremiumViaPaystack(response.reference);
     },
@@ -2767,6 +2968,19 @@ let adminAllUsers = [];
 let adminUnsub = null;
 let adminFilterMode = 'all';
 
+function switchAdminTab(tab) {
+  if (tab === 'users') {
+    show($('adminUsersTab')); hide($('adminOrdersTab'));
+    $('tabUsersBtn').className = 'btn btn-sm btn-primary';
+    $('tabOrdersBtn').className = 'btn btn-sm btn-ghost';
+  } else {
+    hide($('adminUsersTab')); show($('adminOrdersTab'));
+    $('tabUsersBtn').className = 'btn btn-sm btn-ghost';
+    $('tabOrdersBtn').className = 'btn btn-sm btn-primary';
+    renderAdminOrders();
+  }
+}
+
 async function openAdmin(){
   if (!isAdminEmail(currentUser.email)){
     toast('Access denied. Only alaminharuna29@gmail.com.', 'error');
@@ -2841,10 +3055,48 @@ async function renderAdmin(){
   }
   renderAdminStats();
   renderRevenueChart();
-  renderPaymentLog();
   renderAdminList();
   const pendingCount = adminAllUsers.filter(u => u.pending).length;
   updateAdminBadge(pendingCount);
+}
+
+async function renderAdminOrders() {
+  const box = $('adminOrders');
+  if (!box) return;
+  box.innerHTML = '<div class="empty"><p>Loading orders…</p></div>';
+  try {
+    const snap = await db.collection('orders').orderBy('date', 'desc').limit(50).get();
+    const q = ($('orderSearch').value || '').toLowerCase();
+    let html = '';
+    let count = 0;
+    snap.forEach(doc => {
+      const o = doc.data();
+      if (q && !o.email.toLowerCase().includes(q) && !o.service.toLowerCase().includes(q)) return;
+      count++;
+      html += `<div class="arow">
+        <div class="ainfo">
+          <b>${esc(o.service)} - ₦${o.price}</b>
+          <small>${esc(o.email)}</small>
+          <small>Link: ${esc(o.link)}</small>
+          <small>Status: <span style="color:var(--lime)">${esc(o.status)}</span></small>
+        </div>
+        <div class="aacts">
+           <button class="act" onclick="markOrderComplete('${doc.id}')">Mark Done</button>
+        </div>
+      </div>`;
+    });
+    box.innerHTML = count ? html : '<div class="empty"><p>No orders found.</p></div>';
+  } catch(e) {
+    box.innerHTML = '<div class="empty"><p>Failed to load orders.</p></div>';
+  }
+}
+
+async function markOrderComplete(id) {
+  try {
+    await db.collection('orders').doc(id).update({ status: 'Completed' });
+    toast('Order marked as completed');
+    renderAdminOrders();
+  } catch(e) { toast('Failed to update', 'error'); }
 }
 
 function renderAdminStats(){
@@ -2905,31 +3157,6 @@ function renderRevenueChart(){
           '<div style="font-size:10px;color:var(--dim);font-weight:700">' + m.label + '</div></div>';
       }).join('') +
       '</div></div>';
-}
-
-function renderPaymentLog(){
-  const box = $('paymentLog'); if (!box) return;
-  const paid = adminAllUsers
-    .filter(u => u.activatedAt)
-    .sort((a, b) => new Date(b.activatedAt) - new Date(a.activatedAt))
-    .slice(0, 30);
-  if (!paid.length){
-    box.innerHTML = '<p style="color:var(--dim);font-size:12px;text-align:center">No payments yet.</p>';
-    return;
-  }
-  box.innerHTML = paid.map(u => {
-    const when = new Date(u.activatedAt).toLocaleDateString();
-    const time = new Date(u.activatedAt).toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-    return '<div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--stroke);font-size:12px">' +
-      '<div style="flex:1;overflow:hidden">' +
-        '<div style="font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + esc(u.name) + '</div>' +
-        '<div style="color:var(--dim);font-size:10.5px">' + esc(u.email) + '</div>' +
-      '</div>' +
-      '<div style="text-align:right;flex-shrink:0">' +
-        '<div style="color:var(--lime);font-weight:800">₦' + PREMIUM_PRICE + '</div>' +
-        '<div style="color:var(--dim);font-size:10px">' + when + ' ' + time + '</div>' +
-      '</div></div>';
-  }).join('');
 }
 
 function renderAdminList(){
@@ -3051,68 +3278,6 @@ async function adminClear(uid){
   }
 }
 
-async function adminActivateAllPending(){
-  const pending = adminAllUsers.filter(u => u.pending);
-  if (!pending.length){ toast('No pending payments', 'info'); return; }
-  const ok = await askConfirm('Activate All?', 'Activate premium for ' + pending.length + ' pending users?', 'Activate All', false);
-  if (!ok) return;
-  let success = 0;
-  for (const u of pending){
-    try {
-      await db.collection('users').doc(u.uid).update({
-        premium: {
-          active: true,
-          activatedAt: new Date().toISOString(),
-          expiresAt: new Date(Date.now() + PREMIUM_DAYS * 86400000).toISOString(),
-          method: 'admin'
-        },
-        pendingPayment: null
-      });
-      success++;
-    } catch(e){ console.warn('Failed:', u.email, e); }
-  }
-  toast('✅ Activated ' + success + ' users!');
-  await renderAdmin();
-}
-
-function adminExportCSV(){
-  if (!adminAllUsers.length){ toast('No users to export', 'error'); return; }
-  const rows = [['Name', 'Email', 'Status', 'Activated At', 'Expires At', 'Method', 'Pending Ref']];
-  adminAllUsers.forEach(u => {
-    const expired = u.expires && new Date(u.expires) < new Date();
-    const status = u.premium && !expired ? 'Premium' : (u.premium && expired) ? 'Expired' : 'Free';
-    rows.push([
-      u.name, u.email, status,
-      u.activatedAt ? new Date(u.activatedAt).toLocaleString() : '',
-      u.expires ? new Date(u.expires).toLocaleString() : '',
-      u.method || '',
-      u.pending ? u.pending.ref : ''
-    ]);
-  });
-  const csv = rows.map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(',')).join('\n');
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'abhs-users-' + todayKey() + '.csv';
-  a.click();
-  URL.revokeObjectURL(url);
-  toast('✅ CSV downloaded!');
-}
-
-function adminWhatsAppAllPending(){
-  const pending = adminAllUsers.filter(u => u.pending);
-  if (!pending.length){ toast('No pending payments', 'info'); return; }
-  const list = pending.map(u =>
-    '• ' + u.name + ' — ' + u.email + ' (Ref: ' + u.pending.ref + ')'
-  ).join('\n');
-  const msg = encodeURIComponent(
-    'Hello Alamin! Here are all PENDING payments:\n\n' + list +
-    '\n\nTotal: ' + pending.length + ' pending × ₦' + PREMIUM_PRICE + ' = ₦' + (pending.length * PREMIUM_PRICE)
-  );
-  window.open('https://wa.me/' + PAYMENT_PHONE + '?text=' + msg, '_blank');
-}
-
 /* ============================================================
    GLOBAL EVENTS
    ============================================================ */
@@ -3122,6 +3287,7 @@ document.addEventListener('keydown', e => {
     else if (!$('quizModal').classList.contains('hidden')) closeQuiz();
     else if (!$('paymentModal').classList.contains('hidden')) hide($('paymentModal'));
     else if (!$('activationModal').classList.contains('hidden')) hide($('activationModal'));
+    else if (!$('orderModal').classList.contains('hidden')) hide($('orderModal'));
     else if (!$('adminModal').classList.contains('hidden')){ hide($('adminModal')); if (adminUnsub){ adminUnsub(); adminUnsub = null; } }
     else if (!$('confirmModal').classList.contains('hidden')) $('confirmCancel').click();
     else if (!$('drawer').classList.contains('hidden')) closeDrawer();
@@ -3131,6 +3297,7 @@ document.addEventListener('keydown', e => {
 $('quizModal').addEventListener('click', e => { if (e.target.id === 'quizModal') closeQuiz(); });
 $('paymentModal').addEventListener('click', e => { if (e.target.id === 'paymentModal') hide($('paymentModal')); });
 $('activationModal').addEventListener('click', e => { if (e.target.id === 'activationModal') hide($('activationModal')); });
+$('orderModal').addEventListener('click', e => { if (e.target.id === 'orderModal') hide($('orderModal')); });
 $('adminModal').addEventListener('click', e => {
   if (e.target.id === 'adminModal'){
     hide($('adminModal'));
@@ -3168,7 +3335,7 @@ async function init(){
   if (!USE_FIREBASE){
     const sessionUid = localStorage.getItem(LS.session);
     if (sessionUid){
-      const users = JSON.parse(localStorage.getItem('abhs.v12.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v15.users') || '{}');
       const found = Object.values(users).find(u => u.uid === sessionUid);
       if (found){
         currentUser = { uid: found.uid, email: found.email, name: found.name };

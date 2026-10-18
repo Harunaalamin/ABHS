@@ -9,10 +9,10 @@
 <title>ABHS · ALAMIN B HARUN SPECIAL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v10.0 · PAYSTACK EDITION
+   ABHS v11.0 · ISLAMIC EDITION
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
@@ -321,6 +321,20 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .admin-stat .ico{font-size:20px;margin-bottom:4px}
 .admin-stat .val{font-size:18px;font-weight:900}
 .admin-stat .lbl{font-size:10px;color:var(--dim);font-weight:700;letter-spacing:.5px}
+
+/* ISLAMIC HUB STYLES */
+.arabic-text { font-family: 'Amiri', serif; font-size: 26px; line-height: 2; text-align: right; direction: rtl; color: var(--amber); margin-bottom: 10px; }
+.translation-text { font-size: 15px; line-height: 1.7; margin-bottom: 14px; color: var(--txt); }
+.hausa-text { font-size: 14px; line-height: 1.7; color: var(--cyan); font-style: italic; margin-bottom: 14px; }
+.ayah-card { background: var(--panel); border: 1px solid var(--stroke); border-radius: 16px; padding: 18px; margin-bottom: 14px; }
+.ayah-card:hover { border-color: var(--stroke-2); }
+.hadith-card { background: var(--panel); border: 1px solid var(--stroke); border-radius: 16px; padding: 18px; margin-bottom: 14px; }
+.hadith-card .hadith-text { font-size: 15px; line-height: 1.7; color: var(--txt); }
+.hadith-card .hadith-arabic { font-family: 'Amiri', serif; font-size: 22px; line-height: 1.8; text-align: right; direction: rtl; color: var(--amber); margin-bottom: 10px; }
+.book-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.book-btn { padding: 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--stroke); font-weight: 700; text-align: center; cursor: pointer; transition: all .2s; }
+.book-btn:hover { border-color: var(--cyan); }
+.book-btn.active { background: var(--grad-soft); border-color: var(--cyan); color: var(--cyan); }
 </style>
 </head>
 <body>
@@ -388,7 +402,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="orb"></div>
     <span class="chip">Sabuwar Duniyar Ilimi · A New Learning Universe</span>
     <h1>ALAMIN B HARUN<br><span class="grad-text">SPECIAL</span></h1>
-    <p>Learn smarter. Think deeper. Achieve more.<br>AI tutoring, image generation, exams, notes, flashcards, focus and real progress.</p>
+    <p>Learn smarter. Think deeper. Achieve more.<br>AI tutoring, Islamic studies, exams, notes, flashcards, focus and real progress.</p>
     <div class="row">
       <button class="btn btn-primary" onclick="go('dashboard')">Get Started →</button>
       <button class="btn btn-gold" onclick="go('premium')">👑 Go Premium</button>
@@ -404,14 +418,53 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="head"><h2>Your <span class="grad-text">Learning Universe</span></h2><p>Real tools. Real learning. Real progress.</p></div>
     <div class="grid">
       <div class="card tilt"><span class="icon">🤖</span><h3>AI Tutor</h3><p>Ask anything on any subject in your language.</p><button class="card-btn" onclick="go('ai')">Chat Now →</button></div>
+      <div class="card tilt"><span class="icon">🕌</span><h3>Islamic Hub</h3><p>Quran (Hausa/English) and Hadith collections.</p><button class="card-btn" onclick="go('islamic')">Open →</button></div>
       <div class="card tilt"><span class="icon">🖼️</span><h3>AI Image Studio</h3><p>Describe a scene and watch AI paint it.</p><button class="card-btn" onclick="go('image')">Create →</button></div>
       <div class="card tilt"><span class="icon">📝</span><h3>Smart Notes</h3><p>Write, pin, search. Everything auto-saves.</p><button class="card-btn" onclick="go('notes')">Open Notes →</button></div>
       <div class="card tilt"><span class="icon">🎓</span><h3>Exams</h3><p>Real quizzes with instant scoring and XP.</p><button class="card-btn" onclick="openQuiz()">Start Quiz →</button></div>
       <div class="card tilt"><span class="icon">🃏</span><h3>Flashcards</h3><p>Flip, shuffle and master new words.</p><button class="card-btn" onclick="go('flashcards')">Study →</button></div>
       <div class="card tilt"><span class="icon">⏱️</span><h3>Focus Timer</h3><p>Pomodoro sessions to build focus.</p><button class="card-btn" onclick="go('focus')">Focus →</button></div>
-      <div class="card tilt"><span class="icon">🎨</span><h3>6 Themes</h3><p>Aurora, Midnight, Ocean, Sunset, Forest, Light.</p><button class="card-btn" onclick="go('settings')">Change →</button></div>
       <div class="card tilt"><span class="icon">👑</span><h3>Go Premium</h3><p>Unlimited everything for ₦500/year.</p><button class="card-btn" onclick="go('premium')">Upgrade →</button></div>
     </div>
+  </div>
+</section>
+
+<section id="view-islamic" class="view hidden">
+  <div class="wrap" style="max-width:900px">
+    <div class="head"><h2>🕌 Islamic Hub</h2><p>Alkur'ani Mai Tsarki da Hadisai Sahihai.</p></div>
+    
+    <div class="book-selector">
+      <div class="book-btn active" onclick="openIslamicTab('quran', this)">📖 Alkur'ani</div>
+      <div class="book-btn" onclick="openIslamicTab('bukhari', this)">📜 Sahihul Bukhari</div>
+      <div class="book-btn" onclick="openIslamicTab('muslim', this)">📜 Sahihul Muslim</div>
+    </div>
+
+    <!-- QURAN TAB -->
+    <div id="islamicQuranTab">
+      <div class="row" style="margin-bottom:14px">
+        <select id="surahSelect" class="search-input" style="margin:0;flex:1" onchange="fetchQuran()"></select>
+      </div>
+      <div id="quranContainer" class="empty">
+        <span class="em">📖</span><p>Zaɓi Surah a sama don karantawa.</p>
+      </div>
+    </div>
+
+    <!-- HADITH TAB -->
+    <div id="islamicHadithTab" class="hidden">
+      <div class="row" style="margin-bottom:14px">
+        <select id="hadithBookSelect" class="search-input" style="margin:0;flex:1" onchange="fetchHadith()">
+          <option value="bukhari">Sahihul Bukhari</option>
+          <option value="muslim">Sahihul Muslim</option>
+        </select>
+      </div>
+      <div id="hadithContainer" class="empty">
+        <span class="em">📜</span><p>Zaɓi littafi a sama don karanta Hadisi.</p>
+      </div>
+      <div class="row" style="justify-content:center;margin-top:14px">
+         <button class="btn btn-primary btn-sm" onclick="fetchHadith()">🔄 Nemo Wani Hadisi</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -582,7 +635,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="prem-hero"><div class="crown">👑</div><h1>ABHS <span class="grad-text">Premium</span></h1><p>Unlimited learning for ₦500/year.</p></div>
     <div id="premiumStatusBox"></div>
     
-    <!-- PAYSTACK AUTOMATED PAYMENT -->
     <button class="btn btn-gold" style="width:100%;margin-bottom:16px;font-size:16px;padding:16px" onclick="payWithPaystack()" id="paystackBtn">
       💳 Pay ₦500 with Card / Transfer (Instant)
     </button>
@@ -645,14 +697,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 10.0 · Paystack Edition<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 11.0 · Islamic Edition<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
 
 <footer class="foot">
   <strong>ABHS · ALAMIN B HARUN SPECIAL</strong><br>Learn Smarter. Think Deeper. Achieve More.<br>
-  <div class="links"><span onclick="go('courses')">Courses</span><span onclick="go('image')">Image</span><span onclick="go('premium')">Premium</span><span onclick="go('settings')">Settings</span></div>
+  <div class="links"><span onclick="go('islamic')">Islamic Hub</span><span onclick="go('courses')">Courses</span><span onclick="go('image')">Image</span><span onclick="go('premium')">Premium</span><span onclick="go('settings')">Settings</span></div>
   <small>© <span id="year"></span> ABHS. All rights reserved.</small>
 </footer>
 </div>
@@ -661,8 +713,8 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 <nav class="dock">
   <button class="dock-btn" data-nav="home" onclick="go('home')"><i>🏠</i>Home</button>
   <button class="dock-btn" data-nav="courses" onclick="go('courses')"><i>📚</i>Learn</button>
+  <button class="dock-btn" data-nav="islamic" onclick="go('islamic')"><i>🕌</i>Islamic</button>
   <button class="dock-btn" data-nav="ai" onclick="go('ai')"><i>🤖</i>AI</button>
-  <button class="dock-btn" data-nav="image" onclick="go('image')"><i>🖼️</i>Image</button>
   <button class="dock-btn" onclick="openDrawer()"><i>☰</i>More</button>
 </nav>
 
@@ -717,7 +769,6 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 </div></div>
 <div class="toast-host" id="toastHost"></div>
 
-<!-- PAYSTACK SCRIPT -->
 <script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -761,10 +812,10 @@ if (USE_FIREBASE){
    CONSTANTS
    ============================================================ */
 const LS = {
-  session:'abhs.v10.session',
-  data: uid => 'abhs.v10.data.' + uid,
-  theme:'abhs.v10.theme',
-  sound:'abhs.v10.sound'
+  session:'abhs.v11.session',
+  data: uid => 'abhs.v11.data.' + uid,
+  theme:'abhs.v11.theme',
+  sound:'abhs.v11.sound'
 };
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
@@ -1144,6 +1195,9 @@ const NAV = [
     { id:'courses', icon:'📚', label:'Courses' },
     { id:'ai', icon:'🤖', label:'AI Tutor' }
   ]},
+  { group:'Islamic', items:[
+    { id:'islamic', icon:'🕌', label:'Islamic Hub' }
+  ]},
   { group:'Create', items:[{ id:'image', icon:'🖼️', label:'AI Image' }]},
   { group:'Tools', items:[
     { id:'notes', icon:'📝', label:'Notes' },
@@ -1237,12 +1291,12 @@ async function handleAuth(){
 
   try {
     if (!USE_FIREBASE){
-      const users = JSON.parse(localStorage.getItem('abhs.v10.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v11.users') || '{}');
       if (authMode === 'signup'){
         if (users[email]){ err.textContent = 'Email already registered.'; throw new Error('exists'); }
         const uid = 'local_' + Date.now();
         users[email] = { uid, email, name, pass: hashStr(email + '::' + pass) };
-        localStorage.setItem('abhs.v10.users', JSON.stringify(users));
+        localStorage.setItem('abhs.v11.users', JSON.stringify(users));
         await localLogin(uid, email, name);
       } else {
         const u = users[email];
@@ -1371,9 +1425,107 @@ function go(view){
   if (view === 'home')         refreshHome();
   if (view === 'premium')      renderPremiumStatus();
   if (view === 'image')        renderImageGrid();
+  if (view === 'islamic')      initIslamicHub();
   if (view === 'ai'){
     const lbl = $('langLabel'); if (lbl) lbl.textContent = langLabel(currentLang());
     setTimeout(() => $('chatInput').focus(), 250);
+  }
+}
+
+/* ============================================================
+   ISLAMIC HUB LOGIC
+   ============================================================ */
+let islamicInitialized = false;
+
+async function initIslamicHub() {
+  if (islamicInitialized) return;
+  islamicInitialized = true;
+  
+  // Populate Surah list
+  const surahSelect = $('surahSelect');
+  if (surahSelect.options.length === 0) {
+    try {
+      const res = await fetch('https://api.alquran.cloud/v1/surah');
+      const data = await res.json();
+      data.data.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.number;
+        opt.textContent = s.number + '. ' + s.name + ' (' + s.englishName + ')';
+        surahSelect.appendChild(opt);
+      });
+      // Automatically fetch first surah
+      fetchQuran();
+    } catch(e) {
+      toast('Could not load Surah list.', 'error');
+    }
+  }
+}
+
+function openIslamicTab(tab, btn) {
+  $$('.book-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  if (tab === 'quran') {
+    show($('islamicQuranTab'));
+    hide($('islamicHadithTab'));
+  } else {
+    hide($('islamicQuranTab'));
+    show($('islamicHadithTab'));
+    $('hadithBookSelect').value = tab;
+    fetchHadith();
+  }
+}
+
+async function fetchQuran() {
+  const surahNum = $('surahSelect').value;
+  const container = $('quranContainer');
+  container.innerHTML = '<div class="empty"><p>Loading Ayahs…</p></div>';
+  container.classList.remove('empty');
+  
+  try {
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih,ha.gumi`);
+    const data = await res.json();
+    const arabic = data.data[0].ayahs;
+    const english = data.data[1].ayahs;
+    const hausa = data.data[2].ayahs;
+    
+    let html = '';
+    for (let i = 0; i < arabic.length; i++) {
+      html += `<div class="ayah-card">
+        <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Ayah ${arabic[i].numberInSurah}</div>
+        <div class="arabic-text">${arabic[i].text}</div>
+        <div class="translation-text">${esc(english[i].text)}</div>
+        <div class="hausa-text">${esc(hausa[i].text)}</div>
+      </div>`;
+    }
+    container.innerHTML = html;
+  } catch(e) {
+    container.innerHTML = '<div class="empty"><p style="color:#fda4af">Failed to load Quran. Check internet.</p></div>';
+  }
+}
+
+async function fetchHadith() {
+  const book = $('hadithBookSelect').value;
+  const container = $('hadithContainer');
+  container.innerHTML = '<div class="empty"><p>Loading Hadith…</p></div>';
+  container.classList.remove('empty');
+  
+  try {
+    // Using random hadith generator API for Arabic and English
+    const res = await fetch(`https://random-hadith-generator.vercel.app/${book}`);
+    const data = await res.json();
+    
+    let html = `
+      <div class="hadith-card">
+        <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Hadith from Sahih ${book === 'bukhari' ? 'Al-Bukhari' : 'Muslim'}</div>
+        <div class="hadith-arabic">${data.data.hadith_arabic}</div>
+        <div class="hadith-text">${esc(data.data.hadith_english)}</div>
+        <div style="font-size:12px;font-weight:700;color:var(--cyan);margin-top:10px;">${esc(data.data.header)}</div>
+      </div>
+    `;
+    container.innerHTML = html;
+  } catch(e) {
+    container.innerHTML = '<div class="empty"><p style="color:#fda4af">Failed to load Hadith. Check internet.</p></div>';
   }
 }
 
@@ -2110,7 +2262,7 @@ async function saveProfile(){
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:10, exported:new Date().toISOString(),
+    app:'ABHS', version:11, exported:new Date().toISOString(),
     user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
@@ -2916,7 +3068,7 @@ async function init(){
   if (!USE_FIREBASE){
     const sessionUid = localStorage.getItem(LS.session);
     if (sessionUid){
-      const users = JSON.parse(localStorage.getItem('abhs.v10.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v11.users') || '{}');
       const found = Object.values(users).find(u => u.uid === sessionUid);
       if (found){
         currentUser = { uid: found.uid, email: found.email, name: found.name };

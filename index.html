@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v8.0 · ULTIMATE EDITION
+   ABHS v10.0 · PAYSTACK EDITION
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
@@ -581,8 +581,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   <div class="wrap" style="max-width:640px">
     <div class="prem-hero"><div class="crown">👑</div><h1>ABHS <span class="grad-text">Premium</span></h1><p>Unlimited learning for ₦500/year.</p></div>
     <div id="premiumStatusBox"></div>
+    
+    <!-- PAYSTACK AUTOMATED PAYMENT -->
+    <button class="btn btn-gold" style="width:100%;margin-bottom:16px;font-size:16px;padding:16px" onclick="payWithPaystack()" id="paystackBtn">
+      💳 Pay ₦500 with Card / Transfer (Instant)
+    </button>
+
     <div class="bank">
-      <h3>💳 Payment Details</h3>
+      <h3>💳 Or Pay Manually</h3>
       <div class="brow"><span>Bank</span><b id="bankName">OPay</b></div>
       <div class="brow"><span>Account</span><div><b id="bankAcc">9129290984</b> <button class="copy" onclick="copyText('9129290984','Account')">Copy</button></div></div>
       <div class="brow"><span>Name</span><b id="bankOwner">Alamin Haruna</b></div>
@@ -596,7 +602,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <li>Priority support</li>
       <li>All future features</li>
     </ul></div>
-    <div class="steps"><h3>How to activate</h3><ol>
+    <div class="steps"><h3>How to activate manually</h3><ol>
       <li>Send ₦500 to OPay above</li>
       <li>Save the reference number</li>
       <li>Click "I've Paid" below</li>
@@ -605,8 +611,8 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <li>Enter code to unlock</li>
     </ol></div>
     <div style="display:flex;flex-direction:column;gap:10px">
-      <button class="btn btn-primary" onclick="openPaymentFlow()">💳 I've Paid — Submit Reference</button>
-      <button class="btn btn-ghost" onclick="openActivation()">🔑 I have a code</button>
+      <button class="btn btn-primary" onclick="openPaymentFlow()">💳 I've Paid Manually — Submit Reference</button>
+      <button class="btn btn-ghost" onclick="openActivation()">🔑 I have an activation code</button>
       <button class="btn btn-ghost" onclick="openWhatsApp()">💬 Contact on WhatsApp</button>
     </div>
   </div>
@@ -639,7 +645,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 8.0 · Ultimate Edition<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 10.0 · Paystack Edition<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
@@ -670,7 +676,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   <div class="row"><button class="btn btn-danger" id="confirmOk">Confirm</button><button class="btn btn-ghost" id="confirmCancel">Cancel</button></div>
 </div></div>
 <div id="paymentModal" class="overlay hidden"><div class="modal" style="max-width:460px">
-  <h2>💳 Confirm Payment</h2>
+  <h2>💳 Confirm Manual Payment</h2>
   <p class="hint">Enter the transaction reference. Alamin will verify and send you an activation code.</p>
   <div class="field"><label>Reference</label><input id="payRefInput" type="text" placeholder="e.g. 2025011512345678"></div>
   <div class="row"><button class="btn btn-primary" onclick="submitPayment()">Submit</button><button class="btn btn-ghost" onclick="hide($('paymentModal'))">Cancel</button></div>
@@ -711,6 +717,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 </div></div>
 <div class="toast-host" id="toastHost"></div>
 
+<!-- PAYSTACK SCRIPT -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
@@ -730,6 +739,11 @@ const firebaseConfig = {
   measurementId: "G-R9ZMPTJBLN"
 };
 
+/* ============================================================
+   PAYSTACK CONFIG
+   ============================================================ */
+const PAYSTACK_PUBLIC_KEY = "pk_test_abf6fedd61c621a1ddf13799be1efb23818d6ed2";
+
 const ADMIN_EMAILS = ['alaminharuna29@gmail.com'];
 const USE_FIREBASE = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('YOUR_'));
 
@@ -747,10 +761,10 @@ if (USE_FIREBASE){
    CONSTANTS
    ============================================================ */
 const LS = {
-  session:'abhs.v8.session',
-  data: uid => 'abhs.v8.data.' + uid,
-  theme:'abhs.v8.theme',
-  sound:'abhs.v8.sound'
+  session:'abhs.v10.session',
+  data: uid => 'abhs.v10.data.' + uid,
+  theme:'abhs.v10.theme',
+  sound:'abhs.v10.sound'
 };
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
@@ -1223,12 +1237,12 @@ async function handleAuth(){
 
   try {
     if (!USE_FIREBASE){
-      const users = JSON.parse(localStorage.getItem('abhs.v8.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v10.users') || '{}');
       if (authMode === 'signup'){
         if (users[email]){ err.textContent = 'Email already registered.'; throw new Error('exists'); }
         const uid = 'local_' + Date.now();
         users[email] = { uid, email, name, pass: hashStr(email + '::' + pass) };
-        localStorage.setItem('abhs.v8.users', JSON.stringify(users));
+        localStorage.setItem('abhs.v10.users', JSON.stringify(users));
         await localLogin(uid, email, name);
       } else {
         const u = users[email];
@@ -2096,7 +2110,7 @@ async function saveProfile(){
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:8, exported:new Date().toISOString(),
+    app:'ABHS', version:10, exported:new Date().toISOString(),
     user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
@@ -2294,7 +2308,7 @@ async function clearImageHistory(){
 }
 
 /* ============================================================
-   PREMIUM
+   PREMIUM & PAYSTACK
    ============================================================ */
 function isPremium(){
   const d = getData();
@@ -2320,12 +2334,16 @@ function renderPremiumStatus(){
   $('bankName').textContent = ACCOUNT_BANK;
   $('bankAcc').textContent = ACCOUNT_NUMBER;
   $('bankOwner').textContent = ACCOUNT_NAME;
+  
   if (d.premium && d.premium.active && d.premium.expiresAt && new Date(d.premium.expiresAt) > new Date()){
     box.innerHTML = '<div class="pstatus active"><span class="em">👑</span>' +
       '<div><div>Premium Active</div><small style="color:var(--dim);font-weight:500">Until ' +
       new Date(d.premium.expiresAt).toLocaleDateString() + '</small></div></div>';
+    if ($('paystackBtn')) $('paystackBtn').style.display = 'none';
     return;
   }
+  if ($('paystackBtn')) $('paystackBtn').style.display = 'block';
+
   if (d.pendingPayment){
     box.innerHTML = '<div class="pstatus pending"><span class="em">⏳</span>' +
       '<div><div>Pending Verification</div><small style="color:var(--dim);font-weight:500">Ref: ' +
@@ -2334,6 +2352,63 @@ function renderPremiumStatus(){
   }
   box.innerHTML = '';
 }
+
+// TRIGGER PAYSTACK
+function payWithPaystack() {
+  if (isPremium()) { toast('You already have Premium!', 'info'); return; }
+  if (!currentUser) { showAuth(); return; }
+  
+  let handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,
+    email: currentUser.email,
+    amount: PREMIUM_PRICE * 100, // Paystack uses kobo
+    currency: 'NGN',
+    ref: 'ABHS_' + Math.floor((Math.random() * 1000000000) + 1),
+    callback: function(response) {
+      // Payment successful
+      activatePremiumViaPaystack(response.reference);
+    },
+    onClose: function() {
+      toast('Payment window closed.', 'info');
+    }
+  });
+  handler.openIframe();
+}
+
+// ACTIVATE PREMIUM AFTER PAYSTACK SUCCESS
+async function activatePremiumViaPaystack(ref) {
+  const d = getData();
+  d.premium = {
+    active: true,
+    activatedAt: new Date().toISOString(),
+    expiresAt: new Date(Date.now() + PREMIUM_DAYS * 86400000).toISOString(),
+    method: 'paystack',
+    reference: ref
+  };
+  d.pendingPayment = null;
+  d.xp = (d.xp || 0) + XP.premium;
+  saveData(d);
+  
+  if (USE_FIREBASE && db) {
+    try {
+      await db.collection('users').doc(currentUser.uid).update({
+        premium: d.premium,
+        pendingPayment: null
+      });
+    } catch(e) { console.warn('Failed to sync Paystack premium:', e); }
+  }
+  
+  checkAchievements(d);
+  toast('🎉 Payment successful! Premium activated.');
+  burstConfetti(innerWidth/2, innerHeight*0.35, 200);
+  beep(920, 0.15, 'triangle');
+  setTimeout(() => beep(1180, 0.2, 'triangle'), 180);
+  updatePremiumPill();
+  refreshAll();
+  go('dashboard');
+}
+
+// MANUAL FLOW
 function openPaymentFlow(){
   if (isPremium()){ toast('Already Premium 👑', 'info'); return; }
   $('payRefInput').value = '';
@@ -2830,7 +2905,6 @@ async function init(){
   initImageStyles();
   syncDrawerBtn();
 
-  // Splash Screen Logic
   setTimeout(() => {
     const splash = $('splashScreen');
     if(splash) {
@@ -2842,7 +2916,7 @@ async function init(){
   if (!USE_FIREBASE){
     const sessionUid = localStorage.getItem(LS.session);
     if (sessionUid){
-      const users = JSON.parse(localStorage.getItem('abhs.v8.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v10.users') || '{}');
       const found = Object.values(users).find(u => u.uid === sessionUid);
       if (found){
         currentUser = { uid: found.uid, email: found.email, name: found.name };

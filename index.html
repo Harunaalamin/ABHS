@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v11.0 · ISLAMIC EDITION
+   ABHS v11.1 · ISLAMIC EDITION (Fixed Hadith API)
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
@@ -697,7 +697,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 11.0 · Islamic Edition<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 11.1 · Islamic Edition (Fixed)<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
@@ -1433,7 +1433,7 @@ function go(view){
 }
 
 /* ============================================================
-   ISLAMIC HUB LOGIC
+   ISLAMIC HUB LOGIC (UPDATED)
    ============================================================ */
 let islamicInitialized = false;
 
@@ -1441,7 +1441,6 @@ async function initIslamicHub() {
   if (islamicInitialized) return;
   islamicInitialized = true;
   
-  // Populate Surah list
   const surahSelect = $('surahSelect');
   if (surahSelect.options.length === 0) {
     try {
@@ -1453,7 +1452,6 @@ async function initIslamicHub() {
         opt.textContent = s.number + '. ' + s.name + ' (' + s.englishName + ')';
         surahSelect.appendChild(opt);
       });
-      // Automatically fetch first surah
       fetchQuran();
     } catch(e) {
       toast('Could not load Surah list.', 'error');
@@ -1504,28 +1502,43 @@ async function fetchQuran() {
   }
 }
 
+// UPDATED: NEW HADITH API (jsDelivr CDN)
 async function fetchHadith() {
-  const book = $('hadithBookSelect').value;
+  const book = $('hadithBookSelect').value; // 'bukhari' or 'muslim'
   const container = $('hadithContainer');
   container.innerHTML = '<div class="empty"><p>Loading Hadith…</p></div>';
   container.classList.remove('empty');
   
+  // Bukhari & Muslim both have over 5000 Hadiths. Generate random number.
+  const randomNum = Math.floor(Math.random() * 5000) + 1;
+  
   try {
-    // Using random hadith generator API for Arabic and English
-    const res = await fetch(`https://random-hadith-generator.vercel.app/${book}`);
-    const data = await res.json();
-    
+    // Fetch English and Arabic in parallel
+    const [resEng, resAra] = await Promise.all([
+      fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-${book}/${randomNum}.json`),
+      fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-${book}/${randomNum}.json`)
+    ]);
+
+    if (!resEng.ok || !resAra.ok) throw new Error('Not found');
+
+    const dataEng = await resEng.json();
+    const dataAra = await resAra.json();
+
+    const englishText = dataEng.hadiths[0].text;
+    const arabicText = dataAra.hadiths[0].text;
+    const hadithNumber = dataEng.hadiths[0].hadithnumber;
+
     let html = `
       <div class="hadith-card">
-        <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Hadith from Sahih ${book === 'bukhari' ? 'Al-Bukhari' : 'Muslim'}</div>
-        <div class="hadith-arabic">${data.data.hadith_arabic}</div>
-        <div class="hadith-text">${esc(data.data.hadith_english)}</div>
-        <div style="font-size:12px;font-weight:700;color:var(--cyan);margin-top:10px;">${esc(data.data.header)}</div>
+        <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Hadith #${hadithNumber} - Sahih ${book === 'bukhari' ? 'Al-Bukhari' : 'Muslim'}</div>
+        <div class="hadith-arabic">${arabicText}</div>
+        <div class="hadith-text">${esc(englishText)}</div>
       </div>
     `;
     container.innerHTML = html;
   } catch(e) {
-    container.innerHTML = '<div class="empty"><p style="color:#fda4af">Failed to load Hadith. Check internet.</p></div>';
+    console.error(e);
+    container.innerHTML = '<div class="empty"><p style="color:#fda4af">Hadith not found. Please try again.</p></div>';
   }
 }
 

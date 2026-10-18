@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ABHS v11.1 · ISLAMIC EDITION (Fixed Hadith API)
+   ABHS v12.0 · ULTIMATE EDITION
    ============================================================ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#05060f;--bg-2:#080b1a;--panel:rgba(15,20,40,.72);--panel-solid:#0e1329;--panel-2:rgba(22,28,55,.85);--field:rgba(9,13,30,.85);--stroke:rgba(140,170,255,.13);--stroke-2:rgba(140,170,255,.38);--txt:#eef2ff;--dim:#98a5c6;--cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--pink:#ec4899;--lime:#a3e635;--amber:#fbbf24;--rose:#fb7185;--grad:linear-gradient(135deg,#22d3ee 0%,#6366f1 48%,#d946ef 100%);--grad-soft:linear-gradient(135deg,rgba(34,211,238,.16),rgba(217,70,239,.16));--grad-gold:linear-gradient(135deg,#fbbf24,#f97316,#ef4444);--txt-grad:linear-gradient(100deg,#22d3ee,#818cf8 35%,#c084fc 65%,#f472b6 100%);--r-sm:12px;--r:18px;--r-lg:26px;--r-xl:34px;--shadow:0 30px 70px -28px rgba(0,0,0,.85);--glow:0 0 0 1px rgba(140,170,255,.1),0 22px 50px -18px rgba(80,90,255,.45);--rail-w:258px;--top-h:66px}
@@ -335,11 +335,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
 .book-btn { padding: 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--stroke); font-weight: 700; text-align: center; cursor: pointer; transition: all .2s; }
 .book-btn:hover { border-color: var(--cyan); }
 .book-btn.active { background: var(--grad-soft); border-color: var(--cyan); color: var(--cyan); }
+
+/* PLANNER STYLES */
+.plan-box { background: var(--panel); border: 1px solid var(--stroke); border-radius: 16px; padding: 20px; margin-bottom: 16px; font-size: 14.5px; line-height: 1.8; }
+.plan-box h3 { color: var(--cyan); margin-bottom: 10px; font-size: 16px; border-bottom: 1px solid var(--stroke); padding-bottom: 10px; }
 </style>
 </head>
 <body>
 
-<!-- SPLASH SCREEN -->
 <div id="splashScreen">
   <div style="width:80px;height:80px;border-radius:24px;background:linear-gradient(135deg,#22d3ee,#6366f1,#d946ef);display:grid;place-items:center;font-size:40px;font-weight:900;color:#fff;animation:pulseLogo 2s infinite;">A</div>
   <h1 style="margin-top:20px;color:#fff;font-family:'Outfit',sans-serif;letter-spacing:2px;">ABHS</h1>
@@ -419,13 +422,28 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
     <div class="grid">
       <div class="card tilt"><span class="icon">🤖</span><h3>AI Tutor</h3><p>Ask anything on any subject in your language.</p><button class="card-btn" onclick="go('ai')">Chat Now →</button></div>
       <div class="card tilt"><span class="icon">🕌</span><h3>Islamic Hub</h3><p>Quran (Hausa/English) and Hadith collections.</p><button class="card-btn" onclick="go('islamic')">Open →</button></div>
+      <div class="card tilt"><span class="icon">🧠</span><h3>Study Planner</h3><p>Let AI build a daily study schedule for your exams.</p><button class="card-btn" onclick="go('planner')">Plan →</button></div>
       <div class="card tilt"><span class="icon">🖼️</span><h3>AI Image Studio</h3><p>Describe a scene and watch AI paint it.</p><button class="card-btn" onclick="go('image')">Create →</button></div>
-      <div class="card tilt"><span class="icon">📝</span><h3>Smart Notes</h3><p>Write, pin, search. Everything auto-saves.</p><button class="card-btn" onclick="go('notes')">Open Notes →</button></div>
       <div class="card tilt"><span class="icon">🎓</span><h3>Exams</h3><p>Real quizzes with instant scoring and XP.</p><button class="card-btn" onclick="openQuiz()">Start Quiz →</button></div>
-      <div class="card tilt"><span class="icon">🃏</span><h3>Flashcards</h3><p>Flip, shuffle and master new words.</p><button class="card-btn" onclick="go('flashcards')">Study →</button></div>
+      <div class="card tilt"><span class="icon">🏆</span><h3>Global Leaderboard</h3><p>See who is the best in Nigeria and beyond.</p><button class="card-btn" onclick="go('achievements')">View Top 10 →</button></div>
       <div class="card tilt"><span class="icon">⏱️</span><h3>Focus Timer</h3><p>Pomodoro sessions to build focus.</p><button class="card-btn" onclick="go('focus')">Focus →</button></div>
       <div class="card tilt"><span class="icon">👑</span><h3>Go Premium</h3><p>Unlimited everything for ₦500/year.</p><button class="card-btn" onclick="go('premium')">Upgrade →</button></div>
     </div>
+  </div>
+</section>
+
+<section id="view-planner" class="view hidden">
+  <div class="wrap" style="max-width:760px">
+    <div class="head"><h2>🧠 AI Study Planner</h2><p>Tell the AI what you want to study, and it will create a daily schedule for you.</p></div>
+    <div class="s-card">
+      <div class="field"><label>What are you studying for?</label><input id="planGoal" type="text" placeholder="e.g. JAMB, WAEC, University Exam..."></div>
+      <div class="row" style="margin-bottom:14px">
+        <div class="field" style="flex:1"><label>Days until exam</label><input id="planDays" type="number" placeholder="e.g. 30" min="1"></div>
+        <div class="field" style="flex:1"><label>Hours per day</label><input id="planHours" type="number" placeholder="e.g. 3" min="1" max="24"></div>
+      </div>
+      <button class="btn btn-primary" onclick="generateStudyPlan()" id="planBtn">✨ Generate Plan</button>
+    </div>
+    <div id="planResult" class="hidden"></div>
   </div>
 </section>
 
@@ -446,6 +464,9 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       </div>
       <div id="quranContainer" class="empty">
         <span class="em">📖</span><p>Zaɓi Surah a sama don karantawa.</p>
+      </div>
+      <div class="row" style="justify-content:center;margin-top:14px">
+         <button class="btn btn-ghost btn-sm" onclick="cacheCurrentSurah()">⬇ Ajiye a waya (Offline)</button>
       </div>
     </div>
 
@@ -625,7 +646,7 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
   <div class="wrap" style="max-width:960px">
     <div class="head"><h2>🏆 Achievements</h2><p id="achSummary">0 of 0</p></div>
     <div class="grid" id="achGrid"></div>
-    <h3 style="margin:36px 0 14px;font-size:17px">🥇 Leaderboard</h3>
+    <h3 style="margin:36px 0 14px;font-size:17px">🌍 Global Leaderboard</h3>
     <div id="leaderboard"></div>
   </div>
 </section>
@@ -697,14 +718,14 @@ input,textarea,select{font-family:inherit;font-size:15px;color:inherit}
       <button class="btn btn-ghost btn-sm" onclick="openAdmin()" id="adminBtn" style="position:relative">Open Admin Panel</button>
     </div>
     <div class="s-card"><h3>ℹ️ About</h3>
-      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 11.1 · Islamic Edition (Fixed)<br>Admin: alaminharuna29@gmail.com</p>
+      <p style="font-size:13px;color:var(--dim);line-height:1.85;margin-top:8px"><b style="color:var(--txt)">ABHS — ALAMIN B HARUN SPECIAL</b><br>Version 12.0 · Ultimate Edition<br>Admin: alaminharuna29@gmail.com</p>
     </div>
   </div>
 </section>
 
 <footer class="foot">
   <strong>ABHS · ALAMIN B HARUN SPECIAL</strong><br>Learn Smarter. Think Deeper. Achieve More.<br>
-  <div class="links"><span onclick="go('islamic')">Islamic Hub</span><span onclick="go('courses')">Courses</span><span onclick="go('image')">Image</span><span onclick="go('premium')">Premium</span><span onclick="go('settings')">Settings</span></div>
+  <div class="links"><span onclick="go('islamic')">Islamic Hub</span><span onclick="go('planner')">Planner</span><span onclick="go('courses')">Courses</span><span onclick="go('premium')">Premium</span><span onclick="go('settings')">Settings</span></div>
   <small>© <span id="year"></span> ABHS. All rights reserved.</small>
 </footer>
 </div>
@@ -812,10 +833,10 @@ if (USE_FIREBASE){
    CONSTANTS
    ============================================================ */
 const LS = {
-  session:'abhs.v11.session',
-  data: uid => 'abhs.v11.data.' + uid,
-  theme:'abhs.v11.theme',
-  sound:'abhs.v11.sound'
+  session:'abhs.v12.session',
+  data: uid => 'abhs.v12.data.' + uid,
+  theme:'abhs.v12.theme',
+  sound:'abhs.v12.sound'
 };
 const LEVEL_STEP = 100;
 const XP = { quizCorrect:10, quizFinish:5, note:6, ai:2, focus:15, daily:20, fav:2, premium:50 };
@@ -1196,7 +1217,8 @@ const NAV = [
     { id:'ai', icon:'🤖', label:'AI Tutor' }
   ]},
   { group:'Islamic', items:[
-    { id:'islamic', icon:'🕌', label:'Islamic Hub' }
+    { id:'islamic', icon:'🕌', label:'Islamic Hub' },
+    { id:'planner', icon:'🧠', label:'Study Planner' }
   ]},
   { group:'Create', items:[{ id:'image', icon:'🖼️', label:'AI Image' }]},
   { group:'Tools', items:[
@@ -1291,12 +1313,12 @@ async function handleAuth(){
 
   try {
     if (!USE_FIREBASE){
-      const users = JSON.parse(localStorage.getItem('abhs.v11.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v12.users') || '{}');
       if (authMode === 'signup'){
         if (users[email]){ err.textContent = 'Email already registered.'; throw new Error('exists'); }
         const uid = 'local_' + Date.now();
         users[email] = { uid, email, name, pass: hashStr(email + '::' + pass) };
-        localStorage.setItem('abhs.v11.users', JSON.stringify(users));
+        localStorage.setItem('abhs.v12.users', JSON.stringify(users));
         await localLogin(uid, email, name);
       } else {
         const u = users[email];
@@ -1426,6 +1448,7 @@ function go(view){
   if (view === 'premium')      renderPremiumStatus();
   if (view === 'image')        renderImageGrid();
   if (view === 'islamic')      initIslamicHub();
+  if (view === 'planner')      initPlanner();
   if (view === 'ai'){
     const lbl = $('langLabel'); if (lbl) lbl.textContent = langLabel(currentLang());
     setTimeout(() => $('chatInput').focus(), 250);
@@ -1433,7 +1456,48 @@ function go(view){
 }
 
 /* ============================================================
-   ISLAMIC HUB LOGIC (UPDATED)
+   AI STUDY PLANNER
+   ============================================================ */
+let plannerInit = false;
+function initPlanner() {
+  if (plannerInit) return;
+  plannerInit = true;
+}
+
+async function generateStudyPlan() {
+  const goal = $('planGoal').value.trim();
+  const days = $('planDays').value;
+  const hours = $('planHours').value;
+
+  if (!goal || !days || !hours) {
+    toast('Please fill all fields', 'error');
+    return;
+  }
+
+  const btn = $('planBtn');
+  btn.disabled = true;
+  btn.textContent = '🧠 Generating...';
+
+  const prompt = `Create a detailed daily study plan for a student preparing for "${goal}". They have ${days} days and can study ${hours} hours per day. Provide a practical, easy-to-follow schedule in ${currentLang() === 'ha-NG' ? 'Hausa' : 'English'}. Use bullet points and bold text for days.`;
+
+  try {
+    const reply = await fetchAI(prompt);
+    const box = $('planResult');
+    box.classList.remove('hidden');
+    box.innerHTML = `<div class="plan-box">
+      <h3>Your Study Plan</h3>
+      <p style="white-space:pre-wrap">${esc(reply)}</p>
+    </div>`;
+  } catch (e) {
+    toast('Failed to generate plan. Check internet.', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '✨ Generate Plan';
+  }
+}
+
+/* ============================================================
+   ISLAMIC HUB LOGIC (OFFLINE CACHE)
    ============================================================ */
 let islamicInitialized = false;
 
@@ -1477,43 +1541,70 @@ function openIslamicTab(tab, btn) {
 async function fetchQuran() {
   const surahNum = $('surahSelect').value;
   const container = $('quranContainer');
+  
+  // Check Cache First
+  const cachedData = localStorage.getItem('quran_cache_' + surahNum);
+  if (cachedData) {
+    renderQuranData(JSON.parse(cachedData));
+    return;
+  }
+
   container.innerHTML = '<div class="empty"><p>Loading Ayahs…</p></div>';
   container.classList.remove('empty');
   
   try {
     const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih,ha.gumi`);
     const data = await res.json();
-    const arabic = data.data[0].ayahs;
-    const english = data.data[1].ayahs;
-    const hausa = data.data[2].ayahs;
-    
-    let html = '';
-    for (let i = 0; i < arabic.length; i++) {
-      html += `<div class="ayah-card">
-        <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Ayah ${arabic[i].numberInSurah}</div>
-        <div class="arabic-text">${arabic[i].text}</div>
-        <div class="translation-text">${esc(english[i].text)}</div>
-        <div class="hausa-text">${esc(hausa[i].text)}</div>
-      </div>`;
-    }
-    container.innerHTML = html;
+    renderQuranData(data.data);
   } catch(e) {
     container.innerHTML = '<div class="empty"><p style="color:#fda4af">Failed to load Quran. Check internet.</p></div>';
   }
 }
 
-// UPDATED: NEW HADITH API (jsDelivr CDN)
+function renderQuranData(data) {
+  const arabic = data[0].ayahs;
+  const english = data[1].ayahs;
+  const hausa = data[2].ayahs;
+  
+  let html = '';
+  for (let i = 0; i < arabic.length; i++) {
+    html += `<div class="ayah-card">
+      <div style="font-size:12px;font-weight:800;color:var(--dim);margin-bottom:8px;">Ayah ${arabic[i].numberInSurah}</div>
+      <div class="arabic-text">${arabic[i].text}</div>
+      <div class="translation-text">${esc(english[i].text)}</div>
+      <div class="hausa-text">${esc(hausa[i].text)}</div>
+    </div>`;
+  }
+  $('quranContainer').innerHTML = html;
+}
+
+async function cacheCurrentSurah() {
+  const surahNum = $('surahSelect').value;
+  if (localStorage.getItem('quran_cache_' + surahNum)) {
+    toast('Already saved offline', 'info');
+    return;
+  }
+  
+  toast('Saving for offline...', 'info');
+  try {
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNum}/editions/quran-uthmani,en.sahih,ha.gumi`);
+    const data = await res.json();
+    localStorage.setItem('quran_cache_' + surahNum, JSON.stringify(data.data));
+    toast('✅ Saved for offline reading!');
+  } catch(e) {
+    toast('Failed to save. Check internet.', 'error');
+  }
+}
+
 async function fetchHadith() {
-  const book = $('hadithBookSelect').value; // 'bukhari' or 'muslim'
+  const book = $('hadithBookSelect').value;
   const container = $('hadithContainer');
   container.innerHTML = '<div class="empty"><p>Loading Hadith…</p></div>';
   container.classList.remove('empty');
   
-  // Bukhari & Muslim both have over 5000 Hadiths. Generate random number.
   const randomNum = Math.floor(Math.random() * 5000) + 1;
   
   try {
-    // Fetch English and Arabic in parallel
     const [resEng, resAra] = await Promise.all([
       fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-${book}/${randomNum}.json`),
       fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-${book}/${randomNum}.json`)
@@ -2275,7 +2366,7 @@ async function saveProfile(){
 function exportData(){
   const d = getData();
   const payload = {
-    app:'ABHS', version:11, exported:new Date().toISOString(),
+    app:'ABHS', version:12, exported:new Date().toISOString(),
     user:{ name:currentUser.name, email:currentUser.email }, data:d
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
@@ -2518,7 +2609,6 @@ function renderPremiumStatus(){
   box.innerHTML = '';
 }
 
-// TRIGGER PAYSTACK
 function payWithPaystack() {
   if (isPremium()) { toast('You already have Premium!', 'info'); return; }
   if (!currentUser) { showAuth(); return; }
@@ -2526,11 +2616,10 @@ function payWithPaystack() {
   let handler = PaystackPop.setup({
     key: PAYSTACK_PUBLIC_KEY,
     email: currentUser.email,
-    amount: PREMIUM_PRICE * 100, // Paystack uses kobo
+    amount: PREMIUM_PRICE * 100, 
     currency: 'NGN',
     ref: 'ABHS_' + Math.floor((Math.random() * 1000000000) + 1),
     callback: function(response) {
-      // Payment successful
       activatePremiumViaPaystack(response.reference);
     },
     onClose: function() {
@@ -2540,7 +2629,6 @@ function payWithPaystack() {
   handler.openIframe();
 }
 
-// ACTIVATE PREMIUM AFTER PAYSTACK SUCCESS
 async function activatePremiumViaPaystack(ref) {
   const d = getData();
   d.premium = {
@@ -2573,7 +2661,6 @@ async function activatePremiumViaPaystack(ref) {
   go('dashboard');
 }
 
-// MANUAL FLOW
 function openPaymentFlow(){
   if (isPremium()){ toast('Already Premium 👑', 'info'); return; }
   $('payRefInput').value = '';
@@ -3081,7 +3168,7 @@ async function init(){
   if (!USE_FIREBASE){
     const sessionUid = localStorage.getItem(LS.session);
     if (sessionUid){
-      const users = JSON.parse(localStorage.getItem('abhs.v11.users') || '{}');
+      const users = JSON.parse(localStorage.getItem('abhs.v12.users') || '{}');
       const found = Object.values(users).find(u => u.uid === sessionUid);
       if (found){
         currentUser = { uid: found.uid, email: found.email, name: found.name };
